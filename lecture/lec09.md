@@ -1,0 +1,14 @@
+---
+layout: page
+title: Lecture 9 – Modeling, SLR
+nav_exclude: true
+---
+
+# Lecture 9 – Modeling, SLR
+
+Presented by Dominic Liu
+
+Content by many dedicated Data 100 instructors at UC Berkeley. See our [Acknowledgments](../../acks) page.
+
+- [slides](https://docs.google.com/presentation/d/14CEjO4KYfFsS2Ip0cGY6IBN55hZElowG8HMZkqnkA5k/edit?usp=sharing){:target="_blank"}
+- [recording](https://bcourses.berkeley.edu/courses/1525605/pages/lecture-9-modeling-slr)

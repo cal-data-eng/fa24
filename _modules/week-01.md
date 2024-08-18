@@ -1,23 +1,9 @@
 ---
-title: Introduction to Java
+title: Week 01
+date: 2023-08-21
+slides: https://docs.google.com/presentation/d/1RO1gW7kTY1NQIFDKypnVSUOAfKkAHdxNa9vBm17QWsQ/edit?usp=sharing
 ---
 
-Sep 28
-: [Java & Git](#)
-  : [1.1](#)
-
-Sep 29
-: **Section**{: .label .label-purple }[Intro to Java](#)
-  : [Solution](#)
-
-Sep 30
-: [Variables & Objects](#)
-  : [1.2](#), [2.1](#)
-
-Oct 1
-: **Lab**{: .label .label-purple } [Lab 1: Control and Functions]({% link _labs/lab01.md %})
-
-Oct 2
-: [Tracing, IntLists, & Recursion](#)
-  : [2.1](#)
-: **HW 1 due**{: .label .label-red } [HW 1: Recursion]({% link _hw/hw01.md %})
+Thu 8/24
+: **Lecture 1**{: .label .label-lecture }[Welcome to Data Engineering!]({{page.slides}}){:target="\_blank"}
+  : [Pre-Semester Form](https://docs.google.com/forms/d/e/1FAIpQLSfxCLiImx1GXRkTvlmiCSK2hYMjjyxcyje1RyLU5PfKgDZ_JQ/viewform){: target="\_blank"}
