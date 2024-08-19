@@ -3,6 +3,7 @@ _site/
 .DS_Store
 *~
 *.gem
+Gemfile.lock
 
 .bundle/
 .jekyll-cache/

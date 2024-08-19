@@ -10,13 +10,13 @@ markdown: kramdown
 # Syllabus
 {:.no_toc}
 
-Jump to:
-* TOC
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
 {:toc}
 
-<br>
-
-<a name = 'about'></a>
+---
 
 ## About Data 101
 
@@ -36,7 +36,7 @@ See our [FAQ page]({{site.course.faq}}).
 * **Ed** is our primary method of communication and making announcements, and you are responsible for checking it frequently. We will also make assignment "megathreads" where you can public ask questions about the course assignments.
 * **bCourses** will only have lecture webcasts, if any.
 * **Gradescope** is where all assignments are submitted. 
-* **[{{site.course.email}}](mailto:{{site.course.email}})** is the course staff email and is for private logistical student support and DSP accommodations. This email monitored by both the instructor and a core set of staff to ensure fastest response. Please only contact the course instructor directly for matters that require strict privacy and/or their personal attention.
+* **[{{site.course_email}}](mailto:{{site.course_email}})** is the course staff email and is for private logistical student support and DSP accommodations. This email monitored by both the instructor and a core set of staff to ensure fastest response. Please only contact the course instructor directly for matters that require strict privacy and/or their personal attention.
 
 ## Course Culture
 Students taking Data C101 come from a wide range of backgrounds. We hope to foster an inclusive and safe learning environment based on curiosity rather than competition. All members of the course community — the instructors, students, and course staff — are expected to treat each other with courtesy and respect. Some of the responsibility for that lies with the staff, but a lot of it ultimately rests with you, the students.
