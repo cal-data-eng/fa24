@@ -8,6 +8,7 @@ markdown: kramdown
 ---
 
 # Resources
+
 {:.no_toc .text-delta}
 
 Jump to:

@@ -11,6 +11,7 @@ jupysql_docs: "https://jupysql.ploomber.io/en/latest/"
 ---
 
 # {{page.title}}
+
 {:.no_toc .text-delta}
 Author: Lisa Yan
 Last updated: September 9, 2023 (Fall 2023)
