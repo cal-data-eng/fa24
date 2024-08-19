@@ -84,7 +84,7 @@ module Jekyll
       # This is just for consistency of URL presentation.
       errors << '`baseurl` must start with a `/`.' unless baseurl.match?(%r{^/})
       # skip, just for the template.
-      return if baseurl == '/berkeley-class-site'
+      return if baseurl == '/fa24'
 
       return if baseurl.match?(SEMESTER_REGEXP)
 

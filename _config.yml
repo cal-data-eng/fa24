@@ -25,19 +25,19 @@ author: Various Bears
 color_scheme: light
 
 # TODO(setup): Set this to the semester, e.g. /sp24, (faXX / spXX / suXX / wiXX )
-baseurl: '/berkeley-class-site' # the subpath of your site, which should just be the semester.
+baseurl: '/fa24' # the subpath of your site, which should just be the semester.
 # TODO(setup): Set this to your course's domain
-url: 'https://berkeley-eecs.github.io' # the hostname & protocol for your site, e.g. http://example.com
+url: 'https://data101.org' # the hostname & protocol for your site, e.g. http://example.com
 
 # Course variables
 # Course variables can appear in various places around the website, if something isn't used leave it blank.
 # TODO(setup): Set all of these course variables
-course: SAMPLE 101
-course_email: COURSE_EMAIL@berkeley.edu
-gradescope_course_id: 123456 # you can find this in the Gradescope URL after /courses
+course: DATA 101
+course_email: data101@berkeley.edu
+gradescope_course_id: 707300 # you can find this in the Gradescope URL after /courses
 bcourses_course_id: 123456 # Same as above, but for bCourses. Leave blank if not in use...
 ed_course_id: 123456 # Again, same as above.
-sememster: spYY | suYY | faYY # set for the current seemester
+sememster: fa24 # set for the current seemester
 # This should be one of eecs, dsus, stat
 # (Future) This will control some footer text, and later custom styling.
 course_department: dsus
