@@ -70,6 +70,10 @@ slides:
     title: "Introduction to Data Science"
     url: "https://docs.google.com/presentation/d/1J"
 
+nav_external_links:
+  - title: Course FAQ
+    url: https://data101.org/fa24faq
+    hide_icon: true
 
 # Default layouts for each collection type
 defaults:
