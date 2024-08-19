@@ -2,6 +2,7 @@
 title: Week 01
 date: 2023-08-21
 slides: https://docs.google.com/presentation/d/1RO1gW7kTY1NQIFDKypnVSUOAfKkAHdxNa9vBm17QWsQ/edit?usp=sharing
+Status: Active
 ---
 
 Thu 8/24

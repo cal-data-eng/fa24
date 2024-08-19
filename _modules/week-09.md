@@ -1,6 +1,7 @@
 ---
 title: Week 09
 date: 2023-10-16
+Status: Inactive
 ---
 
 Mon 10/16
@@ -18,4 +19,4 @@ Thu 10/19
 
 Fri 10/20
 : **MultiVitamin 4**{: .label .label-hw }[Multivitamin 4](https://www.gradescope.com/courses/576229/assignments/3560740){:target="\_blank"} Release
-  : Due <s>Thu 11/2</s> **Thu 11/9**, 5pm
+  : Due Thu 11/2 **Thu 11/9**, 5pm
