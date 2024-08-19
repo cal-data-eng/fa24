@@ -34,7 +34,7 @@ Other resources from [Data 100](https://ds100.org/), which are intended for SQLi
 
 ## Assignment Tips
 
-See [**Assignment Tips**](/resources/assignment-tips/).
+See [**Assignment Tips**](../assignment-tips).
 
 ## Exam Resources
 
