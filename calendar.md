@@ -5,7 +5,7 @@ description: Listing of course modules and topics.
 nav_order: 1
 ---
 
-# Calendar
+## Schedule
 
 {% assign mods = site.modules %}
 {% assign active-mods = '' | split: '' %}
