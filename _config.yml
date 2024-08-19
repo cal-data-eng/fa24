@@ -64,15 +64,12 @@ collections:
   modules:
   schedules:
   announcements:
-  labs:
-    output: true
-    permalink: /:collection/:path/
-  hw:
-    output: true
-    permalink: /:collection/:path/
-  projects:
-    output: true
-    permalink: /:collection/:path/
+
+slides:
+  slides-01:
+    title: "Introduction to Data Science"
+    url: "https://docs.google.com/presentation/d/1J"
+
 
 # Default layouts for each collection type
 defaults:

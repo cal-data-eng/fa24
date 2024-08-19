@@ -1,6 +1,7 @@
 ---
 title: Finals Week
 date: 2023-12-11
+Status: Inactive
 ---
 
 Fri 12/15

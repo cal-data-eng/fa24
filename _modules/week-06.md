@@ -1,6 +1,7 @@
 ---
 title: Week 06
 date: 2023-09-25
+Status: Active
 ---
 
 Mon 9/25

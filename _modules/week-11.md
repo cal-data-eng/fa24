@@ -1,6 +1,7 @@
 ---
 title: Week 11
 date: 2023-10-30
+Status: Inactive
 ---
 
 Mon 10/30

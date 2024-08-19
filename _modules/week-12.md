@@ -1,6 +1,7 @@
 ---
 title: Week 12
 date: 2023-11-06
+Status: Inactive
 ---
 
 Mon 11/6

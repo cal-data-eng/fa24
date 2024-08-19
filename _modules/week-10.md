@@ -1,6 +1,7 @@
 ---
 title: Week 10
 date: 2023-10-23
+Status: Inactive
 ---
 
 Mon 10/23

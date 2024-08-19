@@ -1,6 +1,7 @@
 ---
 title: Week 13
 date: 2023-11-13
+Status: Inactive
 ---
 
 Mon 11/13
@@ -14,7 +15,7 @@ Tue 11/14
 Thu 11/16
 : **Lecture 25**{: .label .label-lecture }[Sampling](https://docs.google.com/presentation/d/1Czps6B8bNYW8eaYV2_xtpl9Ft8uGDXk4FpwkcN7YLLA/edit?usp=sharing){:target="\_blank"}
   : [Notes](https://drive.google.com/file/d/1LuoYhvI0_BKFDVjzq8R7-84Sxse7K5-C/view?usp=drive_link){:target="\_blank"},
-  [code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa23-materials&urlpath=lab%2Ftree%2Ffa23-materials%2Flecture%2Flec25%2Flec25.ipynb&branch=main){: target="\_blank"}, 
-  [code HTML](../../resources/assets/lectures/lec25/lec25.html), 
+  [code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa23-materials&urlpath=lab%2Ftree%2Ffa23-materials%2Flecture%2Flec25%2Flec25.ipynb&branch=main){: target="\_blank"},
+  [code HTML](../../resources/assets/lectures/lec25/lec25.html),
   [\[extra\] Sketches](../../resources/assets/lectures/lec25/lec25-sketches.html)
 : **MultiVitamin 5**{: .label .label-hw-due } Due, 5pm
