@@ -16,8 +16,6 @@ Jump to:
 
 <br>
 
-<a name = 'about'></a>
-
 ## About Data 101
 
 This course will cover the principles and practices of managing data at scale, with a focus on use cases in data analysis and machine learning. We will cover the entire life cycle of data management and science, ranging from data preparation to exploration, visualization and analysis, to machine learning and collaboration.
@@ -35,8 +33,8 @@ See our [FAQ page]({{site.course.faq}}).
 ### Communications
 * **Ed** is our primary method of communication and making announcements, and you are responsible for checking it frequently. We will also make assignment "megathreads" where you can public ask questions about the course assignments.
 * **bCourses** will only have lecture webcasts, if any.
-* **Gradescope** is where all assignments are submitted. 
-* **[{{site.course.email}}](mailto:{{site.course.email}})** is the course staff email and is for private logistical student support and DSP accommodations. This email monitored by both the instructor and a core set of staff to ensure fastest response. Please only contact the course instructor directly for matters that require strict privacy and/or their personal attention.
+* **Gradescope** is where all assignments are submitted.
+* **[{{site.course_email}}](mailto:{{site.course_email}})** is the course staff email and is for private logistical student support and DSP accommodations. This email monitored by both the instructor and a core set of staff to ensure fastest response. Please only contact the course instructor directly for matters that require strict privacy and/or their personal attention.
 
 ## Course Culture
 Students taking Data C101 come from a wide range of backgrounds. We hope to foster an inclusive and safe learning environment based on curiosity rather than competition. All members of the course community — the instructors, students, and course staff — are expected to treat each other with courtesy and respect. Some of the responsibility for that lies with the staff, but a lot of it ultimately rests with you, the students.
@@ -91,7 +89,7 @@ In both cases, navigate to [slido.com](https://www.slido.com/)
 **Final Exam**: The final exam will be held on Friday, December 15th, from 8:00am - 11:00am. **The final exam is offered in-person only (location TBD), and we will not offer alternate exams.** It is your responsibility to ensure that you are not enrolled in another class that conflicts with our exam time.
 
 Office hours are a great place to get help from course staff and to find study partners for this course. You can find a list of all office hours on the [Calendar]({{site.base_url}}calendar) page, of which there are three categories:
-* **Regular office hours**, held weekly in **Warren 101B**. Attend to get help with multivitamins, projects, or any other content-related questions. 
+* **Regular office hours**, held weekly in **Warren 101B**. Attend to get help with multivitamins, projects, or any other content-related questions.
 * **Project Parties** are work sessions with extra staff support and are more sporadic. These are held in Warren 101B the Wednesday evening before a project deadline. Times TBD.
 * **Tea Hours** are a separate set of instructor hours for general course questions, data science advising, or perspectives on academia/industry. These are not intended for homework questions. Held in Soda 783 (instructor office). Feel free to bring tea/coffee and/or a reusable mug.
 
@@ -138,7 +136,7 @@ You are encouraged to discuss practice problems and lecture content with your fe
 
 1. Do not possess or share code. Before submitting your final work, you should never be in possession of solution code that you did not write. Looking up solution code online is effectively possessing solution code. You will be equally culpable if you distribute code, now or in the future. If you find yourself struggling or really desperate, reach out to the staff and/or submit to Extenuating Circumstances.
 
-1. Cite your sources: 
+1. Cite your sources:
 * **Study groups**: If you do discuss the assignments with others please include their names at the top of your notebook. Restated, you and your friends are encouraged to discuss course content and high-level approaches to problem-solving, but you are not allowed to share your code nor answers. You can work on a project alongside another person or group of people (e.g., study group), but it should not substantially resemble anyone else's.
 * **StackOverflow, etc.** You should cite these sources, even if it's using small snippets of code (e.g., googling "postgres string matching" may lead you to some sample code that you copy and paste. Include the link to these online sources.
 * **With extreme caution**: If you're just generating some amount of boilerplate code with GitHub Copilot / GPT3 / etc., that's OK. However, you should not use such tools to generate non-trivial methods. We are trying to build your engineering skills, and learning on an AI is going to cause you trouble in circumstances where you don't have an AI to help, such as exams or often-time industry. **Any AI-generated code must be cited (with the prompt and log) and explicitly indicatedt as such.** Violation of this citation rule is a serious act of plagiarism. Note that AI generated code, especially from sources like ChatGPT, is often subtly buggy or completely incorrect.

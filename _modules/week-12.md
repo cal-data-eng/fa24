@@ -1,6 +1,10 @@
 ---
 title: Week 12
 date: 2023-11-06
+<<<<<<< HEAD
+=======
+Status: Inactive
+>>>>>>> main
 ---
 
 Mon 11/6

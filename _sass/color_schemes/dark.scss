@@ -33,7 +33,7 @@ $search-background-color: $grey-dk-400;
 $body-text-color: $white;
 $body-lighter-color: darken($body-text-color, 20%);
 
-$link-color: #406FFE;
+$link-color: #7698FE;
 $hover-focus-link-color: darken($link-color, 10%);
 
 // TODO(template): We need to figure out a much better solution!
@@ -56,3 +56,11 @@ $base-button-color: $grey-dk-200;
 .btn:not(.btn-outline) {
   color: $btn-primary-color !important;
 }
+
+$disc-color: #63BB63;
+$lecture-color: #78AEDD;
+$hw-color: #DF7972;
+$project-color: #BF80CB;
+$office-hours-color: #7BEAF9;
+$exam-color: #F977B8;
+$block-text-color: #27262b;

@@ -1,10 +1,18 @@
 ---
 title: Week 15
 date: 2023-11-27
+<<<<<<< HEAD
 ---
 
 Mon 11/27
 : **Discussion 13**{: .label .label-disc } Project 4 OH 
+=======
+Status: Inactive
+---
+
+Mon 11/27
+: **Discussion 13**{: .label .label-disc } Project 4 OH
+>>>>>>> main
 <!-- Sampling, Data Visualizations -->
 
 Tue 11/28

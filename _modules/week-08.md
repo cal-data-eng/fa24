@@ -1,6 +1,10 @@
 ---
 title: Week 08
 date: 2023-10-09
+<<<<<<< HEAD
+=======
+Status: Inactive
+>>>>>>> main
 ---
 
 Mon 10/9
@@ -18,4 +22,8 @@ Thu 10/12
 
 Fri 10/13
 : **Project 3**{: .label .label-proj }[Data Transformation](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa23-materials&urlpath=lab%2Ftree%2Ffa23-materials%2Fproj%2Fproj3%2Fproj3.ipynb&branch=main){: target="\_blank"}
+<<<<<<< HEAD
   : Due <s>Thu 10/26</s> **Thu 11/2**, 5pm
+=======
+  : Due **Thu 10/26** **Thu 11/2**, 5pm
+>>>>>>> main

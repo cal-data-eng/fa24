@@ -1,6 +1,10 @@
 ---
 title: Finals Week
 date: 2023-12-11
+<<<<<<< HEAD
+=======
+Status: Inactive
+>>>>>>> main
 ---
 
 Fri 12/15

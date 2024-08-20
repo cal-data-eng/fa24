@@ -1,6 +1,10 @@
 ---
 title: Week 06
 date: 2023-09-25
+<<<<<<< HEAD
+=======
+Status: Active
+>>>>>>> main
 ---
 
 Mon 9/25

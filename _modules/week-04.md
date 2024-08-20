@@ -1,6 +1,10 @@
 ---
 title: Week 04
 date: 2023-09-11
+<<<<<<< HEAD
+=======
+Status: Active
+>>>>>>> main
 ---
 
 Mon 9/11

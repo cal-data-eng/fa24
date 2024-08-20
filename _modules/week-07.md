@@ -1,6 +1,10 @@
 ---
 title: Week 07
 date: 2023-10-02
+<<<<<<< HEAD
+=======
+Status: Active
+>>>>>>> main
 ---
 
 Mon 10/2

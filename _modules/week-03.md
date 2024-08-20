@@ -1,6 +1,10 @@
 ---
 title: Week 03
 date: 2023-09-04
+<<<<<<< HEAD
+=======
+Status: Active
+>>>>>>> main
 ---
 
 Mon 9/4

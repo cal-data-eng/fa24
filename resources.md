@@ -10,8 +10,10 @@ markdown: kramdown
 # Resources
 {:.no_toc}
 
+{:.no_toc .text-delta}
+
 Jump to:
-* TOC
+1. TOC
 {:toc}
 
 ## Prerequisites
@@ -33,13 +35,13 @@ Other resources from [Data 100](https://ds100.org/), which are intended for SQLi
 
 ## Assignment Tips
 
-See [**Assignment Tips**](/resources/assignment-tips/).
+See [**Assignment Tips**](../assignment-tips).
 
 ## Exam Resources
 
-There has been exactly one final exam for this course so far, and it was a compressed version due to the UAW 2865 ASE strike in Fall 2022. 
+There has been exactly one final exam for this course so far, and it was a compressed version due to the UAW 2865 ASE strike in Fall 2022.
 
-**(updated 12/4/23)** 
+**(updated 12/4/23)**
 
 |Semester|Final|
 |---|---|

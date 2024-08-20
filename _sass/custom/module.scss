@@ -45,6 +45,10 @@
       @extend %module-item;
       border-top: $border $border-color;
       font-weight: normal;
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
       text-align: right;
 
       +dd {
@@ -66,6 +70,14 @@
 
     >dd {
       @extend %module-item;
+<<<<<<< HEAD
+=======
+      font-weight: 500;
+
+      em {
+        font-weight: normal;
+      }
+>>>>>>> main
 
       +dd {
         padding-top: 0;
@@ -76,6 +88,11 @@
       }
 
       dl {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> main
         display: flex;
         flex-direction: column;
 
@@ -84,8 +101,14 @@
         }
 
         dt {
+<<<<<<< HEAD
           flex: 0 0 80%;
           margin: 0;
+=======
+          flex: 0 0 62.5%;
+          margin: 0;
+          font-weight: 500;
+>>>>>>> main
         }
 
         dd {
@@ -93,6 +116,7 @@
         }
       }
     }
+<<<<<<< HEAD
 
     // .label-lecture { background-color: #779ECC; border-radius: 9px; }
 
@@ -138,3 +162,7 @@
 
   }
 }
+=======
+  }
+}
+>>>>>>> main

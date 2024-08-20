@@ -1,6 +1,10 @@
 ---
 title: Week 14
 date: 2023-11-20
+<<<<<<< HEAD
+=======
+Status: Inactive
+>>>>>>> main
 ---
 
 Mon 11/20

@@ -1,5 +1,6 @@
 ---
 layout: page
+<<<<<<< HEAD
 title: Home / Schedule
 nav_order: 1
 description: A week-to-week description of the content covered in the course.
@@ -42,4 +43,19 @@ UC Berkeley, {{site.course.semester}}
 
 {% for module in site.modules %}
 {{ module }}
+=======
+title: Home
+description: Listing of course modules and topics.
+nav_order: 1
+---
+
+# Schedule
+
+{% assign mods = site.modules %}
+
+{% for mod in mods %}
+  {% if mod.Status == 'Active' %}
+    {{ mod }}
+  {% endif %}
+>>>>>>> main
 {% endfor %}
