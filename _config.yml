@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 
 # TODO(setup): Typically the course number, "DEPT XXX". it appears on nearly every page. Keep it short. :)
-title: Berkeley Class Site
+title: DATA 101
 # TODO:(setup): This should be the extended title of your course. e.g. "Introduction to Data Science"
 tagline: A Jekyll template for course websites
 description: A modern, highly customizable, responsive Jekyll template for course websites
@@ -53,9 +53,13 @@ aux_links:
     - 'https://edstem.org'
   OH Queue:
     - 'https://oh.c88c.org'
-  Berkeley Class Site on GitHub:
+  View Template on GitHub:
     - 'https://github.com/berkeley-eecs/berkeley-class-site'
 
+# TODO(template): These need to be documented
+# TODO(semester): You may want to review these...
+berkeley_theme_options:
+  show_logo_in_sidebar: true
 
 # Collections for website data
 collections:
@@ -64,7 +68,23 @@ collections:
   modules:
   schedules:
   announcements:
+  calendars:
+  announcements:
+  labs:
+    output: true
+    permalink: /:collection/:path/
+  lectures:
+    output: true
+    sort_by: number # Date could work...
+    permalink: /lectures/:path/
+  hw:
+    output: true
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
 
+# TODO(data101): Can we extract this from data in _lectures/
 slides:
   slides-01:
     title: "Introduction to Data Science"
@@ -74,6 +94,14 @@ nav_external_links:
   - title: Course FAQ
     url: https://data101.org/fa24faq
     hide_icon: true
+
+# The sitemap **must** be enabled. It's published as /baseurl/sitemap.xml
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-include-cache
+  - jekyll-jupyter-notebook
 
 # Default layouts for each collection type
 defaults:
@@ -110,9 +138,9 @@ defaults:
       layout: module
   - scope:
       path: ''
-      type: schedules
+      type: calendars
     values:
-      layout: schedule
+      layout: calendar
   - scope:
       path: ''
       type: announcements
@@ -123,6 +151,25 @@ defaults:
 # Just the Docs / Berkeley Class Site Common Config
 # Options below here will likely not need to be configured..
 ######################################################################
+# TODO(template): We should clean these up + standardize...
+# TODO(setup): You may want to add additional
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
 # TODO(template): CSS compilations. Handle warnings...
 sass:
   style: expanded
@@ -130,13 +177,6 @@ sass:
   sourcemap: always
   quiet_deps: true
   verbose: false
-
-# The sitemap **must** be enabled. It's published as /baseurl/sitemap.xml
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-github-metadata
-  - jekyll-include-cache
 
 # Theme settings
 theme: just-the-docs
@@ -191,6 +231,6 @@ exclude:
   - README.md
   - CONTRIBUTING.md
   - tmp/
+  - script/
   - spec/
-  - docs/
   - node_modules/
