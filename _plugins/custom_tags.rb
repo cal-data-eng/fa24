@@ -151,6 +151,97 @@ module Jekyll
       parse_file_lines(raw_lines)
     end
   end
+
+  class DiscussionTag < Liquid::Tag
+
+    def initialize(tag_name, number, tokens)
+      super
+      @number = number.strip
+    end
+  
+    def render(context)
+      "**Discussion #{@number}**{: .label .label-disc }"
+    end
+  end
+
+  class HomeworkTag < Liquid::Tag
+
+    def initialize(tag_name, number, tokens)
+      super
+      @number = number.strip
+    end
+  
+    def render(context)
+      "**Homework #{@number}**{: .label .label-hw }"
+    end
+  end
+
+  class LectureTag < Liquid::Tag
+
+    def initialize(tag_name, number, tokens)
+      super
+      @number = number.strip
+    end
+  
+    def render(context)
+      "**Lecture #{@number}**{: .label .label-lec }"
+    end
+  end
+
+  class ProjectTag < Liquid::Tag
+
+    def initialize(tag_name, number, tokens)
+      super
+      @number = number.strip
+    end
+  
+    def render(context)
+      "**Project #{@number}**{: .label .label-proj }"
+    end
+  end
+
+  class HomeworkDueTag < Liquid::Tag
+
+    def initialize(tag_name, date, tokens)
+      super
+      @date = date.strip
+    end
+  
+    def render(context)
+      "**Due #{@date}**{: .label .label-due }"
+    end
+  end
+
+  class HomeworkDueTag < Liquid::Tag
+
+    def initialize(tag_name, number, tokens)
+      super
+      @number = number.strip
+    end
+  
+    def render(context)
+      "**Homework #{@number}**{: .label .label-hw-due }"
+    end
+  end
+
+  class ProjectDueTag < Liquid::Tag
+      
+      def initialize(tag_name, date, tokens)
+        super
+        @date = date.strip
+      end
+    
+      def render(context)
+        "**Due #{@date}**{: .label .label-proj-due }"
+      end
+    end
 end
 
 Liquid::Template.register_tag('code', Jekyll::CodeTag)
+Liquid::Template.register_tag('disc', Jekyll::DiscussionTag)
+Liquid::Template.register_tag('hw', Jekyll::HomeworkTag)
+Liquid::Template.register_tag('lec', Jekyll::LectureTag)
+Liquid::Template.register_tag('proj', Jekyll::ProjectTag)
+Liquid::Template.register_tag('hw-due', Jekyll::HomeworkDueTag)
+Liquid::Template.register_tag('proj-due', Jekyll::ProjectDueTag)
+
