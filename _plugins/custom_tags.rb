@@ -202,18 +202,6 @@ module Jekyll
 
   class HomeworkDueTag < Liquid::Tag
 
-    def initialize(tag_name, date, tokens)
-      super
-      @date = date.strip
-    end
-  
-    def render(context)
-      "**Due #{@date}**{: .label .label-due }"
-    end
-  end
-
-  class HomeworkDueTag < Liquid::Tag
-
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
@@ -226,15 +214,16 @@ module Jekyll
 
   class ProjectDueTag < Liquid::Tag
       
-      def initialize(tag_name, date, tokens)
-        super
-        @date = date.strip
-      end
-    
-      def render(context)
-        "**Due #{@date}**{: .label .label-proj-due }"
-      end
+    def initialize(tag_name, number, tokens)
+      super
+      @number = number.strip
     end
+  
+    def render(context)
+      "**Homework #{@number}**{: .label .label-proj-due }"
+    end
+  end
+
 end
 
 Liquid::Template.register_tag('code', Jekyll::CodeTag)
@@ -244,4 +233,3 @@ Liquid::Template.register_tag('lec', Jekyll::LectureTag)
 Liquid::Template.register_tag('proj', Jekyll::ProjectTag)
 Liquid::Template.register_tag('hw-due', Jekyll::HomeworkDueTag)
 Liquid::Template.register_tag('proj-due', Jekyll::ProjectDueTag)
-
