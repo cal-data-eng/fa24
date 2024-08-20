@@ -33,7 +33,7 @@ end
 module Jekyll
   # Jekyll::ConfigValidator class definition (see docs at the top of file)
   class ConfigValidator
-    SEMESTER_REGEXP = /(wi|sp|su|fa)\d\d$/
+    SEMESTER_REGEXP = %r{/?(wi|sp|su|fa)\d\d$}
     VALID_COURSE_DEPARTMENT = %w[eecs dsus stat].freeze
     VALID_COLOR_SCHEME = %w[light dark].freeze
 
@@ -84,7 +84,7 @@ module Jekyll
       # This is just for consistency of URL presentation.
       errors << '`baseurl` must start with a `/`.' unless baseurl.match?(%r{^/})
       # skip, just for the template.
-      return if baseurl == '/fa24'
+      return if baseurl == '/berkeley-class-site'
 
       return if baseurl.match?(SEMESTER_REGEXP)
 

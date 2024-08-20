@@ -8,5 +8,5 @@ nav_order: 2
 # Weekly Schedule
 
 {% for schedule in site.schedules %}
-{{ schedule }}
+  {{ schedule }}
 {% endfor %}

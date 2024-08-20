@@ -153,72 +153,67 @@ module Jekyll
   end
 
   class DiscussionTag < Liquid::Tag
-
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
-  
-    def render(context)
+
+    def render(_context)
       "**Discussion #{@number}**{: .label .label-disc }"
     end
   end
 
   class HomeworkTag < Liquid::Tag
-
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
-  
-    def render(context)
+
+    def render(_context)
       "**Homework #{@number}**{: .label .label-hw }"
     end
   end
 
   class LectureTag < Liquid::Tag
-
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
-  
-    def render(context)
+
+    def render(_context)
       "**Lecture #{@number}**{: .label .label-lec }"
     end
   end
 
   class ProjectTag < Liquid::Tag
-
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
-  
-    def render(context)
+
+    def render(_context)
       "**Project #{@number}**{: .label .label-proj }"
     end
   end
 
   class HomeworkDueTag < Liquid::Tag
-
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
-  
-    def render(context)
+
+    def render(_context)
       "**Homework #{@number}**{: .label .label-hw-due }"
     end
   end
 
   class ProjectDueTag < Liquid::Tag
-      
+
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
-  
+
     def render(context)
       "**Homework #{@number}**{: .label .label-proj-due }"
     end
