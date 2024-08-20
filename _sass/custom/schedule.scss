@@ -75,7 +75,7 @@
       background-color: $grey-dk-000;
       border-radius: $border-radius;
       box-shadow: 0 10px 20px rgba(0, 0, 0, .1), inset 0 -3px 0 rgba(0, 0, 0, .2);
-      color: $white;
+      color: $block-text-color !important;
       float: left;
       height: 100%;
       margin: 0;
@@ -93,17 +93,17 @@
       }
   
       &.lecture {
-        background-color: $blue-100;
-        color: $white !important;
+        background-color: $lecture-color;
+        color: $block-text-color !important;
 
       }
   
-      &.lab {
-        background-color: $green-100;
+      &.disc {
+        background-color: $disc-color
       }
   
       &.office-hours {
-        background-color: $red-000;
+        background-color: $office-hours-color;
       }
       &.coffee-chats {
         background-color: $yellow-200;
