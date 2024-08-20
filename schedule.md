@@ -10,5 +10,7 @@ published: true
 # Schedule
 
 {% for module in site.modules %}
-  {{ module }}
+
+{{ module }}
+
 {% endfor %}
