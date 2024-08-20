@@ -26,37 +26,49 @@
     }
   
     .label {
-      border-radius: $border-radius;
+      border-radius: 10px;
       margin-left: 0;
       user-select: none;
       background-color: $grey-lt-100;
       color: $grey-dk-100;
-  
-      &.label-lab {
-        background-color: $green-100;
-        color: white;
+
+      &.label-hw {
+        background-color: $hw-color;
+        color: $block-text-color;
       }
-      &.label-homework {
-        background-color: $red-200;
-        color: white;
-      }
-      &.label-discussion {
-        background-color: $purple-000;
-        color: white;
+      &.label-disc {
+        background-color: $disc-color;
+        color: $block-text-color;
       }
       &.label-exam {
-        background-color: $yellow-300;
-        color: white;
+        background-color: $exam-color;
+        color: $block-text-color;
       }
       &.label-survey {
         background-color: $blue-100;
-        color: white;
+        color: $block-text-color;
       }
       &.label-project {
-        background-color: $blue-100;
-        color: white;
+        background-color: $project-color;
+        color: $block-text-color;
+      }
+
+      &.label-lec {
+        background-color: $lecture-color;
+        color: $block-text-color;
+      }
+
+      &.label-hw-due {
+        background-color: transparent;
+        color: $hw-color;
+        box-shadow: inset 0 0 0 2px $hw-color;
       }
   
+      &.label-proj-due {
+        background-color: transparent;
+        color: $project-color;
+        box-shadow: inset 0 0 0 2px $project-color;
+      }
       
     }
   }
