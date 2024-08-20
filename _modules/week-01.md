@@ -5,5 +5,5 @@ Status: Active
 ---
 
 Thu 8/24
-: {% lec 1 %}[Welcome to Data Engineering!](https://docs.google.com/presentation/d/1RO1gW7kTY1NQIFDKypnVSUOAfKkAHdxNa9vBm17QWsQ/edit?usp=sharing){:target="\_blank"}
-  : [Pre-Semester Form](https://docs.google.com/forms/d/e/1FAIpQLSfxCLiImx1GXRkTvlmiCSK2hYMjjyxcyje1RyLU5PfKgDZ_JQ/viewform){: target="\_blank"}
+: {% lec 1 %}
+  : Pre-Semester Form

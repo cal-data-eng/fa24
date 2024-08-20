@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'date'
+
 module Jekyll
   # Custom Liquid tag for including code files in _includes/
   # so that the solutions appear only when specified.
@@ -180,9 +182,29 @@ module Jekyll
       @number = number.strip
     end
 
-    def render(_context)
-      "**Lecture #{@number}**{: .label .label-lec }"
+    def render(context)
+      lectures = context['site']['lectures']
+      lecture = lectures[@number.to_i - 1] if lectures[@number.to_i - 1]
+      lecture_title = lecture['title']
+      date = lecture['date']
+      # Directly grab the date string from the lecture data
+      date_parts = lecture['date'].to_s.split('-')
+      year = date_parts[0].to_i
+      month = date_parts[1].to_i
+      day = date_parts[2].to_i
+
+      # Construct the date manually
+      lecture_date = Date.new(year, month, day)
+
+      current_date = Date.today
+      # add leading 0 to number if less than 10
+      num_index = @number.to_i < 10 ? "0#{@number}" : @number
+      if lecture_date > current_date
+        return "**Lecture #{@number}**{: .label .label-lec } #{lecture_title}"
+      end
+      return "**Lecture #{@number}**{: .label .label-lec } [#{lecture_title}](lectures/#{num_index})"
     end
+    
   end
 
   class ProjectTag < Liquid::Tag
