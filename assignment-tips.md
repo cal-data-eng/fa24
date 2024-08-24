@@ -230,7 +230,7 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
 
 **Want to splitscreen your JupyterHub?** Simply drag a tab over to a different side of your JupyterHub. We recommend splitting your screen with your Jupyter notebook in one window, and a psql terminal in another window, like so (note these are two separate connections to the database!):
 
-<img src="/resources/assets/images/splitscreen.png"
+<img src="../assets/images/splitscreen.png"
      alt="Split Screen of DataHub"
      style="float: center; margin-right: 10px; width: 800px" />
 
