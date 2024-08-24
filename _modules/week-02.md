@@ -1,7 +1,7 @@
 ---
 title: Week 02
 date: 2023-08-28
-Status: Active
+Status: Inactive
 ---
 
 Mon 8/28

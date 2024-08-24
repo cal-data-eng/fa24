@@ -1,7 +1,7 @@
 ---
 title: Week 03
 date: 2023-09-04
-Status: Active
+Status: Inactive
 ---
 
 Mon 9/4

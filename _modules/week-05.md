@@ -1,7 +1,7 @@
 ---
 title: Week 05
 date: 2023-09-18
-Status: Active
+Status: Inactive
 ---
 
 Mon 9/18

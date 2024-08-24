@@ -1,7 +1,7 @@
 ---
 title: Week 07
 date: 2023-10-02
-Status: Active
+Status: Inactive
 ---
 
 Mon 10/2
