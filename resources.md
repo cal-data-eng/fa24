@@ -72,7 +72,7 @@ Students can access device lending options through the Student Technology Equity
 {:.no_toc}
 The staff of the [UHS Counseling and Psychological Services](https://uhs.berkeley.edu/caps) (Tang Center, 2222 Bancroft Way; 510-642-9494; for after-hours support, please call the 24/7 line at 855-817-5667) provides confidential, brief counseling and crisis intervention to students with personal, academic and career stress. Services are provided by a multicultural group of professional counselors including psychologists, social workers, and advanced level trainees. All undergraduate and graduate students are eligible for CAPS services, regardless of insurance coverage.
 
-To improve access for engineering students, a licensed psychologist from the Tang Center also holds walk-in appointments for confidential counseling in Bechtel Engineering Center 241 (check [here](https://engineering.berkeley.edu/student-services/advising-counseling) for schedule).
+To improve access for engineering students, a licensed psychologist from the Tang Center also holds walk-in appointments for confidential counseling in Bechtel Engineering Center 241 (be sure to check the [schedule](https://engineering.berkeley.edu/student-services/advising-counseling)).
 
 ### For disability accommodations
 {:.no_toc}
