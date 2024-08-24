@@ -15,15 +15,16 @@
 # in the templates via {{ site.myvariable }}.
 
 # TODO(setup): Typically the course number, "DEPT XXX". it appears on nearly every page. Keep it short. :)
-title: DATA 101
+title: Data 101
 # TODO:(setup): This should be the extended title of your course. e.g. "Introduction to Data Science"
-tagline: A Jekyll template for course websites
-description: A modern, highly customizable, responsive Jekyll template for course websites
+tagline: Data Engineering
+description: Data Engineering
 # TODO(template): this should be built from the staff list...
-author: Various Bears
+author: Jonathan Ferrari
 # You should use either light or dark as the theme.
 color_scheme: light
-
+# logo
+logo: data-101-logo.png
 # TODO(setup): Set this to the semester, e.g. /sp24, (faXX / spXX / suXX / wiXX )
 baseurl: '/fa24' # the subpath of your site, which should just be the semester.
 # TODO(setup): Set this to your course's domain
