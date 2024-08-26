@@ -71,7 +71,6 @@ collections:
   announcements:
   calendars:
   announcements:
-    output: true
   labs:
     output: true
     permalink: /:collection/:path/
