@@ -1,6 +1,6 @@
 ---
 email: zackaryoon134@berkeley.edu
-name: Zackary Oon
+name: Zack Oon
 pronouns: HE/HIM
 photo: staff/zack.jpeg
 website: https://zackwebsite.vercel.app/
