@@ -33,6 +33,7 @@ schedule:
       start: 9:30 AM
       end: 11:00 AM
       location: Lewis 100
+      instructor: Zack
     - name: Section
       start: 12:00 PM
       end: 1:00 PM
@@ -64,7 +65,7 @@ schedule:
       start: 10:00 AM
       end: 11:00 AM
       location: SOCS 70
-      instructor: Zack
+      instructor: Hima
     - name: Section
       start: 11:00 AM
       end: 12:00 PM
@@ -79,7 +80,7 @@ schedule:
       start: 1:00 PM
       end: 2:00 PM
       location: SOCS 140
-      instructor: Hima
+      instructor: Michelle
     - name: Section
       start: 2:00 PM
       end: 3:00 PM
