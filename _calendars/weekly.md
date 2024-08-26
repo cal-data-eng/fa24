@@ -84,4 +84,5 @@ schedule:
       start: 2:00 PM
       end: 3:00 PM
       location: SOCS 140
+      instructor: Michelle
 ---
