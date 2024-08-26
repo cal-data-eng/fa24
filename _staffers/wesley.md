@@ -7,5 +7,5 @@ website:
 bio: Hi everyone, I'm Wesley. Looking forward to working with you all this semester!
 role: Tutor
 office-hours: 
-hover-photo: 
+hover-photo: hover/wesley.jpeg
 ---

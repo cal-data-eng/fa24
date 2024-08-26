@@ -8,5 +8,5 @@ bio: Hi, I'm Zack, and I'm a senior studying computer science and data science. 
 role: Head Teaching Assistant
 team: Student Support
 office-hours: 
-hover-photo: 
+hover-photo: hover/zack.jpeg
 ---

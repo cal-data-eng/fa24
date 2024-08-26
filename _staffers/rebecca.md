@@ -8,5 +8,5 @@ bio: Hey there, I'm a 4th year EECS major and I'm super excited to teach Data 10
 role: Head Teaching Assistant
 team: Assignments
 office-hours: 
-hover-photo: 
+hover-photo: hover/rebecca.jpeg
 ---
