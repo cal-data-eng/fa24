@@ -1,0 +1,22 @@
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign announcements = site.announcements | sort: 'week' | reverse %}
+{% assign most_recent = nil %}
+
+<div id="announcement-navigation">
+  <a href="#" id="prev-week" data-week="" style="visibility: hidden;">← Previous Week</a>
+  <a href="#" id="next-week" data-week="" style="visibility: hidden;">Next Week →</a>
+</div>
+
+<div id="announcement-container">
+  {% for announcement in announcements %}
+    {% assign announcement_date = announcement.date | date: "%Y-%m-%d" %}
+    {% if announcement.week and announcement.week >= 0 and announcement_date <= today %}
+      {% if most_recent == nil %}
+        {% assign most_recent = announcement %}
+      {% endif %}
+      <div class="announcement" data-week="{{ announcement.week }}" data-date="{{ announcement_date }}" {% if announcement != most_recent %}style="display: none;"{% endif %}>
+        {% include announcement.html announcement=announcement %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
