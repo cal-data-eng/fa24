@@ -1,0 +1,11 @@
+<!-- _includes/announcement.html -->
+<h2>{{ include.announcement.title }}</h2>
+<span class="announcement-meta">
+  {{ include.announcement.date | date: '%b %e' }}
+  &middot;
+  {{ include.announcement.content | strip_html | number_of_words | divided_by: 180.0 | round }} min read
+</span>
+<div>
+  {{ include.announcement.content }}
+</div>
+  
