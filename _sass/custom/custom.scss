@@ -491,3 +491,27 @@ div.highlighter-rouge div.highlight {
 
 // Place all of your course-specific CSS here.
 @import './course_overrides';
+
+#announcement-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#announcement-navigation a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#announcement-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+#prev-week, #next-week {
+  visibility: hidden; /* Start with both buttons hidden */
+}
+
+#prev-week:empty + #next-week {
+  margin-left: auto; /* Ensure "Next Week" stays on the right if "Previous Week" is not visible */
+}
