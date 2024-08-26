@@ -4,7 +4,5 @@ week: 1
 date: 2024-08-25
 ---
 
-1. Create a [new repository based on Just the Class](https://github.com/kevinlin1/just-the-class/generate).
-2. Configure a [publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages). Your course website is now live!
-3. Update `_config.yml` with your course information.
-4. Edit and create `.md` [Markdown files](https://guides.github.com/features/mastering-markdown/) to add your content.
+1. We look forward to seeing you in lecture on Thursday!
+2. Sections will be Thursday afternoon and Friday morning and afternoon
