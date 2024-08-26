@@ -122,14 +122,14 @@
   padding-bottom: 0.16em;
   padding-left: 0.56em;
   padding-right: 0.56em;
-
+  color: $block-text-color;
   font-size: 0.8em;
 
   text-transform: uppercase;
   vertical-align: middle;
   border-radius: 12px;
 
-  background-color: #ecebed;
+  background-color: $label-color;
 }
 
 .term{
