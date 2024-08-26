@@ -33,12 +33,11 @@ schedule:
       start: 9:30 AM
       end: 11:00 AM
       location: Lewis 100
-      instructor: Zack
     - name: Section
       start: 12:00 PM
       end: 1:00 PM
       location: GPBB 103
-      instructor: 
+      instructor: Zack
     - name: Section
       start: 1:00 PM
       end: 2:00 PM
