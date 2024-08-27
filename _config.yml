@@ -33,6 +33,7 @@ url: 'https://data101.org' # the hostname & protocol for your site, e.g. http://
 # Course variables
 # Course variables can appear in various places around the website, if something isn't used leave it blank.
 # TODO(setup): Set all of these course variables
+# TODO(template): these could be migrated to one big key.
 course: DATA 101
 course_email: data101@berkeley.edu
 gradescope_course_id: 707300 # you can find this in the Gradescope URL after /courses
@@ -47,6 +48,8 @@ course_department: dsus
 # If you have no archive page, comment this line out or leave blank.
 class_archive_path: /
 additional_extensions: TBD # Google Form URL
+# TODO(setup): update these as needed.
+course_faq: /faq/
 
 # TODO(setup): Set these auxiliary links as you wish - they show up on the top right
 aux_links:
@@ -85,12 +88,6 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
-
-# TODO(data101): Can we extract this from data in _lectures/
-slides:
-  slides-01:
-    title: "Introduction to Data Science"
-    url: "https://docs.google.com/presentation/d/1J"
 
 nav_external_links:
   - title: Course FAQ

@@ -9,7 +9,7 @@ def site_config
   # Consider forcing the desination folder
   # Override the local URL too? Would it break the sitemap?
   # Note: Config keys must be strings and thus use => style hashes.
-  @site_config ||= Jekyll.configuration({ 'sass' => { 'quiet_deps' => true } })
+  @site_config ||= Jekyll.configuration({ 'future' => 'false', 'sass' => { 'quiet_deps' => true } })
 end
 
 def build_jekyll_site!
