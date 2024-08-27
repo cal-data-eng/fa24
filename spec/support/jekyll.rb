@@ -10,7 +10,7 @@ def site_config
   @site_config ||= Jekyll.configuration({
     'destination' => DESTINATION,
     'url' => '',
-    'baseurl' => '/',
+    'baseurl' => '',
     'future' => false,
     'SKIP_CONFIG_VALIDATION' => 'true',
     'sass' => { 'quiet_deps' => true },

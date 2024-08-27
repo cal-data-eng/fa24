@@ -10,7 +10,7 @@ lec_info: TuTh 9:30am, Lewis 100
 ---
 
 <!-- Common md links can go here -->
-[schedule]: {{ site.baseurl }}
+[schedule]: {{ site.baseurl }}/
 
 # Syllabus
 {:.no_toc}
