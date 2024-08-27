@@ -38,7 +38,7 @@ course_email: data101@berkeley.edu
 gradescope_course_id: 707300 # you can find this in the Gradescope URL after /courses
 bcourses_course_id: 123456 # Same as above, but for bCourses. Leave blank if not in use...
 ed_course_id: 123456 # Again, same as above.
-sememster: fa24 # set for the current seemester
+semester: fa24 # set for the current seemester
 # This should be one of eecs, dsus, stat
 # (Future) This will control some footer text, and later custom styling.
 course_department: dsus
@@ -46,6 +46,7 @@ course_department: dsus
 # Typically just / for DS courses (with a visible index page), or /archives if you're hosting your own, or a link to the inst.eecs page
 # If you have no archive page, comment this line out or leave blank.
 class_archive_path: /
+additional_extensions: TBD # Google Form URL
 
 # TODO(setup): Set these auxiliary links as you wish - they show up on the top right
 aux_links:
