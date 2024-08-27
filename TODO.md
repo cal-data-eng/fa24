@@ -2,7 +2,7 @@
 
 ## Staff Page
 
-- [ ] Get info from Alex Goldberg
+- [X] Get info from Alex Goldberg
 - [ ] Get color badges in for Lead TA's
 - [ ] Assign teams for 12-hour TA's
 - [ ] Get bio for Lisa and Michael
@@ -12,10 +12,6 @@
 
 - [ ] Update Exams on the resources page
 - [ ] Update where Course Notes are found
-
-## Syllabus
-
-- [ ] Update Syllabus based on Instructor Feedback
 
 ## Home Page
 
