@@ -193,7 +193,3 @@ If you are feeling overwhelmed, visit our office hours and talk with us, or fill
 
 Finally, the main goal of this course is that you should learn, and have a fantastic experience doing so. Please keep that goal in mind throughout the semester. Welcome to Data 101!
 
-
-## Acknowledgments
-
-Academic Honesty policy and closing words adapted from [Data 8](https://data8.org/){:target="_blank"}. Course Culture inspired and adapted with permission from Dr. Sarah Chasins’ [Fall 2021 CS 164 Syllabus](https://inst.eecs.berkeley.edu/~cs164/fa21/syllabus.html){:target="_blank"} and Grace O’Connell, the Asssociate Dean for Inclusive Excellence.
