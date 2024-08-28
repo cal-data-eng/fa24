@@ -6,7 +6,7 @@ Status: Active
 
 Thu 8/29
 : {% lec 1 %}
-  : Pre-Semester Form
+  : [Pre-Semester Form](https://docs.google.com/forms/d/e/1FAIpQLSdalE7Mi5AIidLUFjJMU-BoQhcGrucIZPcIiQHKAzdkcoIU6Q/viewform)
 : {% disc 1 %} SQL Review
   : Solution
 
