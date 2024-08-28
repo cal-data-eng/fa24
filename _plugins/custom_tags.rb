@@ -214,7 +214,7 @@ module Jekyll
     end
 
     def render(_context)
-      "**Project #{@number}**{: .label .label-proj }"
+      "**Project #{@number}**{: .label .label-project }"
     end
   end
 
@@ -237,7 +237,7 @@ module Jekyll
     end
 
     def render(context)
-      "**Homework #{@number}**{: .label .label-proj-due }"
+      "**Project #{@number}**{: .label .label-proj-due }"
     end
   end
 
@@ -248,5 +248,5 @@ Liquid::Template.register_tag('disc', Jekyll::DiscussionTag)
 Liquid::Template.register_tag('hw', Jekyll::HomeworkTag)
 Liquid::Template.register_tag('lec', Jekyll::LectureTag)
 Liquid::Template.register_tag('proj', Jekyll::ProjectTag)
-Liquid::Template.register_tag('hw-due', Jekyll::HomeworkDueTag)
-Liquid::Template.register_tag('proj-due', Jekyll::ProjectDueTag)
+Liquid::Template.register_tag('hwDue', Jekyll::HomeworkDueTag)
+Liquid::Template.register_tag('projDue', Jekyll::ProjectDueTag)
