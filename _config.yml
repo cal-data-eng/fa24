@@ -51,11 +51,7 @@ class_archive_path: /
 aux_links:
   # TODO(template): Move this to be built-in.
   Ed:
-    - 'https://edstem.org'
-  OH Queue:
-    - 'https://oh.c88c.org'
-  View Template on GitHub:
-    - 'https://github.com/berkeley-eecs/berkeley-class-site'
+    - 'https://edstem.org/us/courses/63937/discussion/'
 
 # TODO(template): These need to be documented
 # TODO(semester): You may want to review these...
@@ -84,12 +80,6 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
-
-# TODO(data101): Can we extract this from data in _lectures/
-slides:
-  slides-01:
-    title: "Introduction to Data Science"
-    url: "https://docs.google.com/presentation/d/1J"
 
 nav_external_links:
   - title: Course FAQ
@@ -235,3 +225,10 @@ exclude:
   - script/
   - spec/
   - node_modules/
+
+course:
+  ed: https://edstem.org/us/courses/63937/discussion/
+  datahub: https://data101.datahub.berkeley.edu/
+  videos: https://bcourses.berkeley.edu/courses/1536858/external_tools/90481
+  gradescope: https://www.gradescope.com/courses/707300
+  

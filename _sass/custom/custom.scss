@@ -417,35 +417,35 @@ th, td {
 
 
 .btn-datahub {
-  @include btn-color($white, #FF8C00);
+  @include btn-color($block-text-color !important, #FF8C00);
 }
 
 .btn-ed {
-  @include btn-color($white, #9400D3);
+  @include btn-color($block-text-color !important, #9400D3);
 }
 
 .btn-bcourses {
-  @include btn-color($white, #19519a);
+  @include btn-color($block-text-color !important, #19519a);
 }
 
 .btn-gradescope {
-  @include btn-color($white, #228B22);
+  @include btn-color($block-text-color !important, #228B22);
 }
 
 .btn-textbook {
-  @include btn-color($white, teal);
+  @include btn-color($block-text-color !important, teal);
 }
 
 .btn-extensions {
-  @include btn-color($white, #523be7);
+  @include btn-color($block-text-color !important, #523be7);
 }
 
 .btn-currweek {
-  @include btn-color($white, #FA8072);
+  @include btn-color($block-text-color !important, #FA8072);
 }
 
 .btn-officehours {
-  @include btn-color($white, #1863c1);
+  @include btn-color($block-text-color !important, #1863c1);
 }
 
 @import '../color_schemes/dark_overrides';
