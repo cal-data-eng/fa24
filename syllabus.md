@@ -5,7 +5,12 @@ nav_order: 2
 description: >-
     Data Engineering
 markdown: kramdown
+
+lec_info: TuTh 9:30am, Lewis 100
 ---
+
+<!-- Common md links can go here -->
+[schedule]: {{ site.baseurl }}/
 
 # Syllabus
 {:.no_toc}
@@ -30,7 +35,7 @@ The class will balance foundational concerns with exposure to practical language
 COMPSCI C100/DATA C100/STAT C100 or COMPSCI 189 or INFO 251 or DATA 144/INFO 254 or equivalent upper-division course in data science. COMPSCI 61B or INFO 206B or equivalent courses in programming. This class will not assume deep experience with databases or big data solutions.
 
 ### Enrollment
-See our [FAQ page]({{site.course.faq}}).
+See our [FAQ page]({{site.course_faq}}).
 
 ### Communications
 * **Ed** is our primary method of communication and making announcements, and you are responsible for checking it frequently. We will also make assignment "megathreads" where you can public ask questions about the course assignments.
@@ -75,74 +80,101 @@ If individuals are disrespectful to students, course staff, or others via course
 
 ## Course Components
 
-**Lecture**: There are two 80-minute lectures per week. You can attend in-person or online (see Ed post), or watch the recording. The class [schedule](/) will contain links to video recordings posted within 24 hours after the corresponding class.
+### Lecture
+
+There are two 80-minute lectures per week, **{{page.lec_info}}**. You can attend in-person or online (see Ed post), or watch the recording. The class [schedule][schedule] will contain links to video recordings posted within 24 hours after the corresponding class.
 
 **Lecture check-ins**: Every lecture will have a short series of questions to help check your understanding of the material. You will have one week to complete each check-in; no late submissions will be accepted. Each check-in is worth 1 point and is graded on completeness as follows:
-* Synchronous (during lecture) complete at least one question.
-* Asynchronous (after lecture, within 1 week) complete all questions.
-In both cases, navigate to [slido.com](https://www.slido.com/)
+  * Synchronous (during lecture) complete at least one question.
+  * Asynchronous (after lecture, within 1 week) complete all questions.
 
-**Discussion**: This course also includes one weekly 50-minute discussion section held on Mondays. This section will help you synthesize materials via worksheets and activities and is good practice for the final exam. Handouts wil be posted on the class [Schedule](/). Section attendance is not required, but you are strongly encouraged to practice the material on your own time.
+  In both cases, navigate to [slido.com](https://www.slido.com/)
 
-**Projects**: There will be four (4) programming assignments released throughout the semester (see the [Schedule](/)). Generally, you will have about two weeks to complete each project. Projects are graded on accuracy and are equally weighted. Project deadlines are **Thursday 5pm**.
+### Discussion
 
-**Multivitamins**: There will be five (5) multivitamins released on Gradescope throughout the semester. You will have about two weeks to complete short written assignments that consist of multiple choice questions covering material that is not covered in the projects. Multivitamins are graded on accuracy and are equally weighted. Multivitamin deadlines are **Thursday 5pm**.
+This course also includes one weekly 50-minute discussion section held on Thursdays and Fridays. This section will help you synthesize materials via worksheets and activities and is good practice for the final exam. Handouts wil be posted on the class [Schedule][schedule]. Section attendance is not required, but you are strongly encouraged to practice the material on your own time. Discussion begins with the first week of classes.
 
-**Final Exam**: The final exam will be held on Friday, December 15th, from 8:00am - 11:00am. **The final exam is offered in-person only (location TBD), and we will not offer alternate exams.** It is your responsibility to ensure that you are not enrolled in another class that conflicts with our exam time.
+### Projects
 
-Office hours are a great place to get help from course staff and to find study partners for this course. You can find a list of all office hours on the [Calendar]({{site.base_url}}calendar) page, of which there are three categories:
-* **Regular office hours**, held weekly in **Warren 101B**. Attend to get help with multivitamins, projects, or any other content-related questions.
-* **Project Parties** are work sessions with extra staff support and are more sporadic. These are held in Warren 101B the Wednesday evening before a project deadline. Times TBD.
-* **Tea Hours** are a separate set of instructor hours for general course questions, data science advising, or perspectives on academia/industry. These are not intended for homework questions. Held in Soda 783 (instructor office). Feel free to bring tea/coffee and/or a reusable mug.
+There will be five (5) programming assignments released throughout the semester (see the [schedule][schedule]). Generally, you will have about two weeks to complete each project, with the exception of the first Project 0 (one week). Projects are graded on accuracy and are almost equally weighted, with the exception of Project 0 (weighted half of the other projects). Project deadlines are **Wednesday 5pm**.
+
+### Homework Assignments
+
+There will be six (6) homework assignments released on Gradescope throughout the semester. You will have about two weeks to complete short written assignments, with the exception of the first Homework 1 (one week). Each homework assignment consists of multiple choice and short answer questions covering material that is not covered in the projects. Homework assignments are graded on accuracy and are equally weighted. Homework assignment deadlines are **Wednesday 5pm**.
+
+### Exams
+
+This course has two exams:
+* Midterm exam: Wednesday, October 16th, 7:00pm - 9:00pm
+* Final exam: Tuesday, December 17th, 3:00pm - 6:00pm
+
+**Exams are offered in-person only (location TBD).** Alternate exams will be offered for the midterm (TBD), but not for the final. It is your responsibility to ensure that you are not enrolled in another class that conflicts with our final exam time.
+
+### Final Project
+
+We are piloting an **optional** final course project this semester. This will be an open-ended exploration of a database technology, and you will submit a written final report. Details to be released after the midterm.
+
+### Office Hours
+
+Office Hours are a great place to get help from course staff and to find study partners for this course. You can find a list of all office hours on the [calendar]({{site.base_url}}/calendar) page, of which there are three categories:
+* **Regular office hours**, held weekly in **Warren 101B**. Attend to get help with homework assignments, projects, or any other content-related questions.
+* **Tea Hours** are a separate set of instructor hours for general course questions, data science advising, or perspectives on academia/industry. These are not intended for homework questions. Feel free to bring tea/coffee and/or a reusable mug.
 
 ## Grading
-Letter grades for the course will be based on your overall score in the class, calculated using the following weights:
+Letter grades for the course will be based on your overall score in the class. The default scheme is without the optional final project:
 
-| Component | Weight | Details |
-| ---- | --- | --- |
-| Lecture Check-Ins | 8% | Drop 3 lowest scores. Skip Lecture 01. |
-| Projects | 52% | No drops; see [Late Policy](#late-policy) |
-| Multivitamins | 25% | No drops; see [Late Policy](#late-policy) |
-| Final Exam | 15% |
+{: .table }
+| **Component** | **Weight<br/>(default)** | **Weight<br/>(Final Project)** | **Details** |
+| --------- |:---:|:---:|--- |
+| Lecture Check-Ins | 6% | 6% | Drop 3 lowest scores. Skip Lecture 01. |
+| Projects | 36% | 36% | (8% each typically) No drops; Project 0 worth half others. see [Late Policy](#late-policy) |
+| Homework Assignments | 18% | 18% | (3% each) No drops; see [Late Policy](#late-policy) |
+| Midterm | 15% | 10% |     |
+| Final Exam | 25% | 20% | Final is cumulative. |
+| Final Project | -- | 10% | Optional |
+
+If you choose to do the project, your final grade will be the maximum of the two grading schemes.
 
 <!--Letter grades will be based on a combination of absolute cutoffs and the distribution of overall scores. Towards the end of the term, we will make three guarantees: "An overall score of at least x will result in a grade of at least C-; at least y will result in at least B-; at least z will result in at least A-." The thresholds x, y, and z will depend on this term’s performance.
 -->
 
 
 ## Late Policy
-Everyone has 9 slip days, which can be applied to late submissions of projects and multivitamins.
+Everyone has 9 slip days, which can be applied to late submissions of _projects_ and _homework assignments_, including the final project.
 
-* Each project or multivitamin can have a max of 3 slip days applied to it. These slip days will be automatically applied at the end of the semester to maximize your grade.
-* Slip days are rounded up to the next day. That is, 4 minutes late = 1 day late. We will use the submission time as displayed on Gradescope.
-* If you have no remaining slip days, there is a 15% reduction to your total score for every day that the assignment is late.
-  * [Updated 11/6 for clarity] After 3 slip days (i.e., late days), you can no longer receive credit for the submission.
+* Each project or homework assignment can have a max of 3 slip days applied to it. These slip days will be automatically applied at the end of the semester to maximize your grade, based on the final grade shown in gradescope.
+* Slip days are rounded up to the next day. That is, 5 minutes late = 1 day late. We will use the submission time as displayed on Gradescope. You should track your own slip days.
+* If you have no remaining slip days, there is a 15% reduction to your total score for every day that the assignment is late. After 3 slip days (i.e., late days), you can no longer receive credit for the submission.
 * Lecture check-ins are not eligible for slip days.
+* _Please do not ask the staff to apply slip days to particular assignments, or track how many you have used._ If an assignment is open for submission it is _always_ in your interest to turn in your best effort.
 
-### Extenuating Circumstances
-We recognize that life can be unexpected. If you encounter extenuating circumstances at any time in the semester, please don't hesitate to let us know. The sooner we are made aware, the more options we have available to us to help you.
+### Additional Extensions
+We recognize that life can be unexpected. If you encounter the need for additional extensions at any time in the semester, please don't hesitate to let us know. The sooner we are made aware, the more options we have available to us to help you.
 
-The [Extenuating Circumstances form]({{site.course.extenuating_circumstances}}){:target="\_blank"} is for addressing any circumstances that cannot be resolved via the slip day policy above. This form is designed to lower the barrier to reaching out to us, as well as build your independence in managing your academic career long-term. Within one business day of filling out the form, a course staff will reach out to you and, as needed, provide a space for conversation and arrange course accommodations as necessary. When making extension requests, if possible:
+The [Additional Extensions form]({{site.additional_extensions}}){:target="\_blank"} is for addressing any circumstances that cannot be resolved via the slip day policy above. This form is designed to lower the barrier to reaching out to us, as well as build your independence in managing your academic career long-term. Within one business day of filling out the form, a course staff will reach out to you and, as needed, provide a space for conversation and arrange course accommodations as necessary. When making extension requests:
 * Send requests before the assignment deadline
 * Send one extension request per assignment
-* [update 11/9] If your extension request is granted, then the extension is to the original on-time deadline.
+* If your extension request is granted, then the extension is to the original on-time deadline, from which slip days can be used. We will prioritize using your slip days over providing additional extensions.
 
-You are responsible for reasonable communication with course staff. If you make a request close to the deadline, we can not guarantee that you will receive a response before the deadline. Additionally, simply submitting a request does not guarantee you will receive an extension. Even if your work is incomplete, please submit before the deadline so you can receive credit for the work you did complete.
+You are responsible for reasonable, timely communication with course staff.
+Simply submitting a request does not guarantee you will receive an extension. Even if your work is incomplete, please submit before the deadline so you can receive credit for the work you did complete.
 
 ## DSP Accommodations
-If you are registered with the Disabled Students’ Program (DSP) you can expect to receive an email from us during the first week of classes. Otherwise, email our [course email]({{site.course.email}}). DSP students can submit assignment extension requests via the [Extenuating Circumstances Form (link TBD)]({{site.course.extenuating_circumstances}}).
+If you have DSP accommodations for extended time on assignments, please make sure we have received your DSP accommodation letter. We will contact you about arrangements.
 
 ## Collaboration and Integrity
 You are encouraged to discuss practice problems and lecture content with your fellow students and with course staff. Arguing with friends about exercises is an excellent and time-honored way to learn. However, **you must write up all your own assignments and code by yourself**. Copying assignments from other sources is not only dishonest, it also doesn’t help anyone, least of all yourself. We have important rules:
 
 1. All code you submit should be written by you alone.
 
-1. Do not possess or share code. Before submitting your final work, you should never be in possession of solution code that you did not write. Looking up solution code online is effectively possessing solution code. You will be equally culpable if you distribute code, now or in the future. If you find yourself struggling or really desperate, reach out to the staff and/or submit to Extenuating Circumstances.
+1. Do not possess or share code. Before submitting your final work, you should never be in possession of solution code that you did not write. Looking up solution code online is effectively possessing solution code. You will be equally culpable if you distribute code, now or in the future. If you find yourself struggling or really desperate, reach out to the staff and/or submit to Additional Extensions.
 
 1. Cite your sources:
 * **Study groups**: If you do discuss the assignments with others please include their names at the top of your notebook. Restated, you and your friends are encouraged to discuss course content and high-level approaches to problem-solving, but you are not allowed to share your code nor answers. You can work on a project alongside another person or group of people (e.g., study group), but it should not substantially resemble anyone else's.
 * **StackOverflow, etc.** You should cite these sources, even if it's using small snippets of code (e.g., googling "postgres string matching" may lead you to some sample code that you copy and paste. Include the link to these online sources.
-* **With extreme caution**: If you're just generating some amount of boilerplate code with GitHub Copilot / GPT3 / etc., that's OK. However, you should not use such tools to generate non-trivial methods. We are trying to build your engineering skills, and learning on an AI is going to cause you trouble in circumstances where you don't have an AI to help, such as exams or often-time industry. **Any AI-generated code must be cited (with the prompt and log) and explicitly indicatedt as such.** Violation of this citation rule is a serious act of plagiarism. Note that AI generated code, especially from sources like ChatGPT, is often subtly buggy or completely incorrect.
+* **With extreme caution**: If you're just generating some amount of boilerplate code with GitHub Copilot / LLMs / etc., that's OK. However, you should not use such tools to generate non-trivial methods. We are trying to build your engineering skills, and learning on an AI is going to cause you trouble in circumstances where you don't have an AI to help, such as exams or often-time industry. **Any AI-generated code must be cited (with the prompt and log) and explicitly indicatedt as such.** Violation of this citation rule is a serious act of plagiarism. Note that AI generated code, especially from sources like ChatGPT, is often subtly buggy or completely incorrect.
 
+**_Each assignment will ask you to list any collobrators, outside sources, or other help received. You are expected to fill this hout honestly._**
 
 We will follow the [EECS departmental policy](https://eecs.berkeley.edu/resources/students/academic-dishonesty){: target="\_blank"} on academic honesty, so be sure you are familiar with it.
 We will be running advanced plagiarism detection programs on all assignments.
@@ -157,11 +189,7 @@ Our [Resources](../resources) page lists not only course-specific academic resou
 
 ## We want you to succeed!
 
-If you are feeling overwhelmed, visit our office hours and talk with us, or fill out the Extenuating Circumstances Form. We know college can be stressful and we want to help you succeed.
+If you are feeling overwhelmed, visit our office hours and talk with us, or fill out the Additional Extensions Form. We know college can be stressful and we want to help you succeed.
 
 Finally, the main goal of this course is that you should learn, and have a fantastic experience doing so. Please keep that goal in mind throughout the semester. Welcome to Data 101!
 
-
-## Acknowledgments
-
-Academic Honesty policy and closing words adapted from [Data 8](https://data8.org/){:target="_blank"}. Course Culture inspired and adapted with permission from Dr. Sarah Chasins’ [Fall 2021 CS 164 Syllabus](https://inst.eecs.berkeley.edu/~cs164/fa21/syllabus.html){:target="_blank"} and Grace O’Connell, the Asssociate Dean for Inclusive Excellence.

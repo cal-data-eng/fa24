@@ -179,3 +179,7 @@ pids
 *-blx.aux
 *-blx.bib
 *.run.xml
+
+# vim stuff
+.*.swp
+.*.swo
