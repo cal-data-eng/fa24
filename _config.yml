@@ -229,7 +229,7 @@ exclude:
   - node_modules/
 
 course:
-  ed: https://edstem.org/us/courses/63937/discussion/
+  edstem: https://edstem.org/us/courses/63937/discussion/
   datahub: https://data101.datahub.berkeley.edu/
   videos: https://bcourses.berkeley.edu/courses/1536858/external_tools/90481
   gradescope: https://www.gradescope.com/courses/707300
