@@ -168,14 +168,14 @@ module Jekyll
   # TODO: We should be able to define a class that returns a
   # A class so these all share code.
 
-  class HomeworkTag < Liquid::Tag
+  class HomeworkReleaseTag < Liquid::Tag
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
 
     def render(_context)
-      "**Homework #{@number}**{: .label .label-hw }"
+      "**Homework #{@number}**{: .label .label-hw-rel }"
     end
   end
 
@@ -210,7 +210,7 @@ module Jekyll
 
   end
 
-  class ProjectTag < Liquid::Tag
+  class ProjectReleaseTag < Liquid::Tag
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
@@ -223,7 +223,7 @@ module Jekyll
     end
 
     def render(_context)
-      "**#{text}**{: .label .label-project }"
+      "**#{text}**{: .label .label-proj-rel }"
     end
   end
 
@@ -258,8 +258,8 @@ end
 
 Liquid::Template.register_tag('code', Jekyll::CodeTag)
 Liquid::Template.register_tag('disc', Jekyll::DiscussionTag)
-Liquid::Template.register_tag('hw', Jekyll::HomeworkTag)
+Liquid::Template.register_tag('hw_rel', Jekyll::HomeworkReleaseTag)
 Liquid::Template.register_tag('lec', Jekyll::LectureTag)
-Liquid::Template.register_tag('proj', Jekyll::ProjectTag)
-Liquid::Template.register_tag('hwDue', Jekyll::HomeworkDueTag)
-Liquid::Template.register_tag('projDue', Jekyll::ProjectDueTag)
+Liquid::Template.register_tag('proj_rel', Jekyll::ProjectReleaseTag)
+Liquid::Template.register_tag('hw_due', Jekyll::HomeworkDueTag)
+Liquid::Template.register_tag('proj_due', Jekyll::ProjectDueTag)

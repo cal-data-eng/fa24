@@ -7,5 +7,12 @@ Status: Active
 Tue 10/22
 : {% lec 16 %}
 
+Wed 10/23
+: {% hw_due 3 %} Due, 5pm
+
 Thu 10/24
 : {% lec 17 %}
+
+Fri 10/25
+: {% hw_rel 4 %} Homework 4
+  : Due Wed 11/6, 5pm

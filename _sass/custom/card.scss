@@ -32,9 +32,10 @@
       background-color: $grey-lt-100;
       color: $grey-dk-100;
 
-      &.label-hw {
-        background-color: $hw-color;
-        color: $block-text-color;
+      &.label-hw-rel {
+        background-color: transparent;
+        color: $hw-color;
+        box-shadow: inset 0 0 0 2px $hw-color;
       }
       &.label-disc {
         background-color: $disc-color;
@@ -48,9 +49,10 @@
         background-color: $blue-100;
         color: $block-text-color;
       }
-      &.label-project {
-        background-color: $project-color;
-        color: $block-text-color;
+      &.label-proj-rel {
+        background-color: transparent;
+        color: $proj-color;
+        box-shadow: inset 0 0 0 2px $proj-color;
       }
 
       &.label-lec {
@@ -59,15 +61,13 @@
       }
 
       &.label-hw-due {
-        background-color: transparent;
-        color: $hw-color;
-        box-shadow: inset 0 0 0 2px $hw-color;
+        background-color: $hw-color;
+        color: $block-text-color;
       }
   
       &.label-proj-due {
-        background-color: transparent;
-        color: $project-color;
-        box-shadow: inset 0 0 0 2px $project-color;
+        background-color: $proj-color;
+        color: $block-text-color;
       }
       
     }

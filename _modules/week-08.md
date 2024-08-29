@@ -12,3 +12,7 @@ Wed 10/16
 
 Thu 10/17
 : {% lec 15 %}
+
+Fri 10/18
+: {% proj_rel 3%} Data Transformation
+  : Due Wed 10/30, 5pm

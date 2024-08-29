@@ -12,4 +12,5 @@ Thu 9/12
 : {% disc 3 %} CTEs and Keys
 
 Fri 9/13
-: {% proj 1 %} SQL
+: {% proj_rel 1 %} SQL
+  : Due Wed 9/25, 5pm
