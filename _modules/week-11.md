@@ -12,6 +12,7 @@ Wed 11/6
 
 Thu 11/7
 : {% lec 20 %}
+: {% disc 11 %} Transactions
 
 Fri 11/8
 : {% hw_rel 5 %} Homework 5

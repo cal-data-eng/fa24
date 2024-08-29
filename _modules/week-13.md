@@ -12,6 +12,7 @@ Wed 11/20
 
 Thu 11/21
 : {% lec 24 %}
+: {% disc 13 %} OLAP, Parallel/Distributed Computing
 
 Fri 11/22
 : {% hw_rel 6 %} Homework 5

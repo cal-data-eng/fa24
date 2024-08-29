@@ -12,6 +12,7 @@ Wed 12/4
 
 Thu 12/5
 : {% lec 27 %}
+: {% disc 14 %} Wrap-Up
 
 Fri 12/6
 :  **Final Project**{: .label .label-proj-due} Due, 5pm

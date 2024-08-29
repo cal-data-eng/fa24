@@ -12,6 +12,7 @@ Wed 9/25
 
 Thu 9/26
 : {% lec 9 %}
+: {% disc 5 %} Query Optimization
 
 Fri 9/27
 : {% proj_rel 2 %} Query Performance

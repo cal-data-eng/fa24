@@ -12,6 +12,7 @@ Wed 10/30
 
 Thu 10/31
 : {% lec 19 %}
+: {% disc 10 %} MongoDB II
 
 Fri 11/1
 : {% proj_rel 4 %} Mongo

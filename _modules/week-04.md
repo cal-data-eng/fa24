@@ -12,6 +12,7 @@ Wed 9/18
 
 Thu 9/19
 : {% lec 7 %}
+: {% disc 4 %} Constraints, Keys
 
 Fri 9/20
 : {% hw_rel 2 %} Homework 2

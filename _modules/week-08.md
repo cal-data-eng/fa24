@@ -12,6 +12,7 @@ Wed 10/16
 
 Thu 10/17
 : {% lec 15 %}
+: **Discussion**{: .label} (no discussion)
 
 Fri 10/18
 : {% proj_rel 3%} Data Transformation
