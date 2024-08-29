@@ -165,6 +165,9 @@ module Jekyll
     end
   end
 
+  # TODO: We should be able to define a class that returns a
+  # A class so these all share code.
+
   class HomeworkTag < Liquid::Tag
     def initialize(tag_name, number, tokens)
       super
@@ -204,7 +207,7 @@ module Jekyll
       end
       return "**Lecture #{@number}**{: .label .label-lec } [#{lecture_title}](lectures/#{num_index})"
     end
-    
+
   end
 
   class ProjectTag < Liquid::Tag
@@ -213,8 +216,14 @@ module Jekyll
       @number = number.strip
     end
 
+    def text
+      return "Project #{@number}" if @number.to_i.to_s == @number
+
+      "#{@number} Project"
+    end
+
     def render(_context)
-      "**Project #{@number}**{: .label .label-project }"
+      "**#{text}**{: .label .label-project }"
     end
   end
 
@@ -230,17 +239,21 @@ module Jekyll
   end
 
   class ProjectDueTag < Liquid::Tag
-
     def initialize(tag_name, number, tokens)
       super
       @number = number.strip
     end
 
+    def text
+      return "Project #{@number}" if @number.to_i.to_s == @number
+
+      "#{@number} Project"
+    end
+
     def render(context)
-      "**Project #{@number}**{: .label .label-proj-due }"
+      "**#{text}**{: .label .label-proj-due }"
     end
   end
-
 end
 
 Liquid::Template.register_tag('code', Jekyll::CodeTag)
