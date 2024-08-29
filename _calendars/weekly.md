@@ -63,7 +63,7 @@ schedule:
     - name: Section
       start: 10:00 AM
       end: 11:00 AM
-      location: SOCS 70
+      location: SOCS 60
       instructor: Hima
     - name: Section
       start: 11:00 AM
