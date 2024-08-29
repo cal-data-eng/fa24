@@ -8,7 +8,7 @@ Thu 8/29
 : {% lec 1 %}
   : [Pre-Semester Form](https://docs.google.com/forms/d/e/1FAIpQLSdalE7Mi5AIidLUFjJMU-BoQhcGrucIZPcIiQHKAzdkcoIU6Q/viewform)
 : {% disc 1 %} [SQL Review](https://drive.google.com/file/d/1t3Ob8P2QRz3zSmkJdwbh6pVDrOuqm8tV/view?usp=sharing)
-  : Solution
+  : Solution, [code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa23-materials&urlpath=lab%2Ftree%2Ffa24-materials%2Fdisc%2Fdisc01%2Fdisc01.ipynb&branch=main){:target="\_blank"}
 
 Friday 8/30
 : {% proj 0 %} SQL Review
