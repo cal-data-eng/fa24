@@ -12,3 +12,4 @@ Thu 8/29
 
 Friday 8/30
 : {% proj 0 %} SQL Review
+  : [notes](https://data101.org/notes/SQL/index.html)
