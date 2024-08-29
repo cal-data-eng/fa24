@@ -172,7 +172,7 @@ You are encouraged to discuss practice problems and lecture content with your fe
 1. Cite your sources:
 * **Study groups**: If you do discuss the assignments with others please include their names at the top of your notebook. Restated, you and your friends are encouraged to discuss course content and high-level approaches to problem-solving, but you are not allowed to share your code nor answers. You can work on a project alongside another person or group of people (e.g., study group), but it should not substantially resemble anyone else's.
 * **StackOverflow, etc.** You should cite these sources, even if it's using small snippets of code (e.g., googling "postgres string matching" may lead you to some sample code that you copy and paste. Include the link to these online sources.
-* **With extreme caution**: If you're just generating some amount of boilerplate code with GitHub Copilot / LLMs / etc., that's OK. However, you should not use such tools to generate non-trivial methods. We are trying to build your engineering skills, and learning on an AI is going to cause you trouble in circumstances where you don't have an AI to help, such as exams or often-time industry. **Any AI-generated code must be cited (with the prompt and log) and explicitly indicatedt as such.** Violation of this citation rule is a serious act of plagiarism. Note that AI generated code, especially from sources like ChatGPT, is often subtly buggy or completely incorrect.
+* **With extreme caution**: If you're just generating some amount of boilerplate code with GitHub Copilot / LLMs / etc., that's OK. However, you should not use such tools to generate non-trivial methods. We are trying to build your engineering skills, and learning from an AI is going to cause you trouble in circumstances where you don't have an AI to help, such as exams or often-time industry. **Any AI-generated code must be cited (with the prompt and log) and explicitly indicated as such.** Violation of this citation rule is a serious act of plagiarism. Note that AI generated code, especially from sources like ChatGPT, is often subtly buggy or completely incorrect.
 
 **_Each assignment will ask you to list any collobrators, outside sources, or other help received. You are expected to fill this hout honestly._**
 
@@ -193,7 +193,3 @@ If you are feeling overwhelmed, visit our office hours and talk with us, or fill
 
 Finally, the main goal of this course is that you should learn, and have a fantastic experience doing so. Please keep that goal in mind throughout the semester. Welcome to Data 101!
 
-
-## Acknowledgments
-
-Academic Honesty policy and closing words adapted from [Data 8](https://data8.org/){:target="_blank"}. Course Culture inspired and adapted with permission from Dr. Sarah Chasins’ [Fall 2021 CS 164 Syllabus](https://inst.eecs.berkeley.edu/~cs164/fa21/syllabus.html){:target="_blank"} and Grace O’Connell, the Asssociate Dean for Inclusive Excellence.

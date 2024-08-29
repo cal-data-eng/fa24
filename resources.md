@@ -37,13 +37,12 @@ See [**Assignment Tips**](../assignment-tips).
 
 ## Exam Resources
 
-There has been exactly one final exam for this course so far, and it was a compressed version due to the UAW 2865 ASE strike in Fall 2022.
-
-**(updated 12/4/23)**
+Note Fall 2022 had a compressed exam due to the UAW 2865 ASE strike.
 
 |Semester|Final|
 |---|---|
 |Fall 2022|[Exam](/resources/assets/exams/fa22/fa22_final.pdf) [(Solutions)](/resources/assets/exams/fa22/fa22_final_sol.pdf)|
+|Fall 2023|[Exam](/resources/assets/exams/fa23/fa23_final.pdf) [(Solutions)](/resources/assets/exams/fa23/fa23_final_sol.pdf)|
 
 Final Reference Sheet: [PDF](/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is newly created as of Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
 
@@ -64,6 +63,8 @@ The [Center for Access to Engineering Excellence](https://engineering.berkeley.e
 As the primary academic support service for undergraduates at UC Berkeley, the [Student Learning Center](http://slc.berkeley.edu/) (510-642-7332) assists students in transitioning to Cal, navigating the academic terrain, creating networks of resources, and achieving academic, personal, and professional goals. Through various services including tutoring, study groups, workshops, and courses, SLC supports undergraduate students in Biological and Physical Sciences, Business Administration, Computer Science, Economics, Mathematics, Social Sciences, Statistics, Study Strategies, and Writing.
 
 The [Educational Opportunity Program](http://eop.berkeley.edu/) (EOP, Cesar Chavez Student Center 119; 510-642-7224) at Cal has provided first generation and low income college students with the guidance and resources necessary to succeed at the best public university in the world. EOP’s individualized academic counseling, support services, and extensive campus referral network help students develop the unique gifts and talents they each bring to the university while empowering them to achieve.
+
+### Device Lending Options
 
 Students can access device lending options through the Student Technology Equity Program ([STEP](https://studenttech.berkeley.edu/devicelending)) program.
 
