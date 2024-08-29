@@ -53,7 +53,7 @@ course_faq: /faq/
 
 # TODO(setup): Set these auxiliary links as you wish - they show up on the top right
 aux_links:
-  
+  Course Notes: https://data101.org/notes
 
 # TODO(template): These need to be documented
 # TODO(semester): You may want to review these...
