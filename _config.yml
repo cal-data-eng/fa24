@@ -87,6 +87,9 @@ nav_external_links:
   - title: Course FAQ
     url: https://data101.org/fa24faq
     hide_icon: true
+  - title: Course Notes
+    url: https://data101.org/notes
+    hide_icon: true
 
 # The sitemap **must** be enabled. It's published as /baseurl/sitemap.xml
 plugins:

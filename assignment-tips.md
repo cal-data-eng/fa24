@@ -59,9 +59,16 @@ First, to enter shortcut mode/exit editing mode, press `Esc`. This will then ena
 
 ### What is line/cell magic?
 
-Before getting started, read about line magic (``%``) and cell magic (``%%``) [here](https://www.tutorialspoint.com/jupyter/ipython_magic_commands.htm){: target="\_blank"}. These commands will be used extensively in this project and future projects to aid us in running SQL queries.
+Before getting started, read about line magic (``%``) and cell magic (``%%``) [on TutorialsPoint](https://www.tutorialspoint.com/jupyter/ipython_magic_commands.htm){: target="\_blank"}. These commands will be used extensively in this project and future projects to aid us in running SQL queries.
 
-To call SQL commands, we use the Python package `jupyql`. We strongly recommend you check out the `jupysql` [documentation]({{page.jupysql_docs}}){:target="\_blank"}. It has a lot of hidden gems!
+In Jupyter Notebooks, a [cell 'magic' command](https://ipython.readthedocs.io/en/stable/interactive/magics.html) is a special command that is preceded by two percentage signs (%%). Cell magics operate on entire cells and are used to change the behavior of the entire cell. They are not part of the Python language itself but are specific to the Jupyter environment. They help us do a lot of cool things, like run SQL commands directly within Jupyter! For some questions with cell magic, we will be saving the literal query string with [query snippets](https://jupysql.ploomber.io/en/latest/api/magic-snippets.html) using `--save`, as illustrated below:
+
+```
+%%sql --save query_result <<
+SELECT * FROM table ...
+```
+
+To call SQL commands, we use the Python package `jupysql`. We strongly recommend you check out the [`jupysql` documentation]({{page.jupysql_docs}}){:target="\_blank"}. It has a lot of hidden gems!
 
 To load jupysql, run:
 
