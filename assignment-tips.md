@@ -26,7 +26,7 @@ In most of this course, you will use DataHub to work on projects. PostgreSQL has
 * The official [PostgreSQL documentation]({{page.official_docs}}){:target="\_blank"} is great and can even be read cover-to-cover.
 * The `jupysql` [documentation]({{page.jupysql_docs}}){:target="\_blank"} is the primary way you will be writing SQL commands for homework submission.
 
-Please see our policies on [collaboration]({{site.base_url}}syllabus/#collaboration-and-integrity) before working with any study groups.
+Please see our policies on [collaboration](https://data101.org/fa24/syllabus/#collaboration-and-integrity) before working with any study groups.
 
 ## DataHub
 
