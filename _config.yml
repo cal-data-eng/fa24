@@ -54,6 +54,7 @@ course_faq: /faq/
 # TODO(setup): Set these auxiliary links as you wish - they show up on the top right
 aux_links:
   Course Notes: https://data101.org/notes
+  Data Hub: https://data101.datahub.berkeley.edu
 
 # TODO(template): These need to be documented
 # TODO(semester): You may want to review these...
@@ -236,4 +237,3 @@ course:
   datahub: https://data101.datahub.berkeley.edu/
   videos: https://bcourses.berkeley.edu/courses/1536858/external_tools/90481
   gradescope: https://www.gradescope.com/courses/707300
-  
