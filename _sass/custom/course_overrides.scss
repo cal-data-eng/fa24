@@ -1,2 +1,12 @@
 // Put your custom CSS here!
 // You an reference all variables in the Berkeley files
+
+// keyboard elements are inverted
+kbd {
+  padding: .1875rem .375rem;
+  font-size: .875em;
+  color: $body-background-color;
+  background-color: $body-text-color;
+  border-radius: .25rem;
+  // border: 1px solid $body-text-color
+}

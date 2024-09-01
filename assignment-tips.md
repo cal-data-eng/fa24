@@ -59,6 +59,12 @@ First, to enter shortcut mode/exit editing mode, press `Esc`. This will then ena
 |Redo|`Ctrl` + `Shift` + `Z`|
 |Undo|`Ctrl` + `Z`|
 
+### Navigating Long Notebooks
+
+JupyterLab includes an automatic table of contents on the left-hand controls that you can use to quickly jump to different sections of a notebook.
+
+<img src="{{ site.baseurl }}/assets/images/notebook-toc.png" width="300px" alt="Click on the 3 lines to show the table of contents" />
+
 ## Jupysql: PostgreSQL via ipython magic
 
 ### What is line/cell magic?
@@ -171,8 +177,9 @@ psql meta-commands doc: [list][psql_docs]
 
 Here are some Terminal shortcuts to help you better navigate `psql`. (These commands are standard across all Unix terminal envrionments, including macOS.)
 
-| Keys | Description |
-|---|---|
+{: .table }
+| **Keys** | Description |
+|:---:|:---|
 | <kbd>^ c</kbd> | Cancel current operation |
 | <kbd>^ a</kbd> | Jump to beginning of line |
 | <kbd>^ e</kbd> | Jump to end of line |
@@ -181,6 +188,7 @@ Here are some Terminal shortcuts to help you better navigate `psql`. (These comm
 | <kbd>space</kbd> | If currently exploring a query result, see more of the result. |
 | <kbd>q</kbd> | If currently exploring a query result, exit from the result. |
 
+<kbd>^</kbd> is the symbol for the `control` key.
 
 ## PostgreSQL details
 
@@ -215,11 +223,11 @@ psql -h localhost -d imdb
 ```
 
 {: .note }
-> `psql -h localhost -d imdb -U jovyan -p 5432` would be equivalent to passing all of the arguments in the connection URL.
-> On DataHub, you will always need to specify `-h localhost` to connect to the locally running server.
-> Passing `-d` is usually done for convenience, but is not required. In this case you will not be connected to a specific database.
-> `-U` will default to `joyvan` on DataHub, but is otherwise the current user.
-> `-p` has a default value of 5432 for Postgres.
+> * `psql -h localhost -d imdb -U jovyan -p 5432` would be equivalent to passing all of the arguments in the connection URL.
+> * On DataHub, you will always need to specify `-h localhost` to connect to the locally running server.
+> * Passing `-d` is usually done for convenience, but is not required. In this case you will not be connected to a specific database.
+> * `-U` will default to `joyvan` on DataHub, but is otherwise the current user.
+> * `-p` has a default value of 5432 for Postgres.
 
 Try running `psql --help` for more explanation. (Outside of this class, you may find the need to provide a password, especially when connecting to a remote server.)
 
@@ -303,15 +311,19 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
      style="float: center; margin-right: 10px; width: 800px" />
 
 ## Local Setup
+
 While you are welcome to set up everything locally, when grading we will assume that your submission was developed on DataHub. If you would like to develop locally, please make sure you have the following installed:
+
 * `otter-grader==5.1.3`
 * `jupysql==0.10.0`
 * `pgspecial=1.13.1`
-* `psycopg2==2.9.6`
+* `psycopg==3.2.1`
 * `mongodb`
-* PostgreSQL server. For Mac, I use [Postgres.app](https://postgresapp.com/){: target=\_blank}.
+* PostgreSQL server. For Mac, you can use [Postgres.app](https://postgresapp.com/){: target=\_blank}, or [homebrow][brew_pg] (`brew install postgresql`).
 
-Either way, we recommend you always work on DataHub, as staff will not be able to debug/support local setup issues in Fall 2023.
+[brew_pg]: https://formulae.brew.sh/formula/postgresql@16
+
+Either way, we recommend you always work on DataHub, as staff will not be able to debug/support local setup issues.
 
 ## MongoDB debugging
 
