@@ -7,6 +7,7 @@ description: >-
     PostgreSQL and jupysql tips
 markdown: kramdown
 ---
+
 <!-- TODO: The Ed URL should be a site variable. -->
 [pg_current]: https://www.postgresql.org/docs/current/index.html
 [pg_v14]: https://www.postgresql.org/docs/14/index.html
@@ -30,7 +31,7 @@ In most of this course, you will use DataHub to work on projects. PostgreSQL has
 * The official [PostgreSQL v14 documentation][pg_v14]{:target="\_blank"} is great and can even be read cover-to-cover.
 * The `jupysql` [documentation][jupysql_docs]{:target="\_blank"} is the primary way you will be writing SQL commands for homework submission.
 
-Please see our policies on [collaboration]({{site.base_url}}/syllabus/#collaboration-and-integrity) before working with any study groups.
+Please see our policies on [collaboration]({{ site.baseurl }}/syllabus/#collaboration-and-integrity) before working with any study groups.
 
 ## DataHub
 
