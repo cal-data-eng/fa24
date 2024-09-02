@@ -189,7 +189,7 @@ module Jekyll
       lectures = context['site']['lectures']
       lecture = lectures[@number.to_i - 1] if lectures[@number.to_i - 1]
       lecture_title = lecture['title']
-      date = lecture['date']
+      lecture['date']
       # Directly grab the date string from the lecture data
       date_parts = lecture['date'].to_s.split('-')
       year = date_parts[0].to_i
