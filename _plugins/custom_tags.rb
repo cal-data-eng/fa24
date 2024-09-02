@@ -202,12 +202,10 @@ module Jekyll
       current_date = Date.today
       # add leading 0 to number if less than 10
       num_index = @number.to_i < 10 ? "0#{@number}" : @number
-      if lecture_date > current_date
-        return "**Lecture #{@number}**{: .label .label-lec } #{lecture_title}"
-      end
-      return "**Lecture #{@number}**{: .label .label-lec } [#{lecture_title}](lectures/#{num_index})"
-    end
+      return "**Lecture #{@number}**{: .label .label-lec } #{lecture_title}" if lecture_date > current_date
 
+      "**Lecture #{@number}**{: .label .label-lec } [#{lecture_title}](lectures/#{num_index})"
+    end
   end
 
   class ProjectReleaseTag < Liquid::Tag
@@ -250,7 +248,7 @@ module Jekyll
       "#{@number} Project"
     end
 
-    def render(context)
+    def render(_context)
       "**#{text}**{: .label .label-proj-due }"
     end
   end

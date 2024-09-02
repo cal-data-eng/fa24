@@ -8,13 +8,13 @@ def site_config
   # Consider appending jekyll-sitemap to the plugins here, instead of in _config.
   # Note: Config keys must be strings and thus use => style hashes.
   @site_config ||= Jekyll.configuration({
-    'destination' => DESTINATION,
-    'url' => '',
-    'baseurl' => '',
-    'future' => true,
-    'SKIP_CONFIG_VALIDATION' => 'true',
-    'sass' => { 'quiet_deps' => true },
-  })
+                                          'destination' => DESTINATION,
+                                          'url' => '',
+                                          'baseurl' => '',
+                                          'future' => true,
+                                          'SKIP_CONFIG_VALIDATION' => 'true',
+                                          'sass' => { 'quiet_deps' => true }
+                                        })
 end
 
 def build_jekyll_site!
