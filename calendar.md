@@ -1,15 +1,11 @@
 ---
 layout: page
-title: Calendar
-description: The weekly event schedule.
+title: Weekly Schedule
+description: Lecture, Discussion and OH schedules
 nav_order: 2
 ---
 
 # Weekly Schedule
-
-<!-- {% for calendar in site.calendars %}
-  {{ calendar }}
-{% endfor %} -->
 
 <iframe
   title="DATA 101 Google Calendar"
