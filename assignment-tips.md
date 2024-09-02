@@ -4,17 +4,22 @@ title: Assignment Tips
 nav_exclude: false
 nav_order: 5
 description: >-
-    PostgreSQL meta-commands and jupysql
+    PostgreSQL and jupysql tips
 markdown: kramdown
-official_docs: "https://www.postgresql.org/docs/current/index.html"
-jupysql_docs: "https://jupysql.ploomber.io/en/latest/"
 ---
+
+<!-- TODO: The Ed URL should be a site variable. -->
+[pg_current]: https://www.postgresql.org/docs/current/index.html
+[pg_v14]: https://www.postgresql.org/docs/14/index.html
+[jupysql_docs]: https://jupysql.ploomber.io/en/latest/
+[psql_docs]: https://www.postgresql.org/docs/14/app-psql.html
+[ed_url]: https://edstem.org/us/courses/43068/discussion/
 
 # {{page.title}}
 
 {:.no_toc .text-delta}
-Author: Lisa Yan
-Last updated: September 9, 2023 (Fall 2023)
+Author: Lisa Yan, Michael Ball
+Last updated: August 31, 2024 (Fall 2024)
 
 Jump to:
 1. TOC
@@ -23,10 +28,10 @@ Jump to:
 <br>
 
 In most of this course, you will use DataHub to work on projects. PostgreSQL has a few quirks with DataHub that will be covered in this document. However, we strongly encourage you to check out the documentation as you work:
-* The official [PostgreSQL documentation]({{page.official_docs}}){:target="\_blank"} is great and can even be read cover-to-cover.
-* The `jupysql` [documentation]({{page.jupysql_docs}}){:target="\_blank"} is the primary way you will be writing SQL commands for homework submission.
+* The official [PostgreSQL v14 documentation][pg_v14]{:target="\_blank"} is great and can even be read cover-to-cover.
+* The `jupysql` [documentation][jupysql_docs]{:target="\_blank"} is the primary way you will be writing SQL commands for homework submission.
 
-Please see our policies on [collaboration](https://data101.org/fa24/syllabus/#collaboration-and-integrity) before working with any study groups.
+Please see our policies on [collaboration]({{ site.baseurl }}/syllabus/#collaboration-and-integrity) before working with any study groups.
 
 ## DataHub
 
@@ -55,6 +60,12 @@ First, to enter shortcut mode/exit editing mode, press `Esc`. This will then ena
 |Redo|`Ctrl` + `Shift` + `Z`|
 |Undo|`Ctrl` + `Z`|
 
+### Navigating Long Notebooks
+
+JupyterLab includes an automatic table of contents on the left-hand controls that you can use to quickly jump to different sections of a notebook.
+
+<img src="{{ site.baseurl }}/assets/images/notebook-toc.png" width="300px" alt="Click on the 3 lines to show the table of contents" />
+
 ## Jupysql: PostgreSQL via ipython magic
 
 ### What is line/cell magic?
@@ -68,7 +79,7 @@ In Jupyter Notebooks, a [cell 'magic' command](https://ipython.readthedocs.io/en
 SELECT * FROM table ...
 ```
 
-To call SQL commands, we use the Python package `jupysql`. We strongly recommend you check out the [`jupysql` documentation]({{page.jupysql_docs}}){:target="\_blank"}. It has a lot of hidden gems!
+To call SQL commands, we use the Python package `jupysql`. We strongly recommend you check out the [`jupysql` documentation][jupysql_docs]{:target="\_blank"}. It has a lot of hidden gems!
 
 To load jupysql, run:
 
@@ -81,12 +92,14 @@ You will often seen this written as the following, which lets you reload the ext
 ### Making SQL queries in jupysql
 
 Here are the two ways of writing a SQL query and storing the query result into a Python variable `result`:
-- Single-line magic: ``result = %sql SELECT * FROM table ...``
+- Single-line magic: `result = %sql SELECT * FROM table ...`
 - Multi-line cell magic:
 
-``%%sql result <<
+```sql
+%%sql result <<
 SELECT *
-FROM table ...``
+FROM table ...
+```
 
 <!--
 For some questions with multi-line cell magic, we will also be saving the literal query string with [query snippets](https://jupysql.ploomber.io/en/latest/api/magic-snippets.html) using `--save`:
@@ -95,7 +108,8 @@ For some questions with multi-line cell magic, we will also be saving the litera
 -->
 
 ### Opening a database connection
-Before running any SQL queries, you must have a working connection to a database on a postgres server. It usually looks something like this, which connects to the local Postgres server and the database `imdb`.
+
+Before running any SQL queries, you must have a working connection to a database on a Postgres server. It usually looks something like this, which connects to the Postgres server (at the local IP address, using the user `jovyan`) and the database `imdb`.
 
   ``%sql postgresql://jovyan@127.0.0.1:5432/imdb``
 
@@ -107,30 +121,37 @@ You may sometimes wnat to close the database connection, in case you want to del
 
   If that's not working, see the bottom of this page for how to relaunch your DataHub instance.
 
-## PostgreSQL Client CLI
+## `psql`, The PostgresSQL Interactive CLI
 
-The `psql` program is the PostgreSQL client CLI, or Command-Line Interface. Knowing `psql` is very useful to understand what your database looks like, execute meta-commands, and explore quick queries.
+The `psql` program is the PostgreSQL _interpreter_ and CLI, or Command-Line Interface. Knowing `psql` is very useful to understand what your database looks like, execute meta-commands, and explore quick queries.
+
+Just like when you type `python` in a Terminal, `psql`'s primary use is interactively run queries and commands against a database.
 
 ### Open a Terminal in DataHub
 
-To open a Terminal in DataHub, Navigate to Data101's DataHub, then go to File -> New -> Terminal. **Note**: Do not open a Terminal on your local machine; it does not know how to connect to DataHub's server, much less your DataHub's postgres server!
+To open a Terminal in DataHub, Navigate to Data101's DataHub, then go to File → New → Terminal. **Note**: Do not open a Terminal on your local machine; it does not know how to connect to DataHub's server, much less your DataHub's ostgres server!
 
 ### Opening a database connection
 
-This connects to the `imdb` database, if it has been created:
-``
+Use either command to connect to the `imdb` database, if it has been created:
+
+```bash
 psql postgresql://127.0.0.1:5432/imdb
-``
+```
+```
+psql -h localhost -d imdb
+```
 
 If no database has been created:
 * You will likely get this error:
 `psql: error: connection to server at '127.0.0.1', port 5432 failed: FATAL:  database "imdb" does not exist"`
 * In this case, you can still connect to the server and list databases, etc., as follows:
-  ``
-  psql postgresql://127.0.0.1:5432
-  ``
+
+  ```bash
+  psql -h localhost
+  ```
 * However, you won't be able to see any relations, because this default connection cannot access what's in `imdb`.
-* To create the `imdb` database, see the corresponding Jupyter notebook and run the cells that contain commands such as `CREATE DATABASE`. For Fall 2023, `imdb` is created in the Project 1 notebook.
+* To create the `imdb` database, see the corresponding Jupyter notebook and run the cells that contain commands such as `CREATE DATABASE`. For Fall 2024, `imdb` is created in the Project 1 notebook. You may which to run `createdb -h localhost [dbname]` to make a new, empty database.
 
 ### Closing a database connection
 `\q`: This exits out of the `psql` program and also closes your current connections.
@@ -139,48 +160,92 @@ If no database has been created:
 
 ### `psql` Meta-commands
 
-Postgres meta-commands doc: [list](https://www.postgresql.org/docs/15/app-psql.html)
+psql meta-commands doc: [list][psql_docs]
 
 |Meta-Command| Description|
 |---|---|
+| `\?`		| Help |
 | `\l`|  Lists databases |
 | `\d` | Lists relations |
 | `\d tablename`			| List schema of the relation `tablename`. |
 | `\q`		| Quit psql |
-| `\?`		| Help |
 
-**Making queries**: You can write queries in `psql`, too! To write queries that span multiple lines, simply use the newline key (i.e., `<Return>`). However, to execute a query in `psql`, you must use the **semicolon**. This is generally good style, anyway!
+**Making queries**: You can write queries in `psql`! To write queries that span multiple lines, simply use the newline key (i.e., `<Return>`). However, to execute a query in `psql`, you must use the **semicolon**. This is generally good style, anyway!
 
-**Display screen**: If a query's result will span more than the available display screen, `psql` will launch a different display screen. You can navigate this screen by pressing `<space>` to display more, up/down arrows to scroll up and down, or `q` to quit.
+**Display screen**: If a query's result will span more than the available display screen, `psql` will launch a different display screen. You can navigate this screen by pressing `<space>`, `<return>` to display more, up/down arrows to scroll up and down, or use the `page up`/`page down` keys, and `q` to exit the query view.
 
 ### Terminal commands
 
-Here are some Terminal shortcuts to help you better navigate `psql`:
+Here are some Terminal shortcuts to help you better navigate `psql`. (These commands are standard across all Unix terminal envrionments, including macOS.)
 
-| Keys | Description |
-|---|---|
-| &lt;ctrl&gt;-c	| Cancel current operation |
-| &lt;ctrl&gt;-a | Jump to beginning of line |
-| &lt;ctrl&gt;-e | Jump to end of line |
-| &lt;ctrl&gt;-&lt;left&gt; | Jump to previous word |
-| &lt;ctrl&gt;-&lt;right&gt; | Jump to next word |
-| &lt;space&gt; | If currently exploring a query result, see more of the result. |
-| q | If currently exploring a query result, exit from the result. |
+{: .table }
+| **Keys** | Description |
+|:---:|:---|
+| <kbd>^ c</kbd> | Cancel current operation |
+| <kbd>^ a</kbd> | Jump to beginning of line |
+| <kbd>^ e</kbd> | Jump to end of line |
+| <kbd>^ left</kbd> | Jump to previous word |
+| <kbd>^ right</kbd> | Jump to next word |
+| <kbd>space</kbd> | If currently exploring a query result, see more of the result. |
+| <kbd>q</kbd> | If currently exploring a query result, exit from the result. |
 
+<kbd>^</kbd> is the symbol for the `control` key.
 
 ## PostgreSQL details
 
-### DataHub's local PostgreSQL Server
+### Postgres Connection URLs
 
-Instead of connecting to a remote server, we actually connect to a local server. For example, in Project 1, we connect to:
+Throughout this course you will see a number of ways to connect to a database server. These connection strings are like URLs, but won't work in a web browser. Instead tools like SQLAlchemy in Python (and others in Ruby, Java, etc.) use the same URL format to establish a connection to a database server, whether it's on a local machine or connected to the internet.
+
+[uri]: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+
+Consider the following:
 
 ```
 postgresql://jovyan@127.0.0.1:5432/imdb
 ```
 
-* connect to `localhost` IP (private IP address `127.0.0.1` on port `5432`
+This has the following components:
+
+```
+[db driver]://[username][:password]@[server address][:port]/[database name]
+```
+
+In many cases, parts of these connection URIs, like the port, username, or database can ommitted if using the defaults.
+
+#### CLI Connection Arguments
+
+All of the default tools like `psql`, `createdb`, `dropdb`, that come with a PostgreSQL installation, and many other tools allow you to specify the connection more explicitly, which can be convenient when using the command line.
+
+This is the equivalent to the previous URL method:
+
+```bash
+psql -h localhost -d imdb
+```
+
+{: .note }
+> * `psql -h localhost -d imdb -U jovyan -p 5432` would be equivalent to passing all of the arguments in the connection URL.
+> * On DataHub, you will always need to specify `-h localhost` to connect to the locally running server.
+> * Passing `-d` is usually done for convenience, but is not required. In this case you will not be connected to a specific database.
+> * `-U` will default to `joyvan` on DataHub, but is otherwise the current user.
+> * `-p` has a default value of 5432 for Postgres.
+
+Try running `psql --help` for more explanation. (Outside of this class, you may find the need to provide a password, especially when connecting to a remote server.)
+
+### DataHub's local PostgreSQL Server
+
+Every time you want to work with a database, you need to connect to a _database server_. On the Data101 DataHub, a Postgres server is automatically started in the background:
+
+```
+postgresql://jovyan@127.0.0.1:5432/imdb
+```
+
+* connect using `postgresql` as the database driver
 * connect using JupyterHub username `joyvan` (why is the default username? see here [Jupyter](https://github.com/jupyter/docker-stacks/issues/358), [JupyterHub](https://github.com/jupyterhub/repo2docker/issues/366))
+* `127.0.0.1` is a ["loopback" IP][loopback_ip] address representing the current machine, which is also mapped to hostname `localhost`.
 * connect to the database `imdb` on this server. Note that if the `imdb` database has not yet been created, this connection may fail.
+
+[loopback_ip]: https://datatracker.ietf.org/doc/html/rfc6890#section-2.2.2
 
 ### Catalog, Schema, Relation/Table, etc.
 
@@ -189,19 +254,24 @@ postgresql://jovyan@127.0.0.1:5432/imdb
 * `pg_toast`: TOAST storage schema [documentation 73.2](https://www.postgresql.org/docs/current/storage-toast.html)
 * `pg_catalog`: System catalog schema [documentation 5.9.5](https://www.postgresql.org/docs/current/ddl-schemas.html#DDL-SCHEMAS-CATALOG)
 
-## [New] Help! Why is my DataHub so slow?
+## Help! Why is my DataHub so slow?
 
 If you are encountering any of the following issues:
 
 * Your SQL queries are taking a long time to run
 * Your SQL queries fail with `No space left on device`
 * Your DataHub is slow or unresponsive
+* Your browser window becomes slow or laggy
 
 Then, you may have *run out of disk or memory space* on your DataHub server. Here is a list of things you can do to fix this:
 
 1. **Restart your current Jupyter kernel**. To do so, go to Kernel -> Restart Kernel and clear outputs of all cells. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
 
 1. **Check your display limits**. If your row display limit is unbounded, then your notebook will crash. Clear all cell output and insert a cell close to the top of the notebook that sets the display limit to a more reasonable size, like `%config SqlMagic.displaylimit = 50`
+
+1. **Clear (all) cell outputs** to reduce the amount of text your browser needs to load/render. In general, the total amount of content in a notebook can contribute to it feeling slow to navigate. If you see a lot of log output, for example, you can right click on the cell and clear just that cell's output.
+
+  1. **Close Unneeded Files & Notebooks**. Even files that aren't actively displayed can have an impact on your current session. If you find yourself needing to jump between two tabs within JupyterLab, it may be more stable to open two _browser_ tabs. (The best experience depends highly on the specifics of your browser, computer's memory and other settings.)
 
 1. **Close all Jupyter kernels** other than the one that you are currently working on. To do so, go to the left sidebar and click on the stop button (dark circle with a light inscribed square). Go to Kernels, hover over each item, and hit the X button. Or, click "Shut Down All" with all notebooks still open, then manually start your kernel in the desired notebook.
 
@@ -225,7 +295,7 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
 
 1. **Restart your DataHub server.** To do so, go to File -> Hub Control Panel -> Stop My Server. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
 
-1. If none of the above work, please post on [Ed](https://edstem.org/us/courses/43068/discussion/){:target="\_blank"} with the following information:
+1. If none of the above work, please post on [Ed][ed_url]{:target="\_blank"} with the following information:
   * Your DataHub username (your @berkeley.edu name)
   * The project you are working on
   * The output of the following commands:
@@ -242,15 +312,19 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
      style="float: center; margin-right: 10px; width: 800px" />
 
 ## Local Setup
+
 While you are welcome to set up everything locally, when grading we will assume that your submission was developed on DataHub. If you would like to develop locally, please make sure you have the following installed:
+
 * `otter-grader==5.1.3`
 * `jupysql==0.10.0`
 * `pgspecial=1.13.1`
-* `psycopg2==2.9.6`
+* `psycopg==3.2.1`
 * `mongodb`
-* PostgreSQL server. For Mac, I use [Postgres.app](https://postgresapp.com/){: target=\_blank}.
+* PostgreSQL server. For Mac, you can use [Postgres.app](https://postgresapp.com/){: target=\_blank}, or [homebrow][brew_pg] (`brew install postgresql`).
 
-Either way, we recommend you always work on DataHub, as staff will not be able to debug/support local setup issues in Fall 2023.
+[brew_pg]: https://formulae.brew.sh/formula/postgresql@16
+
+Either way, we recommend you always work on DataHub, as staff will not be able to debug/support local setup issues.
 
 ## MongoDB debugging
 
