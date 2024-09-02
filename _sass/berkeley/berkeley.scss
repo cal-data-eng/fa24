@@ -52,6 +52,10 @@ code {
   border: none;
 }
 
+blockquote.note > * {
+  color: $darker-text-color;
+}
+
 iframe {
   max-width: 100%;
 }

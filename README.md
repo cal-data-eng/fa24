@@ -1,9 +1,9 @@
-# Berkeley Class Site
+# DATA 101 Fall 2024
 
 [![Pages Deployment](https://github.com/berkeley-cdss/berkeley-class-site/actions/workflows/jekyll.yml/badge.svg)](https://github.com/berkeley-cdss/berkeley-class-site/actions/workflows/jekyll.yml) •
 [![a11y specs](https://github.com/berkeley-eecs/berkeley-class-site/actions/workflows/rspec.yml/badge.svg)](https://github.com/berkeley-eecs/berkeley-class-site/actions/workflows/rspec.yml)
 
-A template for UC Berkeley class websites (with a focus on EECS/CS/DS courses).
+The https://data101.org/fa24/ website.
 
 ## Installation
 
@@ -43,4 +43,4 @@ See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for instructions on how to develo
 
 ## License
 
-[MIT](LICENSE)
+[BSD 3-Clause](LICENSE)

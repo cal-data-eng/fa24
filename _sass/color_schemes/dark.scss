@@ -13,12 +13,15 @@ $nav-child-link-color: $grey-dk-000;
 $sidebar-color: $grey-dk-300;
 $base-button-color: $grey-dk-250;
 // $btn-primary-color: $blue-200;
+$code-bg-color: $body-background-color;
+$code-color: #e685b5; // Bootstrap 5 default
 $code-background-color: #31343f; // OneDarkJekyll default for syntax-one-dark-vivid
 $code-linenumber-color: #dee2f7; // OneDarkJekyll .nf for syntax-one-dark-vivid
 $feedback-color: darken($sidebar-color, 3%);
 $search-background-color: $grey-dk-250;
 $search-result-preview-color: $grey-dk-000;
 $border-color: $grey-dk-200;
+$darker-text-color: #FFF;
 /////////////////// Add modifications below
 
 @import '../snytax_highliters/a11y-dark';

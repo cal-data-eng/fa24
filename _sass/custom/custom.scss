@@ -131,7 +131,7 @@
   background-color: $label-color;
 }
 
-.term{
+.term {
   font-weight: bold !important;
   display: inline-block;
   padding-top: 0.16em;
@@ -228,6 +228,7 @@ a {
 .icon {
   color: $blue-100 !important;
 }
+
 // Overrides
 a abbr[title] {
   border-bottom: none;
@@ -237,13 +238,16 @@ abbr[title] {
   text-decoration: none;
 }
 
+// TODO: This should be cleaned up/moved to the theme
+// Syntax highlighing should go with the other code stuff.
 code {
-  font-size: 14px;
+  font-size: 1em; // Override theme...
   padding: 0.2em 0.4em;
+  line-height: 1.6;
   border: none;
 
-  background-color: $code-bg-color !important;
-  color: $code-color !important;
+  background-color: $code-bg-color;
+  color: $code-color;
 }
 
 div.highlighter-rouge[overlay] {

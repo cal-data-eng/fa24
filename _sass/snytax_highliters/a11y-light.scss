@@ -20,6 +20,10 @@ $code-background-color: #fafafa;
   --pygments-a11y-red: #d91e18;
 }
 
+pre code {
+  background-color: unset;
+}
+
 .highlight,
 .highlight pre,
 .highlight pre.highlight {
