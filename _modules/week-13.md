@@ -15,5 +15,5 @@ Thu 11/21
 : {% disc 13 %} OLAP, Parallel/Distributed Computing
 
 Fri 11/22
-: {% hw_rel 6 %} Homework 5
-  : Due Wed 12/3, 5pm
+: {% hw_rel 6 %} Homework 6
+  : Due Wed 12/4, 5pm
