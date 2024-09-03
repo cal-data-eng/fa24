@@ -19,7 +19,7 @@ let transform_calendar_event = (event) => {
   let title = event.title.trim();
   for (config in EVENT_CONFIG) {
     if (title.startsWith(config.prefix)) {
-      return event.extend_event(event, config);
+      return extend_event(event, config);
     }
     if (title.endsWith(config.suffix)) {
       return extend_event(event, config);
@@ -62,12 +62,17 @@ document.addEventListener('DOMContentLoaded', function() {
       // This can be called after the event is rendered to manipulate the dom...
       let event = args.event
       let el = args.el;
-      if (true || event.extentedProps && event.extentedProps.icon) {
-        let titleEl = el.querySelector('.fc-event-title')
-        // console.log(titleEl);
-        titleEl.innerHTML = '<i class="fa-solid fa-school" aria-hidden="true"></i>&nbsp;' + titleEl.innerHTML;
+      let location = '';
+      let icon = '';
+      let titleEl = el.querySelector('.fc-event-title')
+      if (event.extentedProps && event.extentedProps.icon) {
+        icon = `'<i class="fa-solid ${event.extentedProps.icon}" aria-hidden="true"></i>&nbsp;`
       }
-      // {description: "Lecture", department: "BioChemistry"}
+      if (event.location) {
+        location = `<br><span class="cal-event-location>${event.location}</span>`;
+      }
+
+      titleEl.innerHTML = `${icon}${titleEl.innerHTML}${location}`
     }
   });
   calendar.render();

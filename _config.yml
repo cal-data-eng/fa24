@@ -67,6 +67,7 @@ google_calendar:
   # The calendar must be publicly readable.
   google_calendar_id: data101@berkeley.edu
   # You need to make this, once per course, ideally via a SPA
+  # https://console.cloud.google.com/apis/api/calendar-json.googleapis.com/metrics?authuser=2&project=data101-website
   google_api_key: AIzaSyD1Tw4oJZfxn7RvCEkubEspj2dsmD033Uw
   # Used to add a link so people can add to their own calendars
   # TODO: Implement this -- this may not be needed...
@@ -76,20 +77,30 @@ google_calendar:
   # You may use only prefix OR suffix, see calendar.js
   event_types:
     - suffix: Lecture
-      background_color: CC00FF
-      text_color: 000000
+      background_color: '#8236C7'
+      text_color: '#FFFFFF'
       class: cal-lecture
       icon: fa-school
     - suffix: Tea Hours
-      background_color: CC00FF
-      text_color: 000000
-      class: cal-lecture
-      icon: fa-school
+      background_color: '#E7115E'
+      text_color: '#FFFFFF'
+      class: cal-tea-oh
+      icon: fa-mug-hot
+    - suffix: Section
+      background_color: '#002676'
+      text_color: '#FFFFFF'
+      class: cal-disc-section
+      icon: fa-person-chalkboard
+    - suffix: Faculty OH
+      background_color: '#431170'
+      text_color: '#FFFFFF'
+      class: cal-tea-oh
+      icon: fa-person-circle-question
     - suffix: OH
-      background_color: CC00FF
-      text_color: 000000
-      class: cal-lecture
-      icon: fa-school
+      background_color: '#018943'
+      text_color: '#FFFFFF'
+      class: cal-oh
+      icon: fa-person-circle-question
 
 
 # Collections for website data
