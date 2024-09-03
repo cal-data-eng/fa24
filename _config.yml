@@ -61,6 +61,24 @@ aux_links:
 berkeley_theme_options:
   show_logo_in_sidebar: true
 
+# TODO(template): Move DATA101 stuff to the template.
+google_calendar:
+  # This can be found in the settings for the calendar.
+  # The calendar must be publicly readable.
+  ics_calendar_url: https://calendar.google.com/calendar/ical/data101%40berkeley.edu/public/basic.ics
+  # Used to add a link so people can add to their own calendars
+  # TODO: Implement this.
+  google_calendar_url:
+  # These are processed in order, top-to-bottom, first match apploes
+  # The suffix matches the name of the Google Calendar event title
+  # TODO: Implement dark_mode_color and icon
+  event_types:
+    - suffix: Lecture
+      color:
+      dark_mode_color:
+      icon:
+
+
 # Collections for website data
 collections:
   staffers:
