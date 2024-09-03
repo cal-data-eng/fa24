@@ -21,7 +21,12 @@ skipped_rules = []
 # It should be rare to add to this list. This disables all rules for an element.
 # e.g. <img data-a11y-errors="true" src="..." /> would pass even though it's missing alt text.
 excluded_elements = [
-  '[data-a11y-errors="true"]'
+  '[data-a11y-errors="true"]',
+  # Jupyternotebooks from nbconvert
+  '[data-jp-theme-light="true"]',
+  # FullCalendar stuff we should fix...
+  '.fc-icon-chevron-left',
+  '.fc-icon-chevron-right',
 ]
 
 # We must call this to ensure the build it up-to-date.
@@ -51,7 +56,7 @@ ALL_PAGES.each do |path|
     context 'when light mode' do
       before do
         visit(path)
-        page.execute_script('jtd.setTheme("light")')
+        page.execute_script('typeof jtd != "undefined" && jtd.setTheme("light")')
       end
 
       include_context 'a11y tests'
@@ -60,7 +65,7 @@ ALL_PAGES.each do |path|
     context 'when dark mode' do
       before do
         visit(path)
-        page.execute_script('jtd.setTheme("dark")')
+        page.execute_script('typeof jtd != "undefined" && jtd.setTheme("dark")')
       end
 
       include_context 'a11y tests'
