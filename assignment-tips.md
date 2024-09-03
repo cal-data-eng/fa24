@@ -129,7 +129,7 @@ Just like when you type `python` in a Terminal, `psql`'s primary use is interact
 
 ### Open a Terminal in DataHub
 
-To open a Terminal in DataHub, Navigate to Data101's DataHub, then go to File → New → Terminal. **Note**: Do not open a Terminal on your local machine; it does not know how to connect to DataHub's server, much less your DataHub's ostgres server!
+To open a Terminal in DataHub, Navigate to Data101's DataHub, then go to File → New → Terminal. **Note**: Do not open a Terminal on your local machine; it does not know how to connect to DataHub's server, much less your DataHub's Postgres server!
 
 ### Opening a database connection
 
