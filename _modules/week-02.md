@@ -8,10 +8,11 @@ Tue 9/3
 : {% lec 2 %}
 
 Wed 9/4
-: {% proj_due 0 %} Due, 5pm
+ : **Project 0 Due Date Extended by 24 hours**
 
 Thu 9/5
 : {% lec 3 %}
+: {% proj_due 0 %} Due, 5pm
 : {% disc 2 %} Relational Algebra
 
 Fri 9/6
