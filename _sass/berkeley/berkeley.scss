@@ -114,3 +114,7 @@ a[target="_blank"]:not(.btn)::after {
 .lecture .subhead {
   @extend h3
 }
+
+.fc .fc-timegrid-slot {
+  height: 2em !important;
+  }

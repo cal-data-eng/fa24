@@ -61,6 +61,26 @@ aux_links:
 berkeley_theme_options:
   show_logo_in_sidebar: true
 
+# TODO(template): Move DATA101 stuff to the template.
+google_calendar:
+  # This can be found in the settings for the calendar.
+  # The calendar must be publicly readable.
+  google_calendar_id: data101@berkeley.edu
+  # You need to make this, once per course, ideally via a SPA
+  google_api_key: AIzaSyD1Tw4oJZfxn7RvCEkubEspj2dsmD033Uw
+  # Used to add a link so people can add to their own calendars
+  # TODO: Implement this -- this may not be needed...
+  google_calendar_link: https://calendar.google.com/calendar/u/0/r?cid=c_lublpqqigfijlbc1l4rudcpi5s@group.calendar.google.com&cid=data101@berkeley.edu
+  # These are processed in order, top-to-bottom, first match apploes
+  # The suffix matches the name of the Google Calendar event title
+  event_types:
+    - prefix: LEC
+      background_color: CC00FF
+      text_color: 000000
+      class:
+      icon: fa-school
+
+
 # Collections for website data
 collections:
   staffers:
