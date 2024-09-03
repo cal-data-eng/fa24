@@ -38,9 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
     weekends: false,
     nowIndicator: true,
     // dayMinWidth: 256,
-    slotDuration: '01:00:00',
+    // TODO: 30 min default makes the calendar tall...
+    // 1 hour is too compact?
+    // slotDuration: '01:00:00',
     slotMinTime: '09:00:00',
-    slotMaxTime: '22:00:00',
+    slotMaxTime: '21:00:00',
     headerToolbar: {
       left: 'prev,next',
       center: 'title',
