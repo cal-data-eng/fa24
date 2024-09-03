@@ -26,7 +26,7 @@ excluded_elements = [
   '[data-jp-theme-light="true"]',
   # FullCalendar stuff we should fix...
   '.fc-icon-chevron-left',
-  '.fc-icon-chevron-right',
+  '.fc-icon-chevron-right'
 ]
 
 # We must call this to ensure the build it up-to-date.
