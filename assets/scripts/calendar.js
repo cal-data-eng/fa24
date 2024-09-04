@@ -32,6 +32,12 @@ let transform_calendar_event = (event) => {
   return event;
 }
 
+/* NOTES / Future Things:
+ * Set initial date to start of semester if semester is over.
+* https://fullcalendar.io/docs/date-navigation
+*
+
+*/
 document.addEventListener('DOMContentLoaded', function() {
   let calendarEl = document.getElementById('full-calendar');
   let calendar = new FullCalendar.Calendar(calendarEl, {
@@ -45,7 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // slotDuration: '01:00:00',
     slotMinTime: '09:00:00',
     slotMaxTime: '21:00:00',
-    height: '1080px',
+    contentHeight: 'auto',
+    height: 'auto',
+    buttonIcons: false,
+    // More button customizations:
+    // https://fullcalendar.io/docs/customButtons
     headerToolbar: {
       left: 'prev,next',
       center: 'title',
@@ -64,17 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
         textColor: '#000000',
       }
     ],
-    // eventContent: function(arg) {
-    //   console.log('event content', arg.event.title)
-    //   // return { html: '<i class="fa-solid fa-school" aria-hidden="true"></i>' + arg.event.title }
-    //   return arg
-    // },
     eventDidMount: function(args) {
-      console.log('event did mount', args.event)
       // This can be called after the event is rendered to manipulate the dom...
-      let props = args.event.extendedProps;
-      let location = '';
-      let icon = '';
+      let props = args.event.extendedProps,
+        location = '',
+        icon = '';
       let titleEl = args.el.querySelector('.fc-event-title'),
           eventTitleContainer = args.el.querySelector('.fc-event-title-container'),
           eventTimeContainer = args.el.querySelector('.fc-event-main-frame'),
@@ -97,5 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   calendar.render();
-  window.cal = calendar;
 });
