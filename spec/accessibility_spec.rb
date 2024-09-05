@@ -24,9 +24,6 @@ excluded_elements = [
   '[data-a11y-errors="true"]',
   # Jupyternotebooks from nbconvert
   '[data-jp-theme-light="true"]',
-  # FullCalendar stuff we should fix...
-  '.fc-icon-chevron-left',
-  '.fc-icon-chevron-right'
 ]
 
 # We must call this to ensure the build it up-to-date.
@@ -53,7 +50,7 @@ end
 
 ALL_PAGES.each do |path|
   describe "#{path} is accessible", :js, type: :feature do
-    context 'when light mode' do
+    context 'when light mode', path_to_sym(path) do
       before do
         visit(path)
         page.execute_script('typeof jtd != "undefined" && jtd.setTheme("light")')
@@ -62,7 +59,7 @@ ALL_PAGES.each do |path|
       include_context 'a11y tests'
     end
 
-    context 'when dark mode' do
+    context 'when dark mode', path_to_sym(path) do
       before do
         visit(path)
         page.execute_script('typeof jtd != "undefined" && jtd.setTheme("dark")')
