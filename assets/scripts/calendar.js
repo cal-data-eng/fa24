@@ -36,7 +36,6 @@ let transform_calendar_event = (event) => {
  * Set initial date to start of semester if semester is over.
 * https://fullcalendar.io/docs/date-navigation
 *
-
 */
 document.addEventListener('DOMContentLoaded', function() {
   let calendarEl = document.getElementById('full-calendar');
@@ -46,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initialView: 'timeGridWeek',
     weekends: false,
     nowIndicator: true,
+    // eventMinHeight: 30,
     // TODO: 30 min default makes the calendar tall...
     // 1 hour is too compact?
     // slotDuration: '01:00:00',
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     slotMaxTime: '21:00:00',
     contentHeight: 'auto',
     height: 'auto',
+    // This is needed because the < > are not properly labelled for a11y
     buttonIcons: false,
     // More button customizations:
     // https://fullcalendar.io/docs/customButtons
@@ -72,7 +73,23 @@ document.addEventListener('DOMContentLoaded', function() {
         googleCalendarId: 'c_lublpqqigfijlbc1l4rudcpi5s@group.calendar.google.com',
         backgroundColor: '#B3E59A',
         textColor: '#000000',
-      }
+      },
+    ],
+    // Additional Custom events
+    events: [
+       // A Recurring event around the assignment deadline
+      //  {
+      //   daysOfWeek: [ '3' ], // these recurrent events move separately
+      //   startRecur: '2024-09-01',
+      //   endRecur: '2024-12-10',
+      //   startTime: '16:30:00',
+      //   endTime: '17:00:00',
+      //   // color: 'red',
+      //   display: 'background',
+      //   backgroundColor: '#B3E59A',
+      //   textColor: '#000000',
+      //   title: '5PM Regular Submission Deadline'
+      // }
     ],
     eventDidMount: function(args) {
       // This can be called after the event is rendered to manipulate the dom...
