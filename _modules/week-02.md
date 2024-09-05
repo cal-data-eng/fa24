@@ -12,7 +12,7 @@ Wed 9/4
 
 Thu 9/5
 : {% lec 3 %}
-: {% disc 2 %} Relational Algebra
+: {% disc 2 %} [Relational Algebra](https://drive.google.com/file/d/1aZaRh98Ug9zUAsBedUz4z-wMu0hdis74/view?usp=drive_link)
 : {% proj_due 0 %} Due, 5pm
 
 Fri 9/6
