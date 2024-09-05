@@ -24,6 +24,14 @@ def build_jekyll_site!
   puts 'Site build complete.'
 end
 
+# Turn a page path into a symbol to used in specs.
+# e.g. rspec --tag index
+def path_to_sym(path)
+  return :index if path == '/'
+
+  path.gsub(/^\//, '').gsub(/\/$/, '').gsub('/', '-').to_sym
+end
+
 def load_sitemap
   # Ensure that you have called build_jekyll_site! first.
   sitemap_text = File.read("#{DESTINATION}/sitemap.xml")
