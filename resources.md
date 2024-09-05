@@ -41,10 +41,10 @@ Note Fall 2022 had a compressed exam due to the UAW 2865 ASE strike.
 
 |Semester|Final|
 |---|---|
-|Fall 2022|[Exam](/resources/assets/exams/fa22/fa22_final.pdf) [(Solutions)](/resources/assets/exams/fa22/fa22_final_sol.pdf)|
-|Fall 2023|[Exam](/resources/assets/exams/fa23/fa23_final.pdf) [(Solutions)](/resources/assets/exams/fa23/fa23_final_sol.pdf)|
+|Fall 2022|[Exam](/fa23/resources/assets/exams/fa22/fa22_final.pdf) [(Solutions)](/fa23/resources/assets/exams/fa22/fa22_final_sol.pdf)|
+|Fall 2023|[Exam](/fa23/resources/assets/exams/fa23/fa23_final.pdf) [(Solutions)](/fa23/resources/assets/exams/fa23/fa23_final_sol.pdf)|
 
-Final Reference Sheet: [PDF](/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is newly created as of Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
+Final Reference Sheet: [PDF](/fa23/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is newly created as of Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
 
 The best way to get a sense for what is needed for our written exam is to attend discussion throughout the semester and work on discussion handouts.
 
