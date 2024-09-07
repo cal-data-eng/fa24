@@ -16,5 +16,5 @@ Thu 9/5
 : {% proj_due 0 %} Due, 5pm
 
 Fri 9/6
-: {% hw_rel 1 %} Homework 1
+: {% hw_rel 1 %} [Homework 1](https://www.gradescope.com/courses/835949/assignments/4866875)
   : Due Wed 9/18, 5pm
