@@ -9,8 +9,7 @@ Tue 9/10
 
 Thu 9/12
 : {% lec 5 %}
-: {% disc 3 %} Views, Windows, DDL
-
+: {% disc 3 %} [Views, Windows, DDL](https://drive.google.com/file/d/1HHL2XSJk-xpt1X4xJdGXK-dUIT6qw11_/view?usp=sharing)
 Fri 9/13
 : {% proj_rel 1 %} SQL
   : Due Wed 9/25, 5pm
