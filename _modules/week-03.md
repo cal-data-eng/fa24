@@ -9,7 +9,7 @@ Tue 9/10
 
 Thu 9/12
 : {% lec 5 %}
-: {% disc 3 %} [Views, Windows, DDL](https://drive.google.com/drive/folders/1b_qSabyIq0Z7JBA0xyP4RIIM7M9DoER5)
+: {% disc 3 %} [Views, Windows, DDL](https://drive.google.com/file/d/1vYwz402q7UaMLsxOXK0d9hInIJsnspU9/view?usp=sharing)
 
 Fri 9/13
 : {% proj_rel 1 %} SQL
