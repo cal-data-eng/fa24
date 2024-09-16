@@ -13,4 +13,4 @@ Thu 8/29
 Friday 8/30
 : {% proj_rel 0 %} [SQL Review](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa24-materials&urlpath=lab%2Ftree%2Ffa24-materials%2Fproj%2Fproj0%2Fproj0.ipynb&branch=main)
   : Due <del>Wed 9/4</del> Thu 9/5, 5pm
-  <br/>[notes](https://data101.org/notes/SQL/index.html)
+  <br/>[notes](https://data101.org/notes/1-SQL/)
