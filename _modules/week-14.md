@@ -8,7 +8,7 @@ Mon 11/25
 :  **Final Project**{: .label .label-proj-due} Checkpoint Due, 5pm
 
 Tue 11/26
-: {% lec 25 %}
+: {% lec 24 %}
 
 Thu 11/28
 : **Thanksgiving Day**{: .label} No class

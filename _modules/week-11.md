@@ -11,7 +11,7 @@ Wed 11/6
 : {% hw_due 4 %} Due, 5pm
 
 Thu 11/7
-: {% lec 20 %}
+: {% lec 19 %}
 : {% disc 11 %} Transactions
 
 Fri 11/8

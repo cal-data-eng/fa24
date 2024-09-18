@@ -5,13 +5,13 @@ Status: Active
 ---
 
 Tue 11/19
-: {% lec 23 %}
+: {% lec 22 %}
 
 Wed 11/20
 : {% hw_due 5 %} Due, 5pm
 
 Thu 11/21
-: {% lec 24 %}
+: {% lec 23 %}
 : {% disc 13 %} OLAP, Parallel/Distributed Computing
 
 Fri 11/22

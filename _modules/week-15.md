@@ -5,13 +5,13 @@ Status: Active
 ---
 
 Tue 12/3
-: {% lec 26 %}
+: {% lec 25 %}
 
 Wed 12/4
 : {% hw_due 6 %} Due, 5pm
 
 Thu 12/5
-: {% lec 27 %}
+: {% lec 26 %}
 : {% disc 14 %} Wrap-Up
 
 Fri 12/6
