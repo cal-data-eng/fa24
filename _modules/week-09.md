@@ -5,13 +5,13 @@ Status: Active
 ---
 
 Tue 10/22
-: {% lec 16 %}
+: {% lec 15 %}
 
 Wed 10/23
 : {% hw_due 3 %} Due, 5pm
 
 Thu 10/24
-: {% lec 17 %}
+: {% lec 16 %}
 : {% disc 9 %} Normalization, MongoDB I
 
 Fri 10/25
