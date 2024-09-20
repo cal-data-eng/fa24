@@ -11,7 +11,7 @@ Wed 10/16
 : **Midterm**{: .label .label-exam } Midterm Exam (7-9pm)
 
 Thu 10/17
-: {% lec 15 %}
+: **Lecture**{: .label} (no class)
 : **Discussion**{: .label} (no discussion)
 
 Fri 10/18
