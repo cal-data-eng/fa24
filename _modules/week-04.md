@@ -12,7 +12,7 @@ Wed 9/18
 
 Thu 9/19
 : {% lec 7 %}
-: {% disc 4 %} [Cascade, Query Performance, Table Sampling, and Join Orders](https://drive.google.com/file/d/1q0e1zozW5jgqKm5sqpOPk0mc2aaLp7lI/view?usp=sharing)
+: {% disc 4 %} [Cascade, Query Performance I](https://drive.google.com/file/d/1q0e1zozW5jgqKm5sqpOPk0mc2aaLp7lI/view?usp=sharing)
   : [solution](https://drive.google.com/file/d/1Nq3AH7NTmd8TsaxP7amRwvx5mCylCP8D/view?usp=sharing), [code](http://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa24-materials&urlpath=tree%2Ffa24-materials%2Fdisc%2Fdisc04%2Fdisc04.ipynb&branch=main)
 
 Fri 9/20
