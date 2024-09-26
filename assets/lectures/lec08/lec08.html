@@ -7711,13 +7711,24 @@ ALTER TABLE
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12bdaa1d-7f17-4c49-81cc-d939fa64bb4f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0700cca9-8c3d-4be8-99b7-086602a26268">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Two-table-demo:-LIMIT">Two-table demo: LIMIT<a class="anchor-link" href="#Two-table-demo:-LIMIT">¶</a></h2><div class="alert alert-success">
+<h1 id="Matching">Matching<a class="anchor-link" href="#Matching">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2480e7fb-dc94-4753-a288-b36dcba78319">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-success">
 It is much easier to see query plans in <b>psql</b>!<br/>
 <code>jupysql</code> dataframe visualization removes any whitespace.
 </div>
@@ -7729,18 +7740,7 @@ print(result)
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41b363f4-f330-42ee-ae8d-c27d67305131">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's join two tables, <code>actors</code> and <code>cast_info</code>. The query planner selects a hash join:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0e0dc742-33cb-4e4e-a7ea-d04770377e67">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=169da418-7abe-488a-a25c-e9e239db7168">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7749,10 +7749,11 @@ print(result)
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="cm">/* 1 */</span>
 <span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">actors</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">actors</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4000000</span><span class="w"> </span><span class="k">AND</span>
+<span class="n">name</span><span class="o">=</span><span class="s1">'Tom Hanks'</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -7785,28 +7786,277 @@ print(result)
 </thead>
 <tbody>
 <tr>
-<td>Hash Join  (cost=30867.48..92474.12 rows=2212088 width=44) (actual time=190.598..1297.060 rows=2211936 loops=1)</td>
+<td>Gather  (cost=1000.00..11653.80 rows=1410 width=4) (actual time=27.728..30.058 rows=0 loops=1)</td>
+</tr>
+<tr>
+<td>  Workers Planned: 2</td>
+</tr>
+<tr>
+<td>  Workers Launched: 2</td>
+</tr>
+<tr>
+<td>  -&gt;  Parallel Seq Scan on actors  (cost=0.00..10512.80 rows=588 width=4) (actual time=24.968..24.969 rows=0 loops=3)</td>
+</tr>
+<tr>
+<td>        Filter: ((id &gt; 4000000) AND (name = 'Tom Hanks'::text))</td>
+</tr>
+<tr>
+<td>        Rows Removed by Filter: 281963</td>
+</tr>
+<tr>
+<td>Planning Time: 0.147 ms</td>
+</tr>
+<tr>
+<td>Execution Time: 30.076 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=01cacc2d-c857-4630-b9d6-102367cd68f6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="cm">/* 2 */</span>
+<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">actors</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">name</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="None">Running query in 'postgresql://127.0.0.1:5432/imdb_perf_lecture'</span>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="color: green">12 rows affected.</span>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>QUERY PLAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Limit  (cost=17366.94..17368.11 rows=10 width=36) (actual time=140.249..142.642 rows=10 loops=1)</td>
+</tr>
+<tr>
+<td>  -&gt;  Gather Merge  (cost=17366.94..99611.72 rows=704906 width=36) (actual time=140.248..142.637 rows=10 loops=1)</td>
+</tr>
+<tr>
+<td>        Workers Planned: 2</td>
+</tr>
+<tr>
+<td>        Workers Launched: 2</td>
+</tr>
+<tr>
+<td>        -&gt;  Sort  (cost=16366.92..17248.05 rows=352453 width=36) (actual time=137.363..137.365 rows=8 loops=3)</td>
+</tr>
+<tr>
+<td>              Sort Key: name</td>
+</tr>
+<tr>
+<td>              Sort Method: top-N heapsort  Memory: 26kB</td>
+</tr>
+<tr>
+<td>              Worker 0:  Sort Method: top-N heapsort  Memory: 26kB</td>
+</tr>
+<tr>
+<td>              Worker 1:  Sort Method: top-N heapsort  Memory: 26kB</td>
+</tr>
+<tr>
+<td>              -&gt;  Parallel Seq Scan on actors  (cost=0.00..8750.53 rows=352453 width=36) (actual time=0.021..49.143 rows=281963 loops=3)</td>
+</tr>
+<tr>
+<td>Planning Time: 0.108 ms</td>
+</tr>
+<tr>
+<td>Execution Time: 142.692 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=53571e31-2bb5-4c88-9d39-a6a373defd0d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="cm">/* 3 */</span>
+<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">actors</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="None">Running query in 'postgresql://127.0.0.1:5432/imdb_perf_lecture'</span>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="color: green">5 rows affected.</span>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>QUERY PLAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Limit  (cost=0.42..0.93 rows=10 width=4) (actual time=0.089..0.093 rows=10 loops=1)</td>
+</tr>
+<tr>
+<td>  -&gt;  Index Only Scan using actor_pkey on actors  (cost=0.42..42884.75 rows=845888 width=4) (actual time=0.088..0.091 rows=10 loops=1)</td>
+</tr>
+<tr>
+<td>        Heap Fetches: 10</td>
+</tr>
+<tr>
+<td>Planning Time: 0.081 ms</td>
+</tr>
+<tr>
+<td>Execution Time: 0.106 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12bdaa1d-7f17-4c49-81cc-d939fa64bb4f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Two-table-demo:-LIMIT">Two-table demo: LIMIT<a class="anchor-link" href="#Two-table-demo:-LIMIT">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41b363f4-f330-42ee-ae8d-c27d67305131">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Let's join two tables, <code>actors</code> and <code>cast_info</code>. The query planner selects a hash join:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0e0dc742-33cb-4e4e-a7ea-d04770377e67">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">actors</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="None">Running query in 'postgresql://127.0.0.1:5432/imdb_perf_lecture'</span>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="color: green">8 rows affected.</span>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>QUERY PLAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hash Join  (cost=30867.48..92474.12 rows=2212088 width=44) (actual time=190.552..1385.646 rows=2211936 loops=1)</td>
 </tr>
 <tr>
 <td>  Hash Cond: (cast_info.person_id = actors.id)</td>
 </tr>
 <tr>
-<td>  -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.030..152.403 rows=2211936 loops=1)</td>
+<td>  -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.021..160.925 rows=2211936 loops=1)</td>
 </tr>
 <tr>
-<td>  -&gt;  Hash  (cost=13684.88..13684.88 rows=845888 width=36) (actual time=190.166..190.167 rows=845888 loops=1)</td>
+<td>  -&gt;  Hash  (cost=13684.88..13684.88 rows=845888 width=36) (actual time=190.117..190.118 rows=845888 loops=1)</td>
 </tr>
 <tr>
 <td>        Buckets: 65536  Batches: 32  Memory Usage: 1810kB</td>
 </tr>
 <tr>
-<td>        -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.011..68.384 rows=845888 loops=1)</td>
+<td>        -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.006..68.439 rows=845888 loops=1)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.299 ms</td>
+<td>Planning Time: 0.221 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 1363.684 ms</td>
+<td>Execution Time: 1449.252 ms</td>
 </tr>
 </tbody>
 </table>
@@ -7819,7 +8069,7 @@ print(result)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -7844,8 +8094,8 @@ print(result)
 3    -&gt;  Hash  (cost=13684.88..13684.88 rows=8458...
 4          Buckets: 65536  Batches: 32  Memory Us...
 5          -&gt;  Seq Scan on actors  (cost=0.00..13...
-6                            Planning Time: 0.299 ms
-7                        Execution Time: 1363.684 ms
+6                            Planning Time: 0.221 ms
+7                        Execution Time: 1449.252 ms
 </pre>
 </div>
 </div>
@@ -7868,7 +8118,7 @@ print(result)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -7899,7 +8149,7 @@ print(result)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table>
 <thead>
@@ -7909,25 +8159,25 @@ print(result)
 </thead>
 <tbody>
 <tr>
-<td>Limit  (cost=0.42..5.13 rows=10 width=44) (actual time=0.049..46.260 rows=10 loops=1)</td>
+<td>Limit  (cost=0.42..5.13 rows=10 width=44) (actual time=0.052..0.165 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>  -&gt;  Nested Loop  (cost=0.42..1040953.73 rows=2212088 width=44) (actual time=0.048..46.254 rows=10 loops=1)</td>
+<td>  -&gt;  Nested Loop  (cost=0.42..1040953.73 rows=2212088 width=44) (actual time=0.051..0.163 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>        -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.018..0.023 rows=10 loops=1)</td>
+<td>        -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.025..0.026 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>        -&gt;  Index Scan using actor_pkey on actors  (cost=0.42..0.46 rows=1 width=36) (actual time=4.620..4.620 rows=1 loops=10)</td>
+<td>        -&gt;  Index Scan using actor_pkey on actors  (cost=0.42..0.46 rows=1 width=36) (actual time=0.013..0.013 rows=1 loops=10)</td>
 </tr>
 <tr>
 <td>              Index Cond: (id = cast_info.person_id)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.130 ms</td>
+<td>Planning Time: 0.112 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 46.281 ms</td>
+<td>Execution Time: 0.185 ms</td>
 </tr>
 </tbody>
 </table>
@@ -7940,7 +8190,7 @@ print(result)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -7964,8 +8214,8 @@ print(result)
 2          -&gt;  Seq Scan on cast_info  (cost=0.00....
 3          -&gt;  Index Scan using actor_pkey on act...
 4                Index Cond: (id = cast_info.pers...
-5                            Planning Time: 0.130 ms
-6                          Execution Time: 46.281 ms
+5                            Planning Time: 0.112 ms
+6                           Execution Time: 0.185 ms
 </pre>
 </div>
 </div>
@@ -7990,7 +8240,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -8020,7 +8270,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table>
 <thead>
@@ -8030,28 +8280,28 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 </thead>
 <tbody>
 <tr>
-<td>Hash Join  (cost=30867.48..92474.12 rows=2212088 width=36) (actual time=449.640..1469.608 rows=2211936 loops=1)</td>
+<td>Hash Join  (cost=30867.48..92474.12 rows=2212088 width=36) (actual time=258.110..1695.561 rows=2211936 loops=1)</td>
 </tr>
 <tr>
 <td>  Hash Cond: (cast_info.person_id = actors.id)</td>
 </tr>
 <tr>
-<td>  -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.010..217.043 rows=2211936 loops=1)</td>
+<td>  -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.012..293.502 rows=2211936 loops=1)</td>
 </tr>
 <tr>
-<td>  -&gt;  Hash  (cost=13684.88..13684.88 rows=845888 width=36) (actual time=449.480..449.481 rows=845888 loops=1)</td>
+<td>  -&gt;  Hash  (cost=13684.88..13684.88 rows=845888 width=36) (actual time=257.724..257.726 rows=845888 loops=1)</td>
 </tr>
 <tr>
 <td>        Buckets: 65536  Batches: 32  Memory Usage: 1848kB</td>
 </tr>
 <tr>
-<td>        -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=19.068..295.719 rows=845888 loops=1)</td>
+<td>        -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.007..102.280 rows=845888 loops=1)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.090 ms</td>
+<td>Planning Time: 0.092 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 1533.435 ms</td>
+<td>Execution Time: 1761.153 ms</td>
 </tr>
 </tbody>
 </table>
@@ -8064,7 +8314,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -8089,8 +8339,8 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 3    -&gt;  Hash  (cost=13684.88..13684.88 rows=8458...
 4          Buckets: 65536  Batches: 32  Memory Us...
 5          -&gt;  Seq Scan on actors  (cost=0.00..13...
-6                            Planning Time: 0.090 ms
-7                        Execution Time: 1533.435 ms
+6                            Planning Time: 0.092 ms
+7                        Execution Time: 1761.153 ms
 </pre>
 </div>
 </div>
@@ -8117,7 +8367,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -8147,7 +8397,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table>
 <thead>
@@ -8157,22 +8407,22 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 </thead>
 <tbody>
 <tr>
-<td>Hash Join  (cost=19763.71..76964.36 rows=737364 width=36) (actual time=167.036..1071.278 rows=634763 loops=1)</td>
+<td>Hash Join  (cost=19763.71..76964.36 rows=737364 width=36) (actual time=169.979..1279.023 rows=634763 loops=1)</td>
 </tr>
 <tr>
 <td>  Hash Cond: (cast_info.person_id = actors.id)</td>
 </tr>
 <tr>
-<td>  -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.006..217.649 rows=2211936 loops=1)</td>
+<td>  -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.009..253.033 rows=2211936 loops=1)</td>
 </tr>
 <tr>
-<td>  -&gt;  Hash  (cost=14036.18..14036.18 rows=281963 width=36) (actual time=166.575..166.578 rows=444781 loops=1)</td>
+<td>  -&gt;  Hash  (cost=14036.18..14036.18 rows=281963 width=36) (actual time=169.158..169.164 rows=444781 loops=1)</td>
 </tr>
 <tr>
 <td>        Buckets: 65536  Batches: 8  Memory Usage: 3335kB</td>
 </tr>
 <tr>
-<td>        -&gt;  Bitmap Heap Scan on actors  (cost=5285.64..14036.18 rows=281963 width=36) (actual time=22.942..85.503 rows=444781 loops=1)</td>
+<td>        -&gt;  Bitmap Heap Scan on actors  (cost=5285.64..14036.18 rows=281963 width=36) (actual time=25.041..87.701 rows=444781 loops=1)</td>
 </tr>
 <tr>
 <td>              Recheck Cond: (id &gt; 4000000)</td>
@@ -8181,16 +8431,16 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <td>              Heap Blocks: exact=3088</td>
 </tr>
 <tr>
-<td>              -&gt;  Bitmap Index Scan on actor_pkey  (cost=0.00..5215.15 rows=281963 width=0) (actual time=22.568..22.568 rows=444781 loops=1)</td>
+<td>              -&gt;  Bitmap Index Scan on actor_pkey  (cost=0.00..5215.15 rows=281963 width=0) (actual time=24.660..24.660 rows=444781 loops=1)</td>
 </tr>
 <tr>
 <td>                    Index Cond: (id &gt; 4000000)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.116 ms</td>
+<td>Planning Time: 0.123 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 1090.516 ms</td>
+<td>Execution Time: 1330.343 ms</td>
 </tr>
 </tbody>
 </table>
@@ -8203,7 +8453,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -8232,8 +8482,8 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 7                             Heap Blocks: exact=3088
 8                 -&gt;  Bitmap Index Scan on actor_p...
 9                          Index Cond: (id &gt; 4000000)
-10                            Planning Time: 0.116 ms
-11                        Execution Time: 1090.516 ms
+10                            Planning Time: 0.123 ms
+11                        Execution Time: 1330.343 ms
 </pre>
 </div>
 </div>
@@ -8255,7 +8505,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span><span class="w"> </span>
@@ -8287,7 +8537,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table>
 <thead>
@@ -8297,16 +8547,16 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 </thead>
 <tbody>
 <tr>
-<td>Limit  (cost=0.85..10.10 rows=10 width=88) (actual time=0.076..0.124 rows=10 loops=1)</td>
+<td>Limit  (cost=0.85..10.10 rows=10 width=74) (actual time=0.066..0.116 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>  -&gt;  Nested Loop  (cost=0.85..2046454.58 rows=2212088 width=88) (actual time=0.075..0.122 rows=10 loops=1)</td>
+<td>  -&gt;  Nested Loop  (cost=0.85..2046318.54 rows=2211936 width=74) (actual time=0.065..0.114 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>        -&gt;  Nested Loop  (cost=0.42..1040953.73 rows=2212088 width=44) (actual time=0.018..0.051 rows=10 loops=1)</td>
+<td>        -&gt;  Nested Loop  (cost=0.42..1040884.95 rows=2211936 width=44) (actual time=0.017..0.052 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>              -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.007..0.008 rows=10 loops=1)</td>
+<td>              -&gt;  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.007..0.008 rows=10 loops=1)</td>
 </tr>
 <tr>
 <td>              -&gt;  Index Scan using actor_pkey on actors  (cost=0.42..0.46 rows=1 width=36) (actual time=0.004..0.004 rows=1 loops=10)</td>
@@ -8315,16 +8565,16 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <td>                    Index Cond: (id = cast_info.person_id)</td>
 </tr>
 <tr>
-<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=44) (actual time=0.007..0.007 rows=1 loops=10)</td>
+<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=30) (actual time=0.006..0.006 rows=1 loops=10)</td>
 </tr>
 <tr>
 <td>              Index Cond: (id = cast_info.movie_id)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.266 ms</td>
+<td>Planning Time: 0.336 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 0.146 ms</td>
+<td>Execution Time: 0.138 ms</td>
 </tr>
 </tbody>
 </table>
@@ -8337,7 +8587,7 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -8356,16 +8606,16 @@ It is much easier to see query plans in <b>psql</b>!<br/>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>                                          QUERY PLAN
-0  Limit  (cost=0.85..10.10 rows=10 width=88) (ac...
-1    -&gt;  Nested Loop  (cost=0.85..2046454.58 rows...
-2          -&gt;  Nested Loop  (cost=0.42..1040953.7...
+0  Limit  (cost=0.85..10.10 rows=10 width=74) (ac...
+1    -&gt;  Nested Loop  (cost=0.85..2046318.54 rows...
+2          -&gt;  Nested Loop  (cost=0.42..1040884.9...
 3                -&gt;  Seq Scan on cast_info  (cost...
 4                -&gt;  Index Scan using actor_pkey ...
 5                      Index Cond: (id = cast_inf...
 6          -&gt;  Index Scan using movie_pkey on mov...
 7                Index Cond: (id = cast_info.movi...
-8                            Planning Time: 0.266 ms
-9                           Execution Time: 0.146 ms
+8                            Planning Time: 0.336 ms
+9                           Execution Time: 0.138 ms
 </pre>
 </div>
 </div>
@@ -8388,7 +8638,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -8420,7 +8670,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table>
 <thead>
@@ -8430,7 +8680,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 </thead>
 <tbody>
 <tr>
-<td>Gather  (cost=10654.12..35278.67 rows=11059 width=88) (actual time=191.376..384.497 rows=65 loops=1)</td>
+<td>Gather  (cost=10654.12..35277.87 rows=11059 width=74) (actual time=199.597..394.324 rows=65 loops=1)</td>
 </tr>
 <tr>
 <td>  Workers Planned: 2</td>
@@ -8439,25 +8689,25 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <td>  Workers Launched: 2</td>
 </tr>
 <tr>
-<td>  -&gt;  Nested Loop  (cost=9654.12..33172.77 rows=4608 width=88) (actual time=163.248..305.915 rows=22 loops=3)</td>
+<td>  -&gt;  Nested Loop  (cost=9654.12..33171.97 rows=4608 width=74) (actual time=222.089..387.662 rows=22 loops=3)</td>
 </tr>
 <tr>
-<td>        -&gt;  Parallel Hash Join  (cost=9653.69..31078.21 rows=4608 width=44) (actual time=163.185..305.518 rows=22 loops=3)</td>
+<td>        -&gt;  Parallel Hash Join  (cost=9653.69..31077.41 rows=4608 width=44) (actual time=221.993..387.051 rows=22 loops=3)</td>
 </tr>
 <tr>
 <td>              Hash Cond: (cast_info.person_id = actors.id)</td>
 </tr>
 <tr>
-<td>              -&gt;  Parallel Seq Scan on cast_info  (cost=0.00..19005.03 rows=921703 width=8) (actual time=0.029..144.110 rows=737312 loops=3)</td>
+<td>              -&gt;  Parallel Seq Scan on cast_info  (cost=0.00..19004.40 rows=921640 width=8) (actual time=0.041..141.876 rows=737312 loops=3)</td>
 </tr>
 <tr>
-<td>              -&gt;  Parallel Hash  (cost=9631.67..9631.67 rows=1762 width=36) (actual time=22.271..22.271 rows=0 loops=3)</td>
+<td>              -&gt;  Parallel Hash  (cost=9631.67..9631.67 rows=1762 width=36) (actual time=56.761..56.762 rows=0 loops=3)</td>
 </tr>
 <tr>
 <td>                    Buckets: 8192  Batches: 1  Memory Usage: 96kB</td>
 </tr>
 <tr>
-<td>                    -&gt;  Parallel Seq Scan on actors  (cost=0.00..9631.67 rows=1762 width=36) (actual time=5.595..22.216 rows=0 loops=3)</td>
+<td>                    -&gt;  Parallel Seq Scan on actors  (cost=0.00..9631.67 rows=1762 width=36) (actual time=16.331..25.688 rows=0 loops=3)</td>
 </tr>
 <tr>
 <td>                          Filter: (name = 'Tom Hanks'::text)</td>
@@ -8466,16 +8716,16 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <td>                          Rows Removed by Filter: 281962</td>
 </tr>
 <tr>
-<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=44) (actual time=0.017..0.017 rows=1 loops=65)</td>
+<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=30) (actual time=0.027..0.027 rows=1 loops=65)</td>
 </tr>
 <tr>
 <td>              Index Cond: (id = cast_info.movie_id)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.158 ms</td>
+<td>Planning Time: 0.155 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 384.551 ms</td>
+<td>Execution Time: 394.368 ms</td>
 </tr>
 </tbody>
 </table>
@@ -8488,7 +8738,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -8507,10 +8757,10 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>                                           QUERY PLAN
-0   Gather  (cost=10654.12..35278.67 rows=11059 wi...
+0   Gather  (cost=10654.12..35277.87 rows=11059 wi...
 1                                  Workers Planned: 2
 2                                 Workers Launched: 2
-3     -&gt;  Nested Loop  (cost=9654.12..33172.77 row...
+3     -&gt;  Nested Loop  (cost=9654.12..33171.97 row...
 4           -&gt;  Parallel Hash Join  (cost=9653.69....
 5                 Hash Cond: (cast_info.person_id ...
 6                 -&gt;  Parallel Seq Scan on cast_in...
@@ -8521,8 +8771,8 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 11                            Rows Removed by Filt...
 12          -&gt;  Index Scan using movie_pkey on mov...
 13                Index Cond: (id = cast_info.movi...
-14                            Planning Time: 0.158 ms
-15                         Execution Time: 384.551 ms
+14                            Planning Time: 0.155 ms
+15                         Execution Time: 394.368 ms
 </pre>
 </div>
 </div>
@@ -8545,7 +8795,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -8577,7 +8827,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table>
 <thead>
@@ -8587,7 +8837,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 </thead>
 <tbody>
 <tr>
-<td>Gather  (cost=9296.55..33928.58 rows=11060 width=88) (actual time=328.263..339.514 rows=4 loops=1)</td>
+<td>Gather  (cost=9279.46..30704.82 rows=7 width=74) (actual time=402.117..405.350 rows=4 loops=1)</td>
 </tr>
 <tr>
 <td>  Workers Planned: 2</td>
@@ -8596,25 +8846,25 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <td>  Workers Launched: 2</td>
 </tr>
 <tr>
-<td>  -&gt;  Nested Loop  (cost=8296.55..31822.58 rows=4608 width=88) (actual time=189.180..333.993 rows=1 loops=3)</td>
+<td>  -&gt;  Nested Loop  (cost=8279.46..29704.12 rows=3 width=74) (actual time=273.025..399.542 rows=1 loops=3)</td>
 </tr>
 <tr>
-<td>        -&gt;  Parallel Hash Join  (cost=8296.13..29720.64 rows=4608 width=52) (actual time=189.114..333.920 rows=1 loops=3)</td>
+<td>        -&gt;  Parallel Hash Join  (cost=8279.04..29702.75 rows=3 width=38) (actual time=272.947..399.439 rows=1 loops=3)</td>
 </tr>
 <tr>
 <td>              Hash Cond: (cast_info.movie_id = movies.id)</td>
 </tr>
 <tr>
-<td>              -&gt;  Parallel Seq Scan on cast_info  (cost=0.00..19005.03 rows=921703 width=8) (actual time=0.022..184.313 rows=737312 loops=3)</td>
+<td>              -&gt;  Parallel Seq Scan on cast_info  (cost=0.00..19004.40 rows=921640 width=8) (actual time=0.030..212.064 rows=737312 loops=3)</td>
 </tr>
 <tr>
-<td>              -&gt;  Parallel Hash  (cost=8279.03..8279.03 rows=1368 width=44) (actual time=22.331..22.332 rows=0 loops=3)</td>
+<td>              -&gt;  Parallel Hash  (cost=8279.03..8279.03 rows=1 width=30) (actual time=22.482..22.483 rows=0 loops=3)</td>
 </tr>
 <tr>
-<td>                    Buckets: 4096  Batches: 1  Memory Usage: 64kB</td>
+<td>                    Buckets: 1024  Batches: 1  Memory Usage: 40kB</td>
 </tr>
 <tr>
-<td>                    -&gt;  Parallel Seq Scan on movies  (cost=0.00..8279.03 rows=1368 width=44) (actual time=17.041..22.268 rows=0 loops=3)</td>
+<td>                    -&gt;  Parallel Seq Scan on movies  (cost=0.00..8279.03 rows=1 width=30) (actual time=17.106..22.422 rows=0 loops=3)</td>
 </tr>
 <tr>
 <td>                          Filter: (title ~~ 'Snakes on a Plane'::text)</td>
@@ -8623,16 +8873,16 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <td>                          Rows Removed by Filter: 218817</td>
 </tr>
 <tr>
-<td>        -&gt;  Index Scan using actor_pkey on actors  (cost=0.42..0.46 rows=1 width=36) (actual time=0.048..0.049 rows=1 loops=4)</td>
+<td>        -&gt;  Index Scan using actor_pkey on actors  (cost=0.42..0.46 rows=1 width=36) (actual time=0.070..0.070 rows=1 loops=4)</td>
 </tr>
 <tr>
 <td>              Index Cond: (id = cast_info.person_id)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.155 ms</td>
+<td>Planning Time: 0.278 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 339.546 ms</td>
+<td>Execution Time: 405.404 ms</td>
 </tr>
 </tbody>
 </table>
@@ -8645,7 +8895,7 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -8664,22 +8914,22 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>                                           QUERY PLAN
-0   Gather  (cost=9296.55..33928.58 rows=11060 wid...
+0   Gather  (cost=9279.46..30704.82 rows=7 width=7...
 1                                  Workers Planned: 2
 2                                 Workers Launched: 2
-3     -&gt;  Nested Loop  (cost=8296.55..31822.58 row...
-4           -&gt;  Parallel Hash Join  (cost=8296.13....
+3     -&gt;  Nested Loop  (cost=8279.46..29704.12 row...
+4           -&gt;  Parallel Hash Join  (cost=8279.04....
 5                 Hash Cond: (cast_info.movie_id =...
 6                 -&gt;  Parallel Seq Scan on cast_in...
 7                 -&gt;  Parallel Hash  (cost=8279.03...
-8                       Buckets: 4096  Batches: 1 ...
+8                       Buckets: 1024  Batches: 1 ...
 9                       -&gt;  Parallel Seq Scan on m...
 10                            Filter: (title ~~ 'S...
 11                            Rows Removed by Filt...
 12          -&gt;  Index Scan using actor_pkey on act...
 13                Index Cond: (id = cast_info.pers...
-14                            Planning Time: 0.155 ms
-15                         Execution Time: 339.546 ms
+14                            Planning Time: 0.278 ms
+15                         Execution Time: 405.404 ms
 </pre>
 </div>
 </div>
@@ -8697,179 +8947,6 @@ Below, note the predicate pushdown in the sequential scan on actors! Again, copy
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c2ffdd6b-bdfb-41d7-8acc-5173934a9781">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">actors</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span><span class="p">,</span><span class="w"> </span><span class="n">movies</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span>
-<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">movie_id</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<span style="None">Running query in 'postgresql://127.0.0.1:5432/imdb_perf_lecture'</span>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<span style="color: green">10 rows affected.</span>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table>
-<thead>
-<tr>
-<th>QUERY PLAN</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Limit  (cost=0.85..10.10 rows=10 width=88) (actual time=0.059..0.106 rows=10 loops=1)</td>
-</tr>
-<tr>
-<td>  -&gt;  Nested Loop  (cost=0.85..2046454.58 rows=2212088 width=88) (actual time=0.044..0.090 rows=10 loops=1)</td>
-</tr>
-<tr>
-<td>        -&gt;  Nested Loop  (cost=0.42..1040953.73 rows=2212088 width=44) (actual time=0.033..0.065 rows=10 loops=1)</td>
-</tr>
-<tr>
-<td>              -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.012..0.013 rows=10 loops=1)</td>
-</tr>
-<tr>
-<td>              -&gt;  Index Scan using actor_pkey on actors  (cost=0.42..0.46 rows=1 width=36) (actual time=0.004..0.004 rows=1 loops=10)</td>
-</tr>
-<tr>
-<td>                    Index Cond: (id = cast_info.person_id)</td>
-</tr>
-<tr>
-<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=44) (actual time=0.002..0.002 rows=1 loops=10)</td>
-</tr>
-<tr>
-<td>              Index Cond: (id = cast_info.movie_id)</td>
-</tr>
-<tr>
-<td>Planning Time: 0.183 ms</td>
-</tr>
-<tr>
-<td>Execution Time: 0.129 ms</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f775d186-e124-4572-aa96-4403b2c54aed">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'text-align'</span><span class="p">:</span> <span class="s1">'left'</span><span class="p">})</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>                                          QUERY PLAN
-0  Limit  (cost=0.85..10.10 rows=10 width=88) (ac...
-1    -&gt;  Nested Loop  (cost=0.85..2046454.58 rows...
-2          -&gt;  Nested Loop  (cost=0.42..1040953.7...
-3                -&gt;  Seq Scan on cast_info  (cost...
-4                -&gt;  Index Scan using actor_pkey ...
-5                      Index Cond: (id = cast_inf...
-6          -&gt;  Index Scan using movie_pkey on mov...
-7                Index Cond: (id = cast_info.movi...
-8                            Planning Time: 0.183 ms
-9                           Execution Time: 0.129 ms
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29b86550-74fb-412e-9770-415591116448">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><br/><br/>
-What if we dropped one of the indexes?</p>
-<p>To do so we must drop the primary key constraint on actors.id:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=75d36170-657f-4fcf-9cef-6537f4e98a46">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> ALTER TABLE actors DROP CONSTRAINT actor_pkey CASCADE;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<span style="None">Running query in 'postgresql://127.0.0.1:5432/imdb_perf_lecture'</span>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table>
-<thead>
-<tr>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=019b9eda-6eb2-4fc6-aa0b-0336fa1f3173">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8902,7 +8979,7 @@ What if we dropped one of the indexes?</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<span style="color: green">12 rows affected.</span>
+<span style="color: green">14 rows affected.</span>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
@@ -8916,40 +8993,46 @@ What if we dropped one of the indexes?</p>
 </thead>
 <tbody>
 <tr>
-<td>Limit  (cost=0.42..42.78 rows=10 width=88) (actual time=285.950..286.855 rows=10 loops=1)</td>
+<td>Limit  (cost=0.86..9.60 rows=10 width=74) (actual time=0.042..0.119 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>  -&gt;  Nested Loop  (cost=0.42..39629755218.82 rows=9355893471 width=88) (actual time=285.949..286.851 rows=10 loops=1)</td>
+<td>  -&gt;  Nested Loop  (cost=0.86..1932285.82 rows=2211936 width=74) (actual time=0.041..0.117 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>        -&gt;  Nested Loop  (cost=0.00..35377049744.14 rows=9355893471 width=44) (actual time=285.924..286.756 rows=10 loops=1)</td>
+<td>        -&gt;  Nested Loop  (cost=0.43..926852.23 rows=2211936 width=44) (actual time=0.030..0.082 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>              Join Filter: (actors.id = cast_info.person_id)</td>
+<td>              -&gt;  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.011..0.012 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>              Rows Removed by Join Filter: 1118182</td>
+<td>              -&gt;  Memoize  (cost=0.43..0.47 rows=1 width=36) (actual time=0.006..0.006 rows=1 loops=10)</td>
 </tr>
 <tr>
-<td>              -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.017..0.017 rows=1 loops=1)</td>
+<td>                    Cache Key: cast_info.person_id</td>
 </tr>
 <tr>
-<td>              -&gt;  Materialize  (cost=0.00..51610.32 rows=2212088 width=8) (actual time=0.005..222.262 rows=1118192 loops=1)</td>
+<td>                    Cache Mode: logical</td>
 </tr>
 <tr>
-<td>                    -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.003..72.846 rows=1118192 loops=1)</td>
+<td>                    Hits: 2  Misses: 8  Evictions: 0  Overflows: 0  Memory Usage: 1kB</td>
 </tr>
 <tr>
-<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=44) (actual time=0.008..0.008 rows=1 loops=10)</td>
+<td>                    -&gt;  Index Scan using actor_pkey on actors  (cost=0.42..0.46 rows=1 width=36) (actual time=0.006..0.006 rows=1 loops=8)</td>
+</tr>
+<tr>
+<td>                          Index Cond: (id = cast_info.person_id)</td>
+</tr>
+<tr>
+<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=30) (actual time=0.003..0.003 rows=1 loops=10)</td>
 </tr>
 <tr>
 <td>              Index Cond: (id = cast_info.movie_id)</td>
 </tr>
 <tr>
-<td>Planning Time: 0.205 ms</td>
+<td>Planning Time: 0.232 ms</td>
 </tr>
 <tr>
-<td>Execution Time: 291.008 ms</td>
+<td>Execution Time: 1.233 ms</td>
 </tr>
 </tbody>
 </table>
@@ -8957,7 +9040,7 @@ What if we dropped one of the indexes?</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=baad66fc-b5b0-4d64-a3f0-fe8833e93de3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f775d186-e124-4572-aa96-4403b2c54aed">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8981,36 +9064,39 @@ What if we dropped one of the indexes?</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>                                           QUERY PLAN
-0   Limit  (cost=0.42..42.78 rows=10 width=88) (ac...
-1     -&gt;  Nested Loop  (cost=0.42..39629755218.82 ...
-2           -&gt;  Nested Loop  (cost=0.00..353770497...
-3                 Join Filter: (actors.id = cast_i...
-4                 Rows Removed by Join Filter: 111...
-5                 -&gt;  Seq Scan on actors  (cost=0....
-6                 -&gt;  Materialize  (cost=0.00..516...
-7                       -&gt;  Seq Scan on cast_info ...
-8           -&gt;  Index Scan using movie_pkey on mov...
-9                 Index Cond: (id = cast_info.movi...
-10                            Planning Time: 0.205 ms
-11                         Execution Time: 291.008 ms
+0   Limit  (cost=0.86..9.60 rows=10 width=74) (act...
+1     -&gt;  Nested Loop  (cost=0.86..1932285.82 rows...
+2           -&gt;  Nested Loop  (cost=0.43..926852.23...
+3                 -&gt;  Seq Scan on cast_info  (cost...
+4                 -&gt;  Memoize  (cost=0.43..0.47 ro...
+5                       Cache Key: cast_info.perso...
+6                                 Cache Mode: logical
+7                       Hits: 2  Misses: 8  Evicti...
+8                       -&gt;  Index Scan using actor...
+9                             Index Cond: (id = ca...
+10          -&gt;  Index Scan using movie_pkey on mov...
+11                Index Cond: (id = cast_info.movi...
+12                            Planning Time: 0.232 ms
+13                           Execution Time: 1.233 ms
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af5abada-6012-41ba-9e1b-d03575d7287e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29b86550-74fb-412e-9770-415591116448">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><br/><br/>
-What if we dropped both indexes?</p>
+What if we dropped one of the indexes?</p>
+<p>To do so we must drop the primary key constraint on actors.id:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dd4126dc-d88d-4eaa-b8eb-29746e999c31">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=75d36170-657f-4fcf-9cef-6537f4e98a46">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9018,7 +9104,7 @@ What if we dropped both indexes?</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> ALTER TABLE movies DROP CONSTRAINT movie_pkey CASCADE;
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> ALTER TABLE actors DROP CONSTRAINT actor_pkey CASCADE;
 </pre></div>
 </div>
 </div>
@@ -9049,7 +9135,7 @@ What if we dropped both indexes?</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5ef94a40-0bc1-462a-b461-6643742b245c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=019b9eda-6eb2-4fc6-aa0b-0336fa1f3173">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9082,7 +9168,7 @@ What if we dropped both indexes?</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<span style="color: green">14 rows affected.</span>
+<span style="color: green">12 rows affected.</span>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
@@ -9096,46 +9182,40 @@ What if we dropped both indexes?</p>
 </thead>
 <tbody>
 <tr>
-<td>Limit  (cost=0.00..45.64 rows=10 width=88) (actual time=253.262..2166.780 rows=10 loops=1)</td>
+<td>Limit  (cost=0.42..25271.13 rows=10 width=74) (actual time=295.628..296.522 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>  -&gt;  Nested Loop  (cost=0.00..140138714952623.28 rows=30708521683592 width=88) (actual time=253.261..2166.767 rows=10 loops=1)</td>
+<td>  -&gt;  Nested Loop  (cost=0.42..35381485254.95 rows=14000989 width=74) (actual time=295.627..296.519 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>        Join Filter: (cast_info.person_id = actors.id)</td>
+<td>        -&gt;  Nested Loop  (cost=0.00..35375121117.60 rows=14000989 width=44) (actual time=295.591..296.409 rows=10 loops=1)</td>
 </tr>
 <tr>
-<td>        Rows Removed by Join Filter: 7668685</td>
+<td>              Join Filter: (actors.id = cast_info.person_id)</td>
 </tr>
 <tr>
-<td>        -&gt;  Nested Loop  (cost=0.00..27454436294.59 rows=7260659019 width=52) (actual time=162.679..1046.005 rows=10 loops=1)</td>
+<td>              Rows Removed by Join Filter: 1118182</td>
 </tr>
 <tr>
-<td>              Join Filter: (cast_info.movie_id = movies.id)</td>
+<td>              -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.009..0.010 rows=1 loops=1)</td>
 </tr>
 <tr>
-<td>              Rows Removed by Join Filter: 5518456</td>
+<td>              -&gt;  Materialize  (cost=0.00..51608.04 rows=2211936 width=8) (actual time=0.007..230.778 rows=1118192 loops=1)</td>
 </tr>
 <tr>
-<td>              -&gt;  Seq Scan on movies  (cost=0.00..11424.53 rows=656453 width=44) (actual time=0.008..0.011 rows=3 loops=1)</td>
+<td>                    -&gt;  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.005..75.815 rows=1118192 loops=1)</td>
 </tr>
 <tr>
-<td>              -&gt;  Materialize  (cost=0.00..51610.32 rows=2212088 width=8) (actual time=0.005..235.646 rows=1839489 loops=3)</td>
+<td>        -&gt;  Index Scan using movie_pkey on movies  (cost=0.42..0.45 rows=1 width=30) (actual time=0.010..0.010 rows=1 loops=10)</td>
 </tr>
 <tr>
-<td>                    -&gt;  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.003..153.321 rows=2211936 loops=1)</td>
+<td>              Index Cond: (id = cast_info.movie_id)</td>
 </tr>
 <tr>
-<td>        -&gt;  Materialize  (cost=0.00..24523.32 rows=845888 width=36) (actual time=0.007..70.015 rows=766870 loops=10)</td>
+<td>Planning Time: 0.401 ms</td>
 </tr>
 <tr>
-<td>              -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.009..61.091 rows=845888 loops=1)</td>
-</tr>
-<tr>
-<td>Planning Time: 0.161 ms</td>
-</tr>
-<tr>
-<td>Execution Time: 2178.771 ms</td>
+<td>Execution Time: 300.628 ms</td>
 </tr>
 </tbody>
 </table>
@@ -9143,7 +9223,7 @@ What if we dropped both indexes?</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=effba2f0-3c11-4b28-9240-94dc2ab907f7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=baad66fc-b5b0-4d64-a3f0-fe8833e93de3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9167,20 +9247,218 @@ What if we dropped both indexes?</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>                                           QUERY PLAN
-0   Limit  (cost=0.00..45.64 rows=10 width=88) (ac...
-1     -&gt;  Nested Loop  (cost=0.00..140138714952623...
+0   Limit  (cost=0.42..25271.13 rows=10 width=74) ...
+1     -&gt;  Nested Loop  (cost=0.42..35381485254.95 ...
+2           -&gt;  Nested Loop  (cost=0.00..353751211...
+3                 Join Filter: (actors.id = cast_i...
+4                 Rows Removed by Join Filter: 111...
+5                 -&gt;  Seq Scan on actors  (cost=0....
+6                 -&gt;  Materialize  (cost=0.00..516...
+7                       -&gt;  Seq Scan on cast_info ...
+8           -&gt;  Index Scan using movie_pkey on mov...
+9                 Index Cond: (id = cast_info.movi...
+10                            Planning Time: 0.401 ms
+11                         Execution Time: 300.628 ms
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af5abada-6012-41ba-9e1b-d03575d7287e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><br/><br/>
+What if we dropped both indexes?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dd4126dc-d88d-4eaa-b8eb-29746e999c31">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> ALTER TABLE movies DROP CONSTRAINT movie_pkey CASCADE;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="None">Running query in 'postgresql://127.0.0.1:5432/imdb_perf_lecture'</span>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5ef94a40-0bc1-462a-b461-6643742b245c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">actors</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span><span class="p">,</span><span class="w"> </span><span class="n">movies</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">actors</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">movie_id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="None">Running query in 'postgresql://127.0.0.1:5432/imdb_perf_lecture'</span>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<span style="color: green">17 rows affected.</span>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>QUERY PLAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Limit  (cost=13884.25..44371.17 rows=10 width=74) (actual time=628.635..1815.969 rows=10 loops=1)</td>
+</tr>
+<tr>
+<td>  -&gt;  Nested Loop  (cost=13884.25..42684723061.69 rows=14000989 width=74) (actual time=628.634..1815.952 rows=10 loops=1)</td>
+</tr>
+<tr>
+<td>        Join Filter: (cast_info.person_id = actors.id)</td>
+</tr>
+<tr>
+<td>        Rows Removed by Join Filter: 7743513</td>
+</tr>
+<tr>
+<td>        -&gt;  Gather  (cost=13884.25..270450.57 rows=2211936 width=38) (actual time=608.599..639.809 rows=10 loops=1)</td>
+</tr>
+<tr>
+<td>              Workers Planned: 2</td>
+</tr>
+<tr>
+<td>              Workers Launched: 2</td>
+</tr>
+<tr>
+<td>              -&gt;  Parallel Hash Join  (cost=12884.25..48256.97 rows=921640 width=38) (actual time=603.671..604.109 rows=673 loops=3)</td>
+</tr>
+<tr>
+<td>                    Hash Cond: (cast_info.movie_id = movies.id)</td>
+</tr>
+<tr>
+<td>                    -&gt;  Parallel Seq Scan on cast_info  (cost=0.00..19004.40 rows=921640 width=8) (actual time=0.022..189.338 rows=737312 loops=3)</td>
+</tr>
+<tr>
+<td>                    -&gt;  Parallel Hash  (cost=7595.22..7595.22 rows=273522 width=30) (actual time=115.192..115.193 rows=218818 loops=3)</td>
+</tr>
+<tr>
+<td>                          Buckets: 65536  Batches: 16  Memory Usage: 0kB</td>
+</tr>
+<tr>
+<td>                          -&gt;  Parallel Seq Scan on movies  (cost=0.00..7595.22 rows=273522 width=30) (actual time=0.019..17.209 rows=218818 loops=3)</td>
+</tr>
+<tr>
+<td>        -&gt;  Materialize  (cost=0.00..24523.32 rows=845888 width=36) (actual time=0.004..73.982 rows=774352 loops=10)</td>
+</tr>
+<tr>
+<td>              -&gt;  Seq Scan on actors  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.015..53.748 rows=845888 loops=1)</td>
+</tr>
+<tr>
+<td>Planning Time: 0.187 ms</td>
+</tr>
+<tr>
+<td>Execution Time: 1822.068 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=effba2f0-3c11-4b28-9240-94dc2ab907f7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">result</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'text-align'</span><span class="p">:</span> <span class="s1">'left'</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>                                           QUERY PLAN
+0   Limit  (cost=13884.25..44371.17 rows=10 width=...
+1     -&gt;  Nested Loop  (cost=13884.25..42684723061...
 2           Join Filter: (cast_info.person_id = ac...
-3                Rows Removed by Join Filter: 7668685
-4           -&gt;  Nested Loop  (cost=0.00..274544362...
-5                 Join Filter: (cast_info.movie_id...
-6                 Rows Removed by Join Filter: 551...
-7                 -&gt;  Seq Scan on movies  (cost=0....
-8                 -&gt;  Materialize  (cost=0.00..516...
-9                       -&gt;  Seq Scan on cast_info ...
-10          -&gt;  Materialize  (cost=0.00..24523.32 ...
-11                -&gt;  Seq Scan on actors  (cost=0....
-12                            Planning Time: 0.161 ms
-13                        Execution Time: 2178.771 ms
+3                Rows Removed by Join Filter: 7743513
+4           -&gt;  Gather  (cost=13884.25..270450.57 ...
+5                                  Workers Planned: 2
+6                                 Workers Launched: 2
+7                 -&gt;  Parallel Hash Join  (cost=12...
+8                       Hash Cond: (cast_info.movi...
+9                       -&gt;  Parallel Seq Scan on c...
+10                      -&gt;  Parallel Hash  (cost=7...
+11                            Buckets: 65536  Batc...
+12                            -&gt;  Parallel Seq Sca...
+13          -&gt;  Materialize  (cost=0.00..24523.32 ...
+14                -&gt;  Seq Scan on actors  (cost=0....
+15                            Planning Time: 0.187 ms
+16                        Execution Time: 1822.068 ms
 </pre>
 </div>
 </div>
@@ -9213,7 +9491,7 @@ What if we dropped both indexes?</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> --close postgresql://127.0.0.1:5432/imdb_perf_lecture
@@ -9227,7 +9505,7 @@ What if we dropped both indexes?</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-c<span class="w"> </span><span class="s1">'DROP DATABASE IF EXISTS imdb_perf_lecture'</span>
