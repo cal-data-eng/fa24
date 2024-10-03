@@ -27,9 +27,12 @@ The Data 101 course notes (found on the [main page](/)) are a work in progress a
 The [PostgresSQL documentation](https://www.postgresql.org/docs/current/index.html) can be read front to back. Highly recommended!
 
 Other resources from [Data 100](https://ds100.org/), which are intended for SQLite:
-+ We've assembled some [SQL Review Slides](https://docs.google.com/presentation/d/1mLVkQxah9asdKhnTNpcUSYBOuKGSWE_d3MJ5nYuTw9U/edit?usp=sharing) to help you brush up on SQL.
++ We've assembled some [SQL Review Slides][sql_review] to help you brush up on SQL.
 + We've also compiled a list of SQL practice problems, which can be found [here](assets/other/sqlReview.pdf), along with their [solutions](assets/other/sqlReviewSol.pdf).
 + This [SQL Cheat Sheet](https://websitesetup.org/sql-cheat-sheet/) is an awesome resource that was created by Luke Harrison, a former Data 100 student.
+
+<!-- TODO: Copy the DS100 slides to a Data 101 folder... -->
+[sql_review]: https://docs.google.com/presentation/d/1mLVkQxah9asdKhnTNpcUSYBOuKGSWE_d3MJ5nYuTw9U/edit?usp=sharing
 
 ## Assignment Tips
 
@@ -39,12 +42,18 @@ See [**Assignment Tips**](../assignment-tips).
 
 Note Fall 2022 had a compressed exam due to the UAW 2865 ASE strike.
 
-|Semester|Final|
-|---|---|
-|Fall 2022|[Exam](/fa23/resources/assets/exams/fa22/fa22_final.pdf) [(Solutions)](/fa23/resources/assets/exams/fa22/fa22_final_sol.pdf)|
-|Fall 2023|[Exam](/fa23/resources/assets/exams/fa23/fa23_final.pdf) [(Solutions)](/fa23/resources/assets/exams/fa23/fa23_final_sol.pdf)|
+| **Semester** | Exam | Solutions | Notes |
+|:-------------|:----:|:---------:|------:|
+| Fall 2022 | [Final Exam][fa22_final_blank] | [Final Solutions][fa22_final_solutions] | |
+| Fall 2023 | [Final Exam][fa23_final_blank] | [Final Solutions][fa23_final_solutions] | [Common Errors][fa23_final_common_errors] |
 
-Final Reference Sheet: [PDF](/fa23/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is newly created as of Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
+[fa22_final_blank]: {{ site.base_url }}/assets/exams/fa22/fa22_final.pdf
+[fa22_final_solutions]: {{ site.base_url }}/assets/exams/fa22/fa22_final_sol.pdf
+[fa23_final_blank]: {{ site.base_url }}/assets/exams/fa23/fa23_final.pdf
+[fa23_final_solutions]: {{ site.base_url }}/assets/exams/fa23/fa23_final_sol.pdf
+[fa23_final_common_errors]: https://docs.google.com/document/d/15pAdiYqw096fvP5_LGbZP1vrvU6zBWrfzdw7kkLHQA0/preview
+
+Final Reference Sheet: [PDF](/fa23/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is from Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
 
 The best way to get a sense for what is needed for our written exam is to attend discussion throughout the semester and work on discussion handouts.
 
