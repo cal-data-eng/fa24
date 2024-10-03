@@ -169,6 +169,7 @@ psql meta-commands doc: [list][psql_docs]
 | `\d` | Lists relations |
 | `\d tablename`			| List schema of the relation `tablename`. |
 | `\q`		| Quit psql |
+| `\x auto` | Expanded view of records. To toggle off, `\x off`. |
 
 **Making queries**: You can write queries in `psql`! To write queries that span multiple lines, simply use the newline key (i.e., `<Return>`). However, to execute a query in `psql`, you must use the **semicolon**. This is generally good style, anyway!
 
