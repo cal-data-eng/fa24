@@ -40,11 +40,9 @@ See [**Assignment Tips**](../assignment-tips).
 
 ## Exam Resources
 
-Note Fall 2022 had a compressed exam due to the UAW 2865 ASE strike.
-
 | **Semester** | Exam | Solutions | Notes |
-|:-------------|:----:|:---------:|------:|
-| Fall 2022 | [Final Exam][fa22_final_blank] | [Final Solutions][fa22_final_solutions] | |
+|:-------------|:----:|:---------:|:-----:|
+| Fall 2022 | [Final Exam][fa22_final_blank] | [Final Solutions][fa22_final_solutions] | shortened exam due to the UAW 2865 ASE strike. |
 | Fall 2023 | [Final Exam][fa23_final_blank] | [Final Solutions][fa23_final_solutions] | [Common Errors][fa23_final_common_errors] |
 
 [fa22_final_blank]: {{ site.base_url }}/assets/exams/fa22/fa22_final.pdf
