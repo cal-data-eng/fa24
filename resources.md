@@ -45,10 +45,10 @@ See [**Assignment Tips**](../assignment-tips).
 | Fall 2022 | [Final Exam][fa22_final_blank] | [Final Solutions][fa22_final_solutions] | shortened exam due to the UAW 2865 ASE strike. |
 | Fall 2023 | [Final Exam][fa23_final_blank] | [Final Solutions][fa23_final_solutions] | [Common Errors][fa23_final_common_errors] |
 
-[fa22_final_blank]: {{ site.base_url }}/assets/exams/fa22/fa22_final.pdf
-[fa22_final_solutions]: {{ site.base_url }}/assets/exams/fa22/fa22_final_sol.pdf
-[fa23_final_blank]: {{ site.base_url }}/assets/exams/fa23/fa23_final.pdf
-[fa23_final_solutions]: {{ site.base_url }}/assets/exams/fa23/fa23_final_sol.pdf
+[fa22_final_blank]: {{ site.baseurl }}/assets/exams/fa22/fa22_final.pdf
+[fa22_final_solutions]: {{ site.baseurl }}/assets/exams/fa22/fa22_final_sol.pdf
+[fa23_final_blank]: {{ site.baseurl }}/assets/exams/fa23/fa23_final.pdf
+[fa23_final_solutions]: {{ site.baseurl }}/assets/exams/fa23/fa23_final_sol.pdf
 [fa23_final_common_errors]: https://docs.google.com/document/d/15pAdiYqw096fvP5_LGbZP1vrvU6zBWrfzdw7kkLHQA0/preview
 
 Final Reference Sheet: [PDF](/fa23/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is from Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
