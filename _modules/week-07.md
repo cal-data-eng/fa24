@@ -15,5 +15,3 @@ Wed 10/9
 Thu 10/10
 : {% lec 13 %}
 : {% disc 7 %} Data Prep II
-
-Fri 10/11

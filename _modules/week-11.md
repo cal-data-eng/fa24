@@ -5,13 +5,13 @@ Status: Active
 ---
 
 Tue 11/5
-: **Election Day**{: .label} **Lecture**{: .label .label-lec} AMA, Q&A
+: **Election Day**{: .label} {% lec 19 %}
 
 Wed 11/6
 : {% hw_due 4 %} Due, 5pm
 
 Thu 11/7
-: {% lec 19 %}
+: {% lec 20 %}
 : {% disc 11 %} Transactions
 
 Fri 11/8
