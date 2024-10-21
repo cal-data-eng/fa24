@@ -1,5 +1,5 @@
 ---
-title: Week 8 Announcement
+title: Week 9 Announcement
 week: 9
 date: 2024-10-21
 ---
