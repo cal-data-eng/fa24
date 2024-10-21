@@ -15,5 +15,5 @@ Thu 10/24
 : {% disc 9 %} Normalization, MongoDB I
 
 Fri 10/25
-: {% hw_rel 4 %} Homework 4
+: {% proj_rel 3%} Data Transformation
   : Due Wed 11/6, 5pm

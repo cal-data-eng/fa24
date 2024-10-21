@@ -14,6 +14,3 @@ Thu 10/17
 : **Lecture**{: .label} (no class)
 : **Discussion**{: .label} (no discussion)
 
-Fri 10/18
-: {% proj_rel 3%} Data Transformation
-  : Due Wed 10/30, 5pm
