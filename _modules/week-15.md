@@ -8,7 +8,7 @@ Tue 12/3
 : {% lec 26 %}
 
 Wed 12/4
-: {% hw_due 6 %} Due, 5pm
+: {% hw_due 5 %} Due, 5pm
 
 Thu 12/5
 : {% lec 27 %}
