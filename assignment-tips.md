@@ -18,8 +18,8 @@ markdown: kramdown
 # {{page.title}}
 
 {:.no_toc .text-delta}
-Author: Lisa Yan, Michael Ball
-Last updated: August 31, 2024 (Fall 2024)
+Author: Lisa Yan, Michael Ball, Rebecca Dang
+Last updated: October 25, 2024 (Fall 2024)
 
 Jump to:
 1. TOC
@@ -43,7 +43,8 @@ there are local and hidden autograder tests, the latter of which are run after y
 **Reminder about adding new cells**:
 If you would like to add new cells, always do so **before** the cell in which you end up writing your answer. Failure to do so may break the auto-grader.
 
-## JupyterHub Keyboard Shortcuts
+###  JupyterHub Keyboard Shortcuts
+
 First, to enter shortcut mode/exit editing mode, press `Esc`. This will then enable you to use any of the below keyboard shortcuts.
 
 |Operation|Keys|
@@ -65,6 +66,80 @@ First, to enter shortcut mode/exit editing mode, press `Esc`. This will then ena
 JupyterLab includes an automatic table of contents on the left-hand controls that you can use to quickly jump to different sections of a notebook.
 
 <img src="{{ site.baseurl }}/assets/images/notebook-toc.png" width="300px" alt="Click on the 3 lines to show the table of contents" />
+
+### Split-screen Setup
+
+**Want to splitscreen your JupyterHub?** Simply drag a tab over to a different side of your JupyterHub. We recommend splitting your screen with your Jupyter notebook in one window, and a psql terminal in another window, like so (note these are two separate connections to the database!):
+
+<img src="{{ site.baseurl }}/assets/images/splitscreen.png"
+     alt="Split Screen of DataHub"
+     style="float: center; margin-right: 10px; width: 800px" />
+
+### Help! Why is my DataHub so slow?
+
+If you are encountering any of the following issues:
+
+* Your SQL queries are taking a long time to run
+* Your SQL queries fail with `No space left on device`
+* Your DataHub is slow or unresponsive
+* Your browser window becomes slow or laggy
+
+Then, you may have *run out of disk or memory space* on your DataHub server. Here is a list of things you can do to fix this:
+
+1. **Restart your current Jupyter kernel**. To do so, go to Kernel -> Restart Kernel and clear outputs of all cells. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
+
+1. **Check your display limits**. If your row display limit is unbounded, then your notebook will crash. Clear all cell output and insert a cell close to the top of the notebook that sets the display limit to a more reasonable size, like `%config SqlMagic.displaylimit = 50`
+
+1. **Clear (all) cell outputs** to reduce the amount of text your browser needs to load/render. In general, the total amount of content in a notebook can contribute to it feeling slow to navigate. If you see a lot of log output, for example, you can right click on the cell and clear just that cell's output.
+
+  1. **Close Unneeded Files & Notebooks**. Even files that aren't actively displayed can have an impact on your current session. If you find yourself needing to jump between two tabs within JupyterLab, it may be more stable to open two _browser_ tabs. (The best experience depends highly on the specifics of your browser, computer's memory and other settings.)
+
+1. **Close all Jupyter kernels** other than the one that you are currently working on. To do so, go to the left sidebar and click on the stop button (dark circle with a light inscribed square). Go to Kernels, hover over each item, and hit the X button. Or, click "Shut Down All" with all notebooks still open, then manually start your kernel in the desired notebook.
+
+1. **Run [`VACUUM FULL`](https://www.postgresql.org/docs/current/sql-vacuum.html).** This command will instruct PostgreSQL to try to reclaim some space. To do so, run `!psql postgresql://jovyan@127.0.0.1:5432/imdb -c 'VACUUM FULL'`
+  * If your notebook is already unresponsive, you can run this command in a terminal window instead. To do so, go to File -> New -> Terminal. Then, run type `psql postgresql://jovyan@127.0.0.1:5432/imdb -c 'VACUUM FULL'` (notice that we don't need to type `!` in the terminal).
+
+1.  **Drop and re-create your database.** To do so, run the database setup commands in the beginning of your project notebook that includes the `DROP DATABASE` and `CREATE DATABASE` commands.
+
+    To find out the **size of all current databases**, run
+
+      * In Jupyter notebook: `!psql postgresql://jovyan@127.0.0.1:5432/ -c '\l+'`
+      * In a Terminal outside of a psql session: `!psql postgresql://jovyan@127.0.0.1:5432/ -c '\l+'`
+      * In an active psql session: `\l+`
+
+    If you are unable to drop the database, it might be because you have other open connections to the database. Run the below to **terminate all other connections** (replace `imdb` with your database name):
+
+      * In Jupyter Notebook, make a new cell. Make sure you replace the syntax with the desired database (e.g., below it is `imdb`) `!psql postgresql://jovyan@127.0.0.1:5432/imdb -c 'SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE datname = current_database()  AND pid <> pg_backend_pid();'`
+      * In `psql`, run the following command. Make sure you are conneted to the target database first.
+        * To connect to `imdb` and delete all other `imdb` connections, use the meta-command `\c imdb`.
+        * Then, run `SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE datname = current_database()  AND pid <> pg_backend_pid();`
+
+1. **Restart your DataHub server.** To do so, go to File -> Hub Control Panel -> Stop My Server. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
+
+1. If none of the above work, please post on [Ed][ed_url]{:target="\_blank"} with the following information:
+  * Your DataHub username (your @berkeley.edu name)
+  * The project you are working on
+  * The output of the following commands:
+    * `!df -h`
+    * `!free -h`
+    * `!psql -c 'SELECT pg_size_pretty(pg_database_size(current_database()))'`
+
+### Help! I can't export my notebook to a PDF
+
+If you are running the `grader.export(...)` cell and you receive an error that looks similar to `LatexFailed: PDF creating failed, captured latex output` which is preventing you from exporting your Jupyter notebook to a PDF, this is likely because there are unescaped LaTeX special characters (such as `\`, `{`, `}`, `_`) in your notebook. Things you can do to troubleshoot:
+
+- Read the *entire* error message carefully. It is probably very long, but somewhere in the message it will say which text in your notebook is causing the error. Here is an example excerpt from an error message:
+```
+! Undefined control sequence.
+l.349 ...r materialized view is much smaller\faster
+                                                   than for
+? 
+! Emergency stop.
+l.349 ...r materialized view is much smaller\faster
+                                                   than for
+```
+  - The special character `\` is reserved in LaTeX and caused the issue in this case. To fix this, use `/` instead.
+- Make sure that the cells you made or modified are Markdown or Code cells, rather than Raw cells. You can change the type of your cell by clicking on the cell to select it, and then clicking on the dropdown at the top of your notebook to change the cell type.
 
 ## Jupysql: PostgreSQL via ipython magic
 
@@ -253,63 +328,6 @@ postgresql://jovyan@127.0.0.1:5432/imdb
 
 * `pg_toast`: TOAST storage schema [documentation 73.2](https://www.postgresql.org/docs/current/storage-toast.html)
 * `pg_catalog`: System catalog schema [documentation 5.9.5](https://www.postgresql.org/docs/current/ddl-schemas.html#DDL-SCHEMAS-CATALOG)
-
-## Help! Why is my DataHub so slow?
-
-If you are encountering any of the following issues:
-
-* Your SQL queries are taking a long time to run
-* Your SQL queries fail with `No space left on device`
-* Your DataHub is slow or unresponsive
-* Your browser window becomes slow or laggy
-
-Then, you may have *run out of disk or memory space* on your DataHub server. Here is a list of things you can do to fix this:
-
-1. **Restart your current Jupyter kernel**. To do so, go to Kernel -> Restart Kernel and clear outputs of all cells. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
-
-1. **Check your display limits**. If your row display limit is unbounded, then your notebook will crash. Clear all cell output and insert a cell close to the top of the notebook that sets the display limit to a more reasonable size, like `%config SqlMagic.displaylimit = 50`
-
-1. **Clear (all) cell outputs** to reduce the amount of text your browser needs to load/render. In general, the total amount of content in a notebook can contribute to it feeling slow to navigate. If you see a lot of log output, for example, you can right click on the cell and clear just that cell's output.
-
-  1. **Close Unneeded Files & Notebooks**. Even files that aren't actively displayed can have an impact on your current session. If you find yourself needing to jump between two tabs within JupyterLab, it may be more stable to open two _browser_ tabs. (The best experience depends highly on the specifics of your browser, computer's memory and other settings.)
-
-1. **Close all Jupyter kernels** other than the one that you are currently working on. To do so, go to the left sidebar and click on the stop button (dark circle with a light inscribed square). Go to Kernels, hover over each item, and hit the X button. Or, click "Shut Down All" with all notebooks still open, then manually start your kernel in the desired notebook.
-
-1. **Run [`VACUUM FULL`](https://www.postgresql.org/docs/current/sql-vacuum.html).** This command will instruct PostgreSQL to try to reclaim some space. To do so, run `!psql postgresql://jovyan@127.0.0.1:5432/imdb -c 'VACUUM FULL'`
-  * If your notebook is already unresponsive, you can run this command in a terminal window instead. To do so, go to File -> New -> Terminal. Then, run type `psql postgresql://jovyan@127.0.0.1:5432/imdb -c 'VACUUM FULL'` (notice that we don't need to type `!` in the terminal).
-
-1.  **Drop and re-create your database.** To do so, run the database setup commands in the beginning of your project notebook that includes the `DROP DATABASE` and `CREATE DATABASE` commands.
-
-    To find out the **size of all current databases**, run
-
-      * In Jupyter notebook: `!psql postgresql://jovyan@127.0.0.1:5432/ -c '\l+'`
-      * In a Terminal outside of a psql session: `!psql postgresql://jovyan@127.0.0.1:5432/ -c '\l+'`
-      * In an active psql session: `\l+`
-
-    If you are unable to drop the database, it might be because you have other open connections to the database. Run the below to **terminate all other connections** (replace `imdb` with your database name):
-
-      * In Jupyter Notebook, make a new cell. Make sure you replace the syntax with the desired database (e.g., below it is `imdb`) `!psql postgresql://jovyan@127.0.0.1:5432/imdb -c 'SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE datname = current_database()  AND pid <> pg_backend_pid();'`
-      * In `psql`, run the following command. Make sure you are conneted to the target database first.
-        * To connect to `imdb` and delete all other `imdb` connections, use the meta-command `\c imdb`.
-        * Then, run `SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE datname = current_database()  AND pid <> pg_backend_pid();`
-
-1. **Restart your DataHub server.** To do so, go to File -> Hub Control Panel -> Stop My Server. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
-
-1. If none of the above work, please post on [Ed][ed_url]{:target="\_blank"} with the following information:
-  * Your DataHub username (your @berkeley.edu name)
-  * The project you are working on
-  * The output of the following commands:
-    * `!df -h`
-    * `!free -h`
-    * `!psql -c 'SELECT pg_size_pretty(pg_database_size(current_database()))'`
-
-## Split-screen Setup
-
-**Want to splitscreen your JupyterHub?** Simply drag a tab over to a different side of your JupyterHub. We recommend splitting your screen with your Jupyter notebook in one window, and a psql terminal in another window, like so (note these are two separate connections to the database!):
-
-<img src="{{ site.baseurl }}/assets/images/splitscreen.png"
-     alt="Split Screen of DataHub"
-     style="float: center; margin-right: 10px; width: 800px" />
 
 ## Local Setup
 
