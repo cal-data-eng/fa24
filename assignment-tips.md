@@ -116,6 +116,8 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
 
 1. **Restart your DataHub server.** To do so, go to File -> Hub Control Panel -> Stop My Server. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
 
+1. **Restart your Web Browser**. Sometimes, simply refreshing a browser tab can improve performance. However, completely quitting your browser can force it to clear up memory and release additional resources. If you don't wish to close all tabs, then closing a tab (or window) and making a new one can also help with performance problems.
+
 1. If none of the above work, please post on [Ed][ed_url]{:target="\_blank"} with the following information:
   * Your DataHub username (your @berkeley.edu name)
   * The project you are working on
