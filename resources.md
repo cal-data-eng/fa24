@@ -40,18 +40,24 @@ See [**Assignment Tips**](../assignment-tips).
 
 ## Exam Resources
 
-| **Semester** | Exam | Solutions | Notes |
-|:-------------|:----:|:---------:|:-----:|
-| Fall 2022 | [Final Exam][fa22_final_blank] | [Final Solutions][fa22_final_solutions] | shortened exam due to the UAW 2865 ASE strike. |
-| Fall 2023 | [Final Exam][fa23_final_blank] | [Final Solutions][fa23_final_solutions] | [Common Errors][fa23_final_common_errors] |
+| **Semester** | Midterm | Final | Reference Sheet | Notes |
+|:-------------|:-------:|:-----:|:---------------:|:-----:|
+| Fall 2024 | [Exam][fa24_midterm_blank] ([Solutions][fa24_midterm_solutions])| | [Midterm][fa24_midterm_reference_packet] | [Common Errors][fa24_midterm_common_errors] |
+| Fall 2023 | | [Exam][fa23_final_blank] ([Solutions][fa23_final_solutions]) | [Final][fa23_final_reference_sheet] | [Common Errors][fa23_final_common_errors] |
+| Fall 2022 | | [Exam][fa22_final_blank] ([Solutions][fa22_final_solutions]) | | Shortened exam due to the UAW 2865 ASE strike |
 
 [fa22_final_blank]: {{ site.baseurl }}/assets/exams/fa22/fa22_final.pdf
 [fa22_final_solutions]: {{ site.baseurl }}/assets/exams/fa22/fa22_final_sol.pdf
 [fa23_final_blank]: {{ site.baseurl }}/assets/exams/fa23/fa23_final.pdf
 [fa23_final_solutions]: {{ site.baseurl }}/assets/exams/fa23/fa23_final_sol.pdf
 [fa23_final_common_errors]: https://docs.google.com/document/d/15pAdiYqw096fvP5_LGbZP1vrvU6zBWrfzdw7kkLHQA0/preview
+[fa23_final_reference_sheet]: {{ site.baseurl }}/assets/exams/fa23/fa23_final_reference_sheet.pdf
+[fa24_midterm_blank]: {{ site.baseurl }}/assets/exams/fa24/fa24_midterm.pdf
+[fa24_midterm_solutions]: {{ site.baseurl }}/assets/exams/fa24/fa24_midterm_sol.pdf
+[fa24_midterm_common_errors]: https://docs.google.com/document/d/1fFtK6svvdNd4AhHJcUN7fft_1Maac0GmY4jeplKiSrg/preview
+[fa24_midterm_reference_packet]: {{ site.baseurl }}/assets/exams/fa24/fa24_midterm_reference_packet.pdf
 
-Final Reference Sheet: [PDF](/fa23/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is from Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
+Note: Reference sheets/packets will be provided with the paper exam; you should not need to print your own copy. Please post to Ed if you find typos. Thanks!
 
 The best way to get a sense for what is needed for our written exam is to attend discussion throughout the semester and work on discussion handouts.
 
