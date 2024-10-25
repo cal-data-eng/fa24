@@ -42,7 +42,7 @@ See [**Assignment Tips**](../assignment-tips).
 
 | **Semester** | Midterm | Final | Reference Sheet | Notes |
 |:-------------|:-------:|:-----:|:---------------:|:-----:|
-| Fall 2024 | [Exam][fa24_midterm_blank] ([Solutions][fa24_midterm_solutions])| | [Midterm][fa24_midterm_reference_packet] |
+| Fall 2024 | [Exam][fa24_midterm_blank] ([Solutions][fa24_midterm_solutions])| | [Midterm][fa24_midterm_reference_packet] | [Common Errors][fa24_midterm_common_errors] |
 | Fall 2023 | | [Exam][fa23_final_blank] ([Solutions][fa23_final_solutions]) | [Final][fa23_final_reference_sheet] | [Common Errors][fa23_final_common_errors] |
 | Fall 2022 | | [Exam][fa22_final_blank] ([Solutions][fa22_final_solutions]) | | Shortened exam due to the UAW 2865 ASE strike |
 
@@ -54,6 +54,7 @@ See [**Assignment Tips**](../assignment-tips).
 [fa23_final_reference_sheet]: {{ site.baseurl }}/assets/exams/fa23/fa23_final_reference_sheet.pdf
 [fa24_midterm_blank]: {{ site.baseurl }}/assets/exams/fa24/fa24_midterm.pdf
 [fa24_midterm_solutions]: {{ site.baseurl }}/assets/exams/fa24/fa24_midterm_sol.pdf
+[fa24_midterm_common_errors]: https://docs.google.com/document/d/1fFtK6svvdNd4AhHJcUN7fft_1Maac0GmY4jeplKiSrg/preview
 [fa24_midterm_reference_packet]: {{ site.baseurl }}/assets/exams/fa24/fa24_midterm_reference_packet.pdf
 
 Note: Reference sheets/packets will be provided with the paper exam; you should not need to print your own copy. Please post to Ed if you find typos. Thanks!
