@@ -16,5 +16,5 @@ Thu 10/24
   : [Solution](https://drive.google.com/file/d/1S-QPC5mPHdk0QbNEZtaBhP0nbOkB39CN/view?usp=sharing), [code](http://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa24-materials&urlpath=tree%2Ffa24-materials%2Fdisc%2Fdisc08%2Fdisc08.ipynb&branch=main)
 
 Fri 10/25
-: {% proj_rel 3%} Data Transformation
+: {% proj_rel 3%} [Data Transformation](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa24-materials&urlpath=lab%2Ftree%2Ffa24-materials%2Fproj%2Fproj3%2Fproj3.ipynb&branch=main)
   : Due Wed 11/6, 5pm
