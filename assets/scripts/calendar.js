@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // plugins: [FullCalendar.TimeGrid, FullCalendar.GoogleCalendar],
     googleCalendarApiKey: '{{ site.google_calendar.google_api_key }}',
     initialView: 'timeGridWeek',
-    // TODO: Should this be configurable?
-    weekends: true,
+    // TODO: This should be configurable.
+    weekends: false,
     nowIndicator: true,
     // eventMinHeight: 30,
     // TODO: 30 min default makes the calendar tall...
