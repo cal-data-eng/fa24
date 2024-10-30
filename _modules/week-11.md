@@ -13,7 +13,7 @@ Wed 11/6
 
 Thu 11/7
 : {% lec 20 %}
-: {% disc 11 %} Transactions
+: {% disc 11 %} Pipelines, MapReduce
 
 Fri 11/8
 : {% proj_rel Final %} Optional Final Project

@@ -12,4 +12,4 @@ Wed 11/13
 
 Thu 11/14
 : {% lec 22 %}
-: {% disc 12 %} Pipelines, MapReduce
+: {% disc 12 %} Transactions
