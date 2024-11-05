@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Optional Final Project
-nav_exclude: true
+nav_order: 5
 description: >-
     Data Engineering
 markdown: kramdown
@@ -52,7 +52,7 @@ You will submit a GitHub repository and written report, where your analysis will
 
 **Group work requirement**: You **must be in a team of 3 or 4**. If you’re looking for a group OR if you have a partial/full team, **everyone who is looking to do the final project must fill out this [Team Matching Survey]({{ page.team_form }}) by {{page.deadlines.team}}**. Group confirmations will be sent out by {{page.deadlines.team_confirm}}. Limited pre-approved exceptions will be made for personal circumstances, or senior/honors thesis work; see the Project Deliverables section for more details.
 
-## Learning Goals
+### Learning Goals
 
 This project is designed to give you a “real-world” example of working with an unknown dataset, and doing so in a team. We *do not expect you to have all the answers*, and there are a number of tasks which are not directly covered in class.
 
