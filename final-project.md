@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Optional Final Project
-nav_order: 2
+nav_exclude: true
 description: >-
     Data Engineering
 markdown: kramdown
