@@ -16,5 +16,5 @@ Thu 11/7
 : {% disc 11 %} Pipelines, MapReduce
 
 Fri 11/8
-: {% proj_rel Final %} Optional Final Project
+: {% proj_rel Final %} [Optional Final Project]({{site.baseurl}}/assignments/final-project)
   : Checkpoint Mon 11/25, 5pm<br/>Due **Fri** 12/6, 5pm
