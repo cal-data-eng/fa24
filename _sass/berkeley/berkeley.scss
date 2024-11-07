@@ -4,6 +4,8 @@
 // UC Berkeley fonts 'Inter' (sans serif) 'Source Serif' (serif), and 'Source Code Pro' (monospace)
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
 // Override default JTD CSS for larger/more accessibile fonts.
 html {
   font-size: 16px;
@@ -16,10 +18,6 @@ body {
   color: $body-text-color;
   background-color: $body-background-color;
   overflow-wrap: break-word;
-}
-
-h1, h2, h3, h4, h5, h6, .serif {
-  font-family: "Source Serif 4", "Georiga", "Baskerville", serif;
 }
 
 // Link Colors
@@ -41,6 +39,8 @@ h1, h2, h3, h4, h5, h6,
 .serif {
   font-family: $serif-font-family;
 }
+
+h1 { font-weight: 500; }
 
 // Override JTD to be darker
 .label-green:not(g) {
