@@ -15,5 +15,3 @@ Thu 10/31
 Fri 11/1
 : {% hw_rel 4 %} Homework 4
   : Due Wed 11/13, 5pm
-: {% proj_rel 4 %} Mongo
-  : Due Wed 11/20, 5pm
