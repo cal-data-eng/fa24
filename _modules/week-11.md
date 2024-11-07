@@ -17,4 +17,4 @@ Thu 11/7
 
 Fri 11/8
 : {% proj_rel Final %} [Optional Final Project]({{site.baseurl}}/assignments/final-project)
-  : Checkpoint Mon 11/25, 5pm<br/>Due **Fri** 12/6, 5pm
+  : Checkpoint Mon 11/25, 5pm<br/>Due **Mon** 12/9, 5pm

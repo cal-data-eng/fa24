@@ -47,7 +47,7 @@ You will submit a GitHub repository and written report, where your analysis will
 4. **Design and analyze a benchmark set of tasks**. Select a representative set of 5 queries (i.e., tasks) that compare the two data system on the following dimensions:
    * Fitness/ergonomics: Is your data system well-designed for the task? How easy is it to complete this task and/or can it even do the task? (i.e., does the system aid you in writing the queries you are trying to write)
    * Performance: How much disk storage or memory (RAM) and time resources does each system spend to complete this task?
-5. **Present your findings in a written report.** This report could be used in an imaginary scenario where, say, a manager could use your report to determine which of two data systems to use. Your report therefore should include diagrams, code snippets, tables/visualizations (where appropriate), and broader reflections/recommendations about the usability of the systems themselves (ease of setup/debugging, etc.)
+5. **Present your findings in a written report.** This report could be used in an imaginary scenario where, say, a manager or labmate could use your report to determine which of two data systems to use. Your report therefore should include diagrams, code snippets, tables/visualizations (where appropriate), and broader reflections/recommendations about the usability of the systems themselves (ease of setup/debugging, etc.)
    * You are also required to submit a **project checkpoint**. For the checkpoint, we expect you to cover enough setup/groundwork such that you can run at least one query in PostgreSQL on your chosen dataset.
 
 **Group work requirement**: You **must be in a team of 3 or 4**. If you’re looking for a group OR if you have a partial/full team, **everyone who is looking to do the final project must fill out this [Team Matching Survey]({{ page.team_form }}) by {{page.deadlines.team}}**. Group confirmations will be sent out by {{page.deadlines.team_confirm}}. Limited pre-approved exceptions will be made for personal circumstances, or senior/honors thesis work; see the Project Deliverables section for more details.
@@ -84,7 +84,7 @@ You should expect to get practice with:
 
 In very special circumstances (e.g., extenuating personal circumstances or ongoing personal project such as a senior thesis), we will allow students to work alone. If you believe you qualify for this exception, please email [{{site.course_email}}](mailto:{{site.course_email}}) AND cc instructors ASAP with relevant information/documentation. Do not assume the exception has been granted until you receive a confirmation email.
 
-### Checkpoint: Midpoint Report and GitHub Repository (due {{page.deadlines.checkpoint}})
+### Checkpoint: Checkpoint Report and GitHub Repository (due {{page.deadlines.checkpoint}})
 
 The checkpoint report will be a relatively short report to make sure your team is on track. Your team will submit one **GitHub Repository and a written report** to Gradescope.
 
@@ -132,7 +132,7 @@ This file should be named `1-final-report.pdf` and should be committed to your G
     * Consider performance, ease of writing, etc.
   * Does one tool allow tasks which are incredibly difficult in the other tool?
 * Reflections of tools
-  * If you were recommending someone else (e.g. your manager) pick one of these tools, what would it be and why?
+  * If you were recommending someone else (e.g. your manager or labmate) pick one of these tools, what would it be and why?
   * Think broadly beyond just the data systems, what worked well and didn’t work so well?
 * *Individual Reflections*
   *  Each team member should include a paragraph about your personal reflections on the project. What did you learn? What did you find most exciting, or perhaps most frustrating?
