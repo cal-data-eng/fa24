@@ -13,7 +13,7 @@ Wed 11/6
 
 Thu 11/7
 : {% lec 20 %}
-: {% disc 11 %} Pipelines, MapReduce
+: {% disc 11 %} [Data Ops, MapReduce, MQL II](https://drive.google.com/file/d/1QnR7hEtyGuzqFr1SyaDS6MT2E0RBZJkH/view?usp=sharing)
 
 Fri 11/8
 : {% proj_rel Final %} [Optional Final Project]({{site.baseurl}}/assignments/final-project)
