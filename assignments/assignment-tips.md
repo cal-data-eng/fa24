@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Assignment Tips
+permalink: /assignment-tips/
 nav_exclude: false
 nav_order: 5
 description: >-
@@ -135,7 +136,7 @@ If you are running the `grader.export(...)` cell and you receive an error that l
 ! Undefined control sequence.
 l.349 ...r materialized view is much smaller\faster
                                                    than for
-? 
+?
 ! Emergency stop.
 l.349 ...r materialized view is much smaller\faster
                                                    than for
