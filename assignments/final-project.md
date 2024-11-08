@@ -149,6 +149,20 @@ You may use up to 2 slip days on this optional final project.
 
 This will be a short survey (submitted with your final submission) assessing you and your teammates contributions to the project. Each member will make an individual submission which is **anonymous** to your teammates.
 
+---
+
+## FAQ
+
+<details>
+  <summary>How does the overall DATA101 Grading work?</summary>
+</details>
+
+<details>
+  <summary>How are slip days handled?</summary>
+</details>
+
+---
+
 ## Acknowledgments
 
 Select wording for the specifications (in particular, the entirety of “Working in Groups”) are drawn from the Data 102: Inference and Decision-Making ([https://data102.org/](https://data102.org/)) Final Project.
