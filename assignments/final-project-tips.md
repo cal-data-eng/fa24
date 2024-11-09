@@ -70,17 +70,17 @@ Because your repository is private, we recommend setting up [SSH][git_ssh] if yo
 
 ## Using SQL & Python
 
-Example: Using `psycopg3` to Connect to PostgreSQL, Create a Table, and Insert Data
+Using `psycopg3` to Connect to PostgreSQL, Create a Table, and Insert Data
 
-To interact with PostgreSQL using Python, you can use the `psycopg3` library. Below is a short example demonstrating how to connect to a PostgreSQL database, create a table, and insert some data.
+To interact with PostgreSQL using Python, you can use the `psycopg3` library. Below is a short example demonstrating how to connect to a database, create a table, and insert some data.
 
 First, install the `psycopg3` library if you haven't already:
 For more information on `psycopg3`, you can refer to the following resources:
 
-- **Official Documentation**: [psycopg3 Documentation](https://www.psycopg.org/psycopg3/docs/)
-- **GitHub Repository**: [psycopg3 on GitHub](https://github.com/psycopg/psycopg)
-- **Tutorials and Examples**: [Real Python - PostgreSQL with Python](https://realpython.com/python-postgresql/)
+- **Official Documentation**: [psycopg3 Documentation](https://www.psycopg.org/psycopg3/docs/) (Start here!)
 - **API Reference**: [psycopg3 API Reference](https://www.psycopg.org/psycopg3/docs/api/)
+- **GitHub Repository**: [psycopg3 on GitHub](https://github.com/psycopg/psycopg)
+<!-- - **Tutorials and Examples**: [Real Python - PostgreSQL with Python](https://realpython.com/python-postgresql/) -->
 
 ```sh
 pip install psycopg[binary]
@@ -93,6 +93,7 @@ import psycopg
 
 # Connect to your PostgreSQL database
 # Make sure it is already running on your computer.
+# (This is done by default on JupyterHub)
 conn = psycopg.connect("localhost")
 
 # Create a cursor object
@@ -122,6 +123,7 @@ cur.execute(
 )
 
 # Insert data using a prepared statement
+# See https://www.postgresql.org/docs/8.1/sql-syntax.html#AEN1368
 prepared_statement = "INSERT INTO users (name, age) VALUES ($1, $2)"
 cur.execute(prepared_statement, ('Eve', 22))
 
@@ -131,7 +133,9 @@ user_list = [
   ('Grace', 29),
   ('Hannah', 33)
 ]
+
 # Use executemany to insert multiple rows
+# This properly escapes quotes, etc.
 cur.executemany(
   "INSERT INTO users (name, age) VALUES (%s, %s)",
   user_list
@@ -144,5 +148,3 @@ conn.commit()
 cur.close()
 conn.close()
 ```
-
-This script connects to a PostgreSQL database, creates a `users` table if it doesn't already exist, inserts three rows of data, and then closes the connection.
