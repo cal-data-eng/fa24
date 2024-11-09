@@ -10,6 +10,7 @@ Tue 11/5
 Thu 11/7
 : {% lec 20 %}
 : {% disc 11 %} [Data Ops, MapReduce, MQL II](https://drive.google.com/file/d/1QnR7hEtyGuzqFr1SyaDS6MT2E0RBZJkH/view?usp=sharing)
+  : [Solution](https://drive.google.com/file/d/1mm58tipjtjUvZEfhePBD6LposBdWhFVm/view?usp=sharing)
 
 Fri 11/8
 : {% proj_due 3 %} Due, 5pm
