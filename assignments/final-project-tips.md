@@ -1,3 +1,4 @@
+---
 layout: page
 title: Final Project Tips
 permalink: /assignments/final-project-tips/
