@@ -1,3 +1,5 @@
+**Staff Note: This file is not published / compiled.**
+
 # Final Project Grading Rubric
 
 **Total: 80 points**
