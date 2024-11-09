@@ -38,7 +38,8 @@ team_form: "https://docs.google.com/forms/d/e/1FAIpQLSe7Suf2tv9wX2d8iZvB79GbqP5_
 
 The final project is **optional**; if you submit it, it will be [10% of your final grade]({{site.baseurl}}/syllabus). The final project will be a multi-part group project which will ask that you complete an investigation of two data systems—one of which is PostgreSQL and the other will be a non-relational system of your choice—based on a **performance benchmark** (dataset, queries, and measurements) of your design. 
 
-**Detailed guidelines will be released on {{page.deadlines.spec}}**, but if you are interested in completing this optional final project, we encourage you to skim this page and start finding groups for the Team Matching Survey deadline on {{page.deadlines.team}}. A Project Partner search thread has also been posted on Ed.
+If you are interested in completing this optional final project, we encourage you to skim this page and start finding groups for the [Team Matching Survey]({{pages.team_form}}) deadline on **{{page.deadlines.team}}**. A Project Partner search thread has also been posted on Ed.
+Group confirmations will be released on **{{page.deadlines.team_confirm}}**.
 
 You will submit a GitHub repository and written report, where your analysis will include the following steps:
 
@@ -59,7 +60,7 @@ You will submit a GitHub repository and written report, where your analysis will
 5. **Present your findings in a written report.** This report could be used in an imaginary scenario where, say, a manager or labmate could use your report to determine which of two data systems to use. Your report therefore should include diagrams, code snippets, tables/visualizations (where appropriate), and broader reflections/recommendations about the usability of the systems themselves (ease of setup/debugging, etc.).  
    * You are also required to submit a **project checkpoint**. For the checkpoint, we expect you to cover enough setup/groundwork such that you can run at least one query in PostgreSQL on your chosen dataset.
 
-**Group work requirement**: You **must be in a team of 3 or 4**. If you’re looking for a group OR if you have a partial/full team, everyone who is looking to do the final project must fill out this **[Team Matching Survey]({{pages.team_form}})** by {{page.deadlines.team}}. Group confirmations will be sent out by {{page.deadlines.team\_confirm}}. Limited exceptions will be made for personal circumstances, or senior/honors thesis work; see the Project Deliverables section for more details.
+**Group work requirement**: You **must be in a team of 3 or 4**. If you’re looking for a group OR if you have a partial/full team, everyone who is looking to do the final project must fill out this **[Team Matching Survey]({{pages.team_form}})** by {{page.deadlines.team}}. Group confirmations will be sent out by **{{page.deadlines.team_confirm}}**. Limited exceptions will be made for personal circumstances, or senior/honors thesis work; see the Project Deliverables section for more details.
 
 ### Learning Goals
 
@@ -295,7 +296,7 @@ Your GitHub repository submission should include your report, and all code writt
 
 You may use up to 2 slip days on the final report/repository submission.
 
-*We will be releasing an outline template for the final report in the template repository on* {{page.full\_spec}}*.*
+*We will be releasing an outline template for the final report in the template repository on* {{page.full_spec}}*.*
 
 ### 4\. Team Member Assessment ((due {{page.deadlines.final}})
 
