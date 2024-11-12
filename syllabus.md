@@ -140,7 +140,7 @@ If you choose to do the project, your final grade will be the maximum of the two
 
 
 ## Late Policy
-Everyone has 9 slip days, which can be applied to late submissions of _projects_ and _homework assignments_, including the final project.
+Everyone has ~~9~~ **10** slip days, which can be applied to late submissions of _projects_ and _homework assignments_, including the final project.
 
 * Each project or homework assignment can have a max of 3 slip days applied to it. These slip days will be automatically applied at the end of the semester to maximize your grade, based on the final grade shown in gradescope.
 * Slip days are rounded up to the next day. That is, 5 minutes late = 1 day late. We will use the submission time as displayed on Gradescope. You should track your own slip days.
