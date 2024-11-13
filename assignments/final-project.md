@@ -267,7 +267,7 @@ Your report(s) should address the following. Items are tagged to indicate if the
 * If you don’t have a group, you must **individually** fill out the form and you will be randomly assigned a group.  
 * If you have a partial group (e.g., a pair), **one person** must fill out the form by the deadline, and you will be randomly assigned 1-2 additional members.  
 * If you do have a full group, **one person** must fill out the form by the deadline to declare your group.  
-* Group confirmations will be sent out latest {{page.deadlines.teams\_confirm}}.  
+* Group confirmations will be sent out latest {{page.deadlines.teams_confirm}}.  
 * Please note that you will be evaluating your group members at the end of the project: we strongly encourage you to discuss and resolve any conflicts with your group members sooner rather than later.
 
 In very special circumstances (e.g., extenuating personal circumstances or an ongoing personal project such as a senior thesis), we will allow students to work alone. If you believe you qualify for this exception, please email [{{site.course_email}}](mailto:{{site.course_email}}) AND cc instructors ASAP with relevant information/documentation. Do not assume the exception has been granted until you receive a confirmation email.

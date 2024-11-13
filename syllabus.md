@@ -108,7 +108,7 @@ This course has two exams:
 * Midterm exam: Wednesday, October 16th, 7:00pm - 9:00pm
 * Final exam: Tuesday, December 17th, 3:00pm - 6:00pm
 
-**Exams are offered in-person only (location TBD).** Alternate exams will be offered for the midterm (TBD), but not for the final. It is your responsibility to ensure that you are not enrolled in another class that conflicts with our final exam time.
+**Exams are offered in-person only.** Alternate exams will be offered for the midterm, but not for the final. It is your responsibility to ensure that you are not enrolled in another class that conflicts with our final exam time. All details will be posted on Ed.
 
 ### Final Project
 
