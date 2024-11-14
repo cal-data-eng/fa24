@@ -100,7 +100,7 @@ There will be five (5) programming assignments released throughout the semester 
 
 ### Homework Assignments
 
-There will be six (6) homework assignments released on Gradescope throughout the semester. You will have about two weeks to complete short written assignments, with the exception of the first Homework 1 (one week). Each homework assignment consists of multiple choice and short answer questions covering material that is not covered in the projects. Homework assignments are graded on accuracy and are equally weighted. Homework assignment deadlines are **Wednesday 5pm**.
+There will be five (5) homework assignments released on Gradescope throughout the semester. You will have about two weeks to complete short written assignments, with the exception of the first Homework 1 (one week). Each homework assignment consists of multiple choice and short answer questions covering material that is not covered in the projects. Homework assignments are graded on accuracy and are equally weighted. Homework assignment deadlines are **Wednesday 5pm**.
 
 ### Exams
 
