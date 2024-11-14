@@ -15,6 +15,6 @@ Thu 11/7
 Fri 11/8
 : {% proj_due 3 %} Due, 5pm
 : {% proj_rel 4 %} [Mongo](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa24-materials&urlpath=lab%2Ftree%2Ffa24-materials%2Fproj%2Fproj4%2Fproj4.ipynb&branch=main)
-  : Due Wed 11/20, 5pm
+  : Due Fri 11/22, 5pm
 : {% proj_rel Final %} [Optional Final Project]({{site.baseurl}}/assignments/final-project)
   : Checkpoint Mon 11/25, 5pm<br/>Due **Mon** 12/9, 5pm
