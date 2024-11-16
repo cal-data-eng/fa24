@@ -13,4 +13,4 @@ Wed 11/13
 Thu 11/14
 : {% lec 22 %}
 : {% disc 12 %} [Reservoir Sampling, Transactions](https://drive.google.com/file/d/15D9nu3QMS65wMqwDkL7f2H9NtpiihyM2/view?usp=sharing)
-  : [Code](http://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa24-materials&urlpath=tree%2Ffa24-materials%2Fdisc%2Fdisc12%2Fdisc12.ipynb&branch=main)
+  : [Solution](https://drive.google.com/file/d/1vhy1C4-fz0PzwSuvzYNm5vfPc6hvZyHS/view?usp=sharing), [Code](http://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Ffa24-materials&urlpath=tree%2Ffa24-materials%2Fdisc%2Fdisc12%2Fdisc12.ipynb&branch=main)
