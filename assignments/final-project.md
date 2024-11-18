@@ -424,6 +424,16 @@ Most of the below tips are based on the collective wisdom of Data Science final 
   </p>
 </details>
 
+<details>
+  <summary>
+    Can I get project help during office hours?
+  </summary>
+
+  <p>
+    We can offer general design and debugging tips during office hours, but we likely won't be able to help debug specific code. Instructors have opened up project office hours; please check the office hour calendar for more information.
+  </p>
+</details>
+
 [Jump to Top](#top)
 
 ---
