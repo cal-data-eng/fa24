@@ -149,3 +149,47 @@ conn.commit()
 cur.close()
 conn.close()
 ```
+
+## Writing Tips and Compiling PDFs
+
+You are welcome to generate your report PDF in any way you choose.
+If you want to write collaboratively, we would personally recommend against
+writing in a Jupyter Notebook. However, the very rough markdown file we've
+provided should be easy enough to avoid git conflicts.
+
+Otherwise, you are welcome to write in Google Docs or Overleaf / LaTeX if you'd like.
+
+_Remember_: A particular format for your report is **not required**. You do not need to be extra fancy; simply focus on the clarify of your writing.
+
+### Scientific Writing and markdown
+
+So, you've got a Markdown document, how do you render it as a PDF? There's plenty of options! Each tool may be suited to more complex tasks in the long0ryb, but here's a few places to get started.
+
+#### Rendering Markdown with Pandoc or Quarto
+
+[Pandoc][pandoc] is a swiss army knife of document conversion tools, and it's already installed on DataHub.
+
+[pandoc]: https://pandoc.org/getting-started.html#step-6-converting-a-file
+
+* To install pandoc yourself: `brew install pandoc`
+* Basic compilation with pandoc: `pandoc file.md -t [format] -o output-filename` where `[format]` is most likely `pdf` for your use cases.
+* Don't forget to run `pandoc --help`.
+
+[Quarto][quarto] is another useful tool designed for publishing scientific documents and websites. It can similarly render markdown files to PDFs, and has many themes and advanced styling options,
+including the ability to run code in a markdown file and render its outputs in the final PDF.
+
+[quarto]: https://quarto.org/docs/get-started/authoring/vscode.html
+
+* Install quarto: `brew install quarto`
+* render markdown to PDF: `quarto render file.md --to pdf`
+* Likewise, run `quarto render --help`
+
+### Markdown Guides
+
+If you'd like to learn more about writing Markdown, you can checkout these guides:
+
+* [GitHub Flavored Markdown](https://github.github.com/gfm/)
+* [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
+* [Quarto's Markdown Guide](https://quarto.org/docs/authoring/markdown-basics.html)
+
+The vast majority of the text you write in markdown will not vary by the tool you use. However, different tools may offer specific features.
