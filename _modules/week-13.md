@@ -13,7 +13,7 @@ Wed 11/20
 
 Thu 11/21
 : {% lec 24 %}
-: {% disc 13 %} OLAP, Parallel/Distributed Computing
+: {% disc 13 %} [Data Cubes, OLAP, Parallel Processing](https://drive.google.com/file/d/1Lr5LisDvCyL83dNoU1H2tLd9fEiNO9yM/view?usp=sharing)
 
 Fri 11/22
 : {% proj_due 4 %} Due, 5pm
