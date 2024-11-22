@@ -95,7 +95,8 @@ import psycopg
 # Connect to your PostgreSQL database
 # Make sure it is already running on your computer.
 # (This is done by default on JupyterHub)
-conn = psycopg.connect("localhost")
+# Assuming the database mydb exists...
+conn = psycopg.connect("postgresql://localhost/mydb")
 
 # Create a cursor object
 cur = conn.cursor()
