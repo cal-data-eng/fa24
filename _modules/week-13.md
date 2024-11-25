@@ -18,5 +18,5 @@ Thu 11/21
 
 Fri 11/22
 : {% proj_due 4 %} Due, 5pm
-: {% hw_rel 5 %} Homework 5
+: {% hw_rel 5 %} [Homework 5](https://www.gradescope.com/courses/835949/assignments/5336690)
   : Due Wed 12/4, 5pm
