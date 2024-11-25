@@ -125,8 +125,8 @@ cur.execute(
 )
 
 # Insert data using a prepared statement
-# See https://www.postgresql.org/docs/8.1/sql-syntax.html#AEN1368
-prepared_statement = "INSERT INTO users (name, age) VALUES ($1, $2)"
+# See also: https://www.postgresql.org/docs/8.1/sql-syntax.html#AEN1368
+prepared_statement = "INSERT INTO users (name, age) VALUES (%s, %s)"
 cur.execute(prepared_statement, ('Eve', 22))
 
 # Insert data from a list
