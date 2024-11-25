@@ -142,6 +142,19 @@ cur.close()
 conn.close()
 ```
 
+## Sharing SQL Databases
+
+You will likely find that databases are hard to share among teammates. A few suggestions:
+* To make data processing reproducible, maintain a separate notebook/set of scripts that teammates can use to reproduce the same SQL database. This ideally is a separate file from any EDA/task-writing that your team does. It may contain some data wrangling functions needed to load in the same data. You may assume that your teammates have already pre-downloaded in the raw files.
+* If you are randomly sampling the data, set a random seed (e.g., in Python) so that anyone who follows the same steps will reproduce the identical set of rows across different tables.
+* To make database export/import easy, use `pg_dump` to create a `.sql` file. The below takes a `yelp_db` database exists on your Postgres server and dumps the full database (schema + records) into a file called `yelp.sql`:
+
+    ```
+    pg_dump --encoding utf8 yelp_db -f yelp.sql
+    ```
+
+    You can then share the `.sql` binary file directly with your teammates. However, this method does not lead to good data provenance (and it also can assume specific features about a given Postgres server setup), so we generally recommend sharing both this binary AND the steps used to recreate the database from raw data files.
+
 ## Writing Tips and Compiling PDFs
 
 You are welcome to generate your report PDF in any way you choose.

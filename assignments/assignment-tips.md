@@ -22,6 +22,9 @@ markdown: kramdown
 Author: Lisa Yan, Michael Ball, Rebecca Dang
 Last updated: October 25, 2024 (Fall 2024)
 
+Quick links:
+* [Final Project Tips]({{site.baseurl}}/assignments/final-project-tips)
+
 Jump to:
 1. TOC
 {:toc}
