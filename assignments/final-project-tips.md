@@ -23,31 +23,22 @@ markdown: kramdown
 ## Installing Software Locally
 We recommend everyone install Postgres locally, following their [documentation](https://www.postgresql.org/docs/).
 
-### Using Homebrew
+#### Postgres & Homebrew
 Homebrew (`brew`) is a package manager for macOS (and Linux) that simplifies the installation of software. You might find brew useful since it can install many different pieces of software.
 
 Checkout [https://brew.sh](https://brew.sh)
 
+
 However, if you're comfortable with Conda, you can also use that. Otherwise, we tend to find brew to be easier on macOS.
+To install PostgreSQL using Homebrew:
+* Run the following command in your terminal: `brew install postgresql`
+* After installation, you can start the PostgreSQL service with: `brew services start postgresql`
+* And stop it with: `brew services stop postgresql`
 
-#### Postgres & Homebrew
-To install PostgreSQL using Homebrew, run the following command in your terminal:
+### Postgres (Mac OS X only)
 
-```sh
-brew install postgresql
-```
+If you are having trouble with database permissions using a `brew` installation of Postgres, we suggest installing [Postgres.App](https://postgresapp.com/) which is a full-featured application native to Mac OS X only. It installs a simple server (with GUI management) and `psql` program; we recommend uninstalling any existing versions of postgres if you decide to go this route.
 
-After installation, you can start the PostgreSQL service with:
-
-```sh
-brew services start postgresql
-```
-
-And stop it with:
-
-```sh
-brew services stop postgresql
-```
 
 ## Non-Relational DBs
 - **Cassandra**: A highly scalable, high-performance distributed database designed to handle large amounts of data across many commodity servers. [Documentation](https://cassandra.apache.org/doc/latest/)
