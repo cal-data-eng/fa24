@@ -285,7 +285,7 @@ In very special circumstances (e.g., extenuating personal circumstances or an on
 
 The checkpoint report is a relatively short report to make sure your team is on track. Your team will submit one **GitHub Repository and a written report** to Gradescope. See the [Present Your Findings](#present-your-findings) section for report components.
 
-Your checkpoint report is **expected to be about <s>500-800</s> 800-1600 words** and should include code snippets, charts, or tables as necessary. You may choose to write your report in your team’s preferred tool (e.g., Overleaf or Google Docs). This file should be saved as `0-checkpoint.pdf` and included in your GitHub repository.
+Your checkpoint report is **expected to be about <s>500-800</s> 700-1600 words** and should include code snippets, charts, or tables as necessary. You may choose to write your report in your team’s preferred tool (e.g., Overleaf or Google Docs). This file should be saved as `0-checkpoint.pdf` and included in your GitHub repository.
 
 Your GitHub repository submission should include your report, and all code written to help produce the report. You should not include any raw dataset data in your GitHub repo.
 
