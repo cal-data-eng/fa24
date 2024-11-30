@@ -285,7 +285,7 @@ In very special circumstances (e.g., extenuating personal circumstances or an on
 
 The checkpoint report is a relatively short report to make sure your team is on track. Your team will submit one **GitHub Repository and a written report** to Gradescope. See the [Present Your Findings](#present-your-findings) section for report components.
 
-Your checkpoint report is **expected to be about 500-800 words** and should include code snippets, charts, or tables as necessary. You may choose to write your report in your team’s preferred tool (e.g., Overleaf or Google Docs). This file should be saved as `0-checkpoint.pdf` and included in your GitHub repository.
+Your checkpoint report is **expected to be about <s>500-800</s> 800-1600 words** and should include code snippets, charts, or tables as necessary. You may choose to write your report in your team’s preferred tool (e.g., Overleaf or Google Docs). This file should be saved as `0-checkpoint.pdf` and included in your GitHub repository.
 
 Your GitHub repository submission should include your report, and all code written to help produce the report. You should not include any raw dataset data in your GitHub repo.
 
@@ -297,9 +297,9 @@ You may use up to 2 slip days on the checkpoint submission.
 
 Your final report is expected to build upon much of your checkpoint report. Of course, some of your expectations from your checkpoint will likely need to be revised. Your team will submit **one GitHub repository and written report** to Gradescope. see the [Present Your Findings](#present-your-findings) section for report components.
 
-Your final report is **expected to be about 1800-2500 words long** and should include code snippets, charts, tables, and screenshots as necessary. You may choose to write your report in your team’s preferred tool (e.g., Overleaf or Google Docs). This file should be named `1-final-report.pdf` and should be committed to your GitHub repo.
+Your final report is **expected to be about <s>1800-2500</s> 2700-4000 words long** and should include code snippets, charts, tables, and screenshots as necessary. You may choose to write your report in your team’s preferred tool (e.g., Overleaf or Google Docs). This file should be named `1-final-report.pdf` and should be committed to your GitHub repo.
 
-Including diagrams and/or code, we expect your report to be **9–12 pages**. We won’t be strictly enforcing these word/page limits, but reports that are much longer are subject to a penalty; reports that are much shorter are probably missing important discussion.
+Including diagrams and/or code, we expect your report to be **<s>9–12</s> 13-28 pages**. We won’t be strictly enforcing these word/page limits, but reports that are much longer are subject to a penalty; reports that are much shorter are probably missing important discussion.
 
 Your GitHub repository submission should include your report, and all code written to help produce the report. You should not include any raw dataset data in your GitHub repo.
 
