@@ -13,4 +13,5 @@ Wed 12/4
 
 Thu 12/5
 : {% lec 27 %}
-: {% disc 14 %} Wrap-Up
+: {% disc 14 %} [Parallel Processing, Spreadsheets, and Graph DB](https://drive.google.com/file/d/1pQL9yGp2g7NJNNr0kJF2sEu8QhqjB4pt/view?usp=sharing)
+    : [Demo](https://docs.google.com/spreadsheets/d/1uKqUfmbmV5m7bQ4zBnv1NMJ2aVw5CKTTtV0LVVYWn_U/edit?usp=sharing)
