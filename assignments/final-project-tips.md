@@ -23,7 +23,7 @@ markdown: kramdown
 ## Installing Software Locally
 We recommend everyone install Postgres locally, following their [documentation](https://www.postgresql.org/docs/).
 
-#### Postgres & Homebrew
+### Postgres & Homebrew
 Homebrew (`brew`) is a package manager for macOS (and Linux) that simplifies the installation of software. You might find brew useful since it can install many different pieces of software.
 
 Checkout [https://brew.sh](https://brew.sh)
@@ -39,6 +39,16 @@ To install PostgreSQL using Homebrew:
 
 If you are having trouble with database permissions using a `brew` installation of Postgres, we suggest installing [Postgres.App](https://postgresapp.com/) which is a full-featured application native to Mac OS X only. It installs a simple server (with GUI management) and `psql` program; we recommend uninstalling any existing versions of postgres if you decide to go this route.
 
+### MongoDB
+
+We recommend everyone install MongoDB locally, following their [documentation](https://www.mongodb.com/docs/). Some high-level steps:
+
+Install the Community Edition of Mongo:
+* [Install MongoDB CommunityEdition](https://www.mongodb.com/docs/manual/administration/install-community/)
+* [Install `mongosh`, the MongoDB shell](https://www.mongodb.com/docs/mongodb-shell/install/)
+* Once installed, follow the instructions to run a local Mongo server.
+* Then verify that you can connect a Mongo client (e.g., `mongosh`).
+* Finally, install needed Python packages (e.g., `pymongo`) if that's what you'll regularly use to execute mongo commands.
 
 ## Non-Relational DBs
 - **Cassandra**: A highly scalable, high-performance distributed database designed to handle large amounts of data across many commodity servers. [Documentation](https://cassandra.apache.org/doc/latest/)
