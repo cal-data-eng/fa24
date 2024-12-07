@@ -8,8 +8,8 @@ Tue 12/10
 : Final Review
 
 Wed 12/11
-:  **[Optional Final Project]({{site.baseurl}}/assignments/final-project)**{: .label .label-proj-due} Due, 5pm
- : [Final Submission [Group]][fp_repo_submission] <br> [Peer Assessment [Individual]][fp_peer_assess]
+:  **Final Project**{: .label .label-proj-due} [Project Spec]({{site.baseurl}}/assignments/final-project) Due, 5pm
+    : [Final Submission [Group]][fp_repo_submission] <br> [Peer Assessment [Individual]][fp_peer_assess]
 
 
 Thu 12/12
