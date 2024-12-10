@@ -36,9 +36,11 @@ team_form: "https://docs.google.com/forms/d/e/1FAIpQLSe7Suf2tv9wX2d8iZvB79GbqP5_
 * Checkpoint Gradescope Submissions:
   * [Checkpoint Submission [Group]][fp_repo_checkpoint]
   * [Checkpoint Peer Assessment [Individual]][fp_gradescope_checkpoint]
-* Final Gradescope Submissions:
-  * Coming Soon!
+  * [Final Submission [Group]][fp_repo_submission]
+  * [Peer Assessment [Individual]][fp_peer_assess]
 
+[fp_repo_submission]: https://www.gradescope.com/courses/835949/assignments/5426574/
+[fp_peer_assess]: https://www.gradescope.com/courses/835949/assignments/5426573/
 [fp_repo_checkpoint]: https://www.gradescope.com/courses/835949/assignments/5331860
 [fp_gradescope_checkpoint]: https://www.gradescope.com/courses/835949/assignments/5332076
 
