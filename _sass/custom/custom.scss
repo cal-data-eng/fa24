@@ -20,6 +20,20 @@
 
 // CUSTOM
 
+.warning a {
+  color: $warning-link-color !important;
+  text-decoration: underline;
+}
+
+.warning a:hover {
+  color: $warning-link-hover-color !important;
+  text-decoration: none;
+}
+
+.warning {
+  color: $warning-color !important; /* Changed from #757575 */
+}
+
 @media (min-width: 66.5rem) {
   .side-bar { width: 248px !important;}
   .main { margin-left: 264px !important;}
