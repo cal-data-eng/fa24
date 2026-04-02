@@ -9,6 +9,9 @@ description: >-
 markdown: kramdown
 ---
 
+{: .warning }
+⚠️ This content is archived as of March 2026 and is retained exclusively for reference. [Find current offerings.](https://data101.org/)
+
 <!-- TODO: The Ed URL should be a site variable. -->
 [pg_current]: https://www.postgresql.org/docs/current/index.html
 [pg_v14]: https://www.postgresql.org/docs/14/index.html

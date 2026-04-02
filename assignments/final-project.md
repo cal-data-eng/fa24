@@ -18,6 +18,9 @@ deadlines:
 team_form: "https://docs.google.com/forms/d/e/1FAIpQLSe7Suf2tv9wX2d8iZvB79GbqP5_jR0ind4g7ZgHApopr9QkEA/viewform?usp=sf_link"
 ---
 
+{: .warning }
+⚠️ This content is archived as of March 2026 and is retained exclusively for reference. [Find current offerings.](https://data101.org/)
+
 # Optional Final Project
 {:.no_toc}
 

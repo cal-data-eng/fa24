@@ -9,6 +9,9 @@ markdown: kramdown
 lec_info: TuTh 9:30am, Lewis 100
 ---
 
+{: .warning }
+⚠️ This content is archived as of March 2026 and is retained exclusively for reference. [Find current offerings.](https://data101.org/)
+
 <!-- Common md links can go here -->
 [schedule]: {{ site.baseurl }}/
 

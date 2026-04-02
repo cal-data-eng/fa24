@@ -5,6 +5,9 @@ description: Lecture, Discussion and OH schedules
 nav_order: 2
 ---
 
+{: .warning }
+⚠️ This content is archived as of March 2026 and is retained exclusively for reference. [Find current offerings.](https://data101.org/)
+
 # Weekly Schedule
 
 {: .fs-4}
